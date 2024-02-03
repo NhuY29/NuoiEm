@@ -58,27 +58,42 @@
     </div>
   </div>
   <div class="QuyTac">
-  <div class="QuyTacConAnh">
+    <div class="QuyTacConAnh">
       dksjfsdjfkdfjsdfsd
     </div>
     <div>
       <h5><i class="fa-solid fa-key"></i>Mỗi Em Chỉ 01 Mã</h5>
       <p>Mỗi em một mã và 01 ảnh duy nhất, không trùng trong hàng NGHÌN em nhỏ.</p>
       <div>
-      <h5><i class="fa-solid fa-phone"></i>Mỗi Em Chỉ 01 Người Nhận Nuôi</h5>
-      <p>Để đảm bảo an toàn, bảo mật thông tin cho các bé, mỗi bé chỉ có 01 người nhận nuôi duy nhất.</p>
+        <h5><i class="fa-solid fa-phone"></i>Mỗi Em Chỉ 01 Người Nhận Nuôi</h5>
+        <p>Để đảm bảo an toàn, bảo mật thông tin cho các bé, mỗi bé chỉ có 01 người nhận nuôi duy nhất.</p>
+      </div>
+      <div>
+        <h5><i class="fa-solid fa-user-plus"></i>Một Người Có Thể Nuôi Nhiều Bé</h5>
+        <p>Chúng tôi không giới hạn số lượng bé trên mỗi người nuôi.</p>
+      </div>
+      <div>
+        <h5><i class="fa-solid fa-gift"></i>Khuyến Khích Nuôi Bé Nhiều Hơn 1 Năm</h5>
+        <p>Mỗi bé đều đặn đi học, vì thế chúng tôi khuyến khích bạn tham gia nuôi bé nhiều hơn 1 năm.</p>
+      </div>
     </div>
-    <div>
-      <h5><i class="fa-solid fa-user-plus"></i>Một Người Có Thể Nuôi Nhiều Bé</h5>
-      <p>Chúng tôi không giới hạn số lượng bé trên mỗi người nuôi.</p>
-    </div>
-    <div>
-      <h5><i class="fa-solid fa-gift"></i>Khuyến Khích Nuôi Bé Nhiều Hơn 1 Năm</h5>
-      <p>Mỗi bé đều đặn đi học, vì thế chúng tôi khuyến khích bạn tham gia nuôi bé nhiều hơn 1 năm.</p>
-    </div>
-    </div>  
   </div>
+  <div class="ThuPhong">
+    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <p>Trường học đã được xây dựng , sách vở cũng được quyên góp đầy đủ, các bé được giảng dạy miễn phí nhưng sau mỗi bữa trưa, lớp học lại càng thưa thớt. Sau vài hôm lại có 1 vài bé bỏ học. Khu trường cũng bỗng nhiên vắng lặng lạ thường. Các bạn có biết lí do là gì không ?</p>
+        <p>Đó là vì cái đói. Cái đói cản bước khiến nhiều dãy bàn học ở những ngôi trường vùng núi trống trải, dẫu được xây dựng khang trang nhờ cộng đồng đóng góp. Có thể hiểu được thôi, những đứa trẻ đang tuổi ăn tuổi lớn khi bụng đói, chẳng ai nhớ đến giấc mơ biết đọc, biết viết, chúng chỉ nghĩ về những bữa cơm đủ "sắc màu". Những chiếc bụng rỗng đã níu chân các em đến với ánh sáng tri thức.</p>
+        <img src="https://phunudep.net.vn/wp-content/uploads/2019/11/m%E1%BB%99t-b%C3%A1t-c%C6%A1m-bao-nhi%C3%AAu-calo.jpg" id="" alt="...">
+      </div>
+      <div class="read-more" style="display: none;">
 
+        <p>Thêm nội dung cần hiển thị khi bấm "Xem Thêm"...</p>
+      </div>
+      <button class="btn btn-link" onclick="toggleReadMore()">Xem Thêm</button>
+    </div>
+
+  </div>
+  </div>
 </body>
 
 </html>
@@ -222,9 +237,29 @@
 
   .QuyTac {
     width: 100%;
-    height: 500px;
+    height: 400px;
     display: grid;
-    grid-template-columns:60% 40%;
+    grid-template-columns: 60% 40%;
+  }
+
+  .ThuPhong {
+    width: 100%;
+    height: 500px;
+    background-color: beige;
   }
 </style>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<script>
+  function toggleReadMore() {
+    var readMore = document.querySelector('.read-more');
+    var btn = document.querySelector('.btn');
+
+    if (readMore.style.display === 'none') {
+      readMore.style.display = 'block';
+      btn.textContent = 'Ẩn Bớt';
+    } else {
+      readMore.style.display = 'none';
+      btn.textContent = 'Xem Thêm';
+    }
+  }
+</script>
