@@ -1,265 +1,796 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html class="no-js" lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dự Án Nuôi Em</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-...</style>" crossorigin="anonymous" />
+	<meta charset="utf-8">
+
+	<!--====== Title ======-->
+	<title>Dự Án Nuôi Em</title>
+
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!--====== Favicon Icon ======-->
+	<link rel="shortcut icon" href="resources/images/logo.svg" type="image/png">
+
+	<!--====== Animate CSS ======-->
+	<!-- <link rel="stylesheet" href="resources/css/animate.css"> -->
+	<link rel="stylesheet" href="{{ asset('resources/css/animate.css') }}">
+
+	<!--====== Line Icons CSS ======-->
+	<link rel="stylesheet" href="resources/css/LineIcons.2.0.css">
+
+	<!--====== Bootstrap CSS ======-->
+	<link rel="stylesheet" href="resources/css/bootstrap-5.0.5-alpha.min.css">
+
+	<!--====== Style CSS ======-->
+	<link rel="stylesheet" href="{{ asset('resources/css/style.css') }}">
+
+
 </head>
 
 <body>
-  <nav>
-    <a href="#">Giới Thiệu Chung</a>
-    <a href="#">Tài Chính</a>
-    <a href="#">Nhận Mã</a>
-    <a href="#">Tra Mã</a>
-    <a href="#">Thăm Em</a>
-    <a href="#">Số Tài Khoản</a>
-    <a href="#">Hệ Sinh Thái</a>
-  </nav>
-  <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img src="https://xanhtueduc.edu.vn/thumbs/1500x650x1/upload/photo/slider-11780.jpg" class="d-block w-100" alt="...">
-      </div>
-      <div class="carousel-item">
-        <img src="https://i.ytimg.com/vi/SmxPzjIM83M/maxresdefault.jpg" class="d-block w-100" alt="...">
-      </div>
-      <div class="carousel-item">
-        <img src="https://dntt.mediacdn.vn/197608888129458176/2023/6/12/z4417382735986f6566aa77a9f6548012e6f4e908da373-16865331557961772883558.jpg" class="d-block w-100" alt="...">
-      </div>
-    </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade1" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
-  </div>
-  <div class="Com">
-    <div class="GT">
-      <h1 style="font-weight: 900;">Sức Mạnh Bữa Ăn Trưa 8.500 Đồng <i class="fa-solid fa-fire"></i></h1>
-      <p>Dự án “Nuôi em” bắt đầu hoạt động từ năm 2014, do tổ chức thiện nguyện Niềm tin phụ trách.</p>
-      <p>Nhận thấy rằng, dù đã được hỗ trợ xây trường, cung cấp sách vở nhưng các em vùng cao vẫn phải bỏ học vì “đói ăn” khi đến trường. Đây là nguyên nhân trực tiếp khiến hơn 90% các em bỏ học.</p>
-      <p>Do vậy, dự án “Nuôi em” đã ra đời, với mục tiêu cung cấp những bữa ăn đầy đủ, giúp các em có thêm động lực đến trường. Mỗi bữa ăn có chi phí chỉ 8500 đồng do các thầy cô tại trường nấu, nhưng đầy đủ chất dinh dưỡng, ấm nóng tình thương, là một động lực vô cùng to lớn tiếp thêm sức mạnh cho các bé trên con đường đến trường.</p>
-    </div>
-    <div class="dagiac">
-      <img src="https://th.bing.com/th/id/OIP.sqRY7pYg1znr9Z4exIJLoQHaE9?rs=1&pid=ImgDetMain" id="hexagon-image" alt="...">
-      <img src="https://mytourcdn.com/upload_images/Image/Minh%20Hoang/Tay%20bac/tre%20em/3.jpg" id="hexagon-image1" alt="...">
-      <img src="https://images.baoquangnam.vn/Storage/NewsPortal/2021/9/17/117512/TNB-47496.jpg" id="hexagon-image2" alt="...">
-      <img src="https://img1.kienthucvui.vn/uploads/2021/02/11/anh-tre-em-ngheo-vung-cao-di-hoc_114006106.jpg" id="hexagon-image3" alt="...">
-      <img src="https://th.bing.com/th/id/OIP.vQjON6D-WRZb4BCMwPUwbgHaE7?rs=1&pid=ImgDetMain" id="hexagon-image4" alt="...">
-      <img src="https://www.worldatlas.com/twitter/satrip/boca/theline.jpg" id="hexagon-image5" alt="...">
-      <img src="https://th.bing.com/th/id/OIP.gXlxedd-AxF3AKpZbAz3AAHaE8?rs=1&pid=ImgDetMain" id="hexagon-image6" alt="...">
-    </div>
-  </div>
-  <div class="QuyTac">
-    <div class="QuyTacConAnh">
-      dksjfsdjfkdfjsdfsd
-    </div>
-    <div>
-      <h5><i class="fa-solid fa-key"></i>Mỗi Em Chỉ 01 Mã</h5>
-      <p>Mỗi em một mã và 01 ảnh duy nhất, không trùng trong hàng NGHÌN em nhỏ.</p>
-      <div>
-        <h5><i class="fa-solid fa-phone"></i>Mỗi Em Chỉ 01 Người Nhận Nuôi</h5>
-        <p>Để đảm bảo an toàn, bảo mật thông tin cho các bé, mỗi bé chỉ có 01 người nhận nuôi duy nhất.</p>
-      </div>
-      <div>
-        <h5><i class="fa-solid fa-user-plus"></i>Một Người Có Thể Nuôi Nhiều Bé</h5>
-        <p>Chúng tôi không giới hạn số lượng bé trên mỗi người nuôi.</p>
-      </div>
-      <div>
-        <h5><i class="fa-solid fa-gift"></i>Khuyến Khích Nuôi Bé Nhiều Hơn 1 Năm</h5>
-        <p>Mỗi bé đều đặn đi học, vì thế chúng tôi khuyến khích bạn tham gia nuôi bé nhiều hơn 1 năm.</p>
-      </div>
-    </div>
-  </div>
-  <div class="ThuPhong">
-    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-      <div class="accordion-body">
-        <p>Trường học đã được xây dựng , sách vở cũng được quyên góp đầy đủ, các bé được giảng dạy miễn phí nhưng sau mỗi bữa trưa, lớp học lại càng thưa thớt. Sau vài hôm lại có 1 vài bé bỏ học. Khu trường cũng bỗng nhiên vắng lặng lạ thường. Các bạn có biết lí do là gì không ?</p>
-        <p>Đó là vì cái đói. Cái đói cản bước khiến nhiều dãy bàn học ở những ngôi trường vùng núi trống trải, dẫu được xây dựng khang trang nhờ cộng đồng đóng góp. Có thể hiểu được thôi, những đứa trẻ đang tuổi ăn tuổi lớn khi bụng đói, chẳng ai nhớ đến giấc mơ biết đọc, biết viết, chúng chỉ nghĩ về những bữa cơm đủ "sắc màu". Những chiếc bụng rỗng đã níu chân các em đến với ánh sáng tri thức.</p>
-        <img src="https://phunudep.net.vn/wp-content/uploads/2019/11/m%E1%BB%99t-b%C3%A1t-c%C6%A1m-bao-nhi%C3%AAu-calo.jpg" id="" alt="...">
-      </div>
-      <div class="read-more" style="display: none;">
+	<!--[if IE]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+    <![endif]-->
 
-        <p>Thêm nội dung cần hiển thị khi bấm "Xem Thêm"...</p>
-      </div>
-      <button class="btn btn-link" onclick="toggleReadMore()">Xem Thêm</button>
-    </div>
+	<!--====== PRELOADER PART START ======-->
 
-  </div>
-  </div>
+	<div class="preloader">
+		<div class="loader">
+			<div class="ytp-spinner">
+				<div class="ytp-spinner-container">
+					<div class="ytp-spinner-rotator">
+						<div class="ytp-spinner-left">
+							<div class="ytp-spinner-circle"></div>
+						</div>
+						<div class="ytp-spinner-right">
+							<div class="ytp-spinner-circle"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!--====== PRELOADER PART ENDS ======-->
+
+	<!--====== HEADER PART START ======-->
+
+	<header class="header_area">
+		<div id="header_navbar" class="header_navbar">
+			<div class="container">
+				<div class="row align-items-center">
+					<div class="col-xl-12">
+						<nav class="navbar navbar-expand-lg">
+							<a class="navbar-brand" href="index.html">
+								<img id="logo" src="resources/images/logo.svg" alt="Logo">
+							</a>
+							<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+								<span class="toggler-icon"></span>
+								<span class="toggler-icon"></span>
+								<span class="toggler-icon"></span>
+							</button>
+							<div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
+								<ul id="nav" class="navbar-nav ml-auto">
+									<!-- <li class="nav-item">
+										<a class="page-scroll" href="#gioi-thieu">Giới Thiệu</a>
+									</li> -->
+									<li class="nav-item">
+										<a class="page-scroll" href="#nhan-ma">Nhận Mã</a>
+									</li>
+									<li class="nav-item">
+										<a class="page-scroll" href="#tra-ma">Tra Mã</a>
+									</li>
+									<li class="nav-item">
+										<a class="page-scroll" href="#tham-em">Thăm Em</a>
+									</li>
+									<li class="nav-item">
+										<a class="page-scroll" href="#he-sinh-thai">Hệ Sinh Thái</a>
+									</li>
+									<li class="nav-item">
+										<a class="header-btn btn-hover" href="#courses">Get Started</a>
+									</li>
+								</ul>
+							</div> <!-- navbar collapse -->
+						</nav> <!-- navbar -->
+					</div>
+				</div> <!-- row -->
+			</div> <!-- container -->
+		</div> <!-- header navbar -->
+	</header>
+
+	<!--====== HEADER PART ENDS ======-->
+
+	<!--====== HERO PART START ======-->
+	<section id="gioi-thieu" class="hero-area bg_cover">
+		<div class="container">
+			<div class="row align-items-center">
+				<div class="col-xl-5 offset-xl-7 col-lg-8 offset-lg-2 col-md-10 offset-md-1">
+					<div class="hero-content">
+						<h2 class="mb-30 wow fadeInUp" data-wow-delay=".2s">Sức Mạnh Bữa Ăn Trưa 8.500 Đồng</h2>
+						<p class="wow fadeInUp" data-wow-delay=".4s">Dự án “Nuôi em” bắt đầu hoạt động từ năm 2014, do tổ chức thiện nguyện Niềm tin phụ trách.
+
+							Nhận thấy rằng, dù đã được hỗ trợ xây trường, cung cấp sách vở nhưng các em vùng cao vẫn phải bỏ học vì “đói ăn” khi đến trường. Đây là nguyên nhân trực tiếp khiến hơn 90% các em bỏ học.</p>
+
+						<p class="wow fadeInUp" data-wow-delay=".4s"> Do vậy, dự án “Nuôi em” đã ra đời, với mục tiêu cung cấp những bữa ăn đầy đủ, giúp các em có thêm động lực đến trường. Mỗi bữa ăn có chi phí chỉ 8500 đồng do các thầy cô tại trường nấu, nhưng đầy đủ chất dinh dưỡng, ấm nóng tình thương, là một động lực vô cùng to lớn tiếp thêm sức mạnh cho các bé trên con đường đến trường.</p>
+
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="hero-left">
+			<img src="https://img.cand.com.vn/NewFiles/Images/2022/10/27/1-1666870392779.jpg" alt="">
+		</div>
+	</section>
+	<!--====== HERO PART END ======-->
+
+	<!--====== SKILL PART START ======-->
+	<section id="skill" class="skill-area pt-170">
+		<div class="container">
+			<div class="row">
+				<div class="col-xl-6 col-lg-7 col-md-10 mx-auto">
+					<div class="section-title text-center">
+						<h2 class="mb-15 wow fadeInUp" data-wow-delay=".2s">Learn New Skills</h2>
+						<p class="wow fadeInUp" data-wow-delay=".4s">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt utlabo</p>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xl-4 col-lg-4 col-md-6">
+					<div class="single-skill wow fadeInUp" data-wow-delay=".2s">
+						<div class="skill-icon">
+							<i class="lni lni-pencil-alt"></i>
+						</div>
+						<div class="skill-content">
+							<h4>Learn Anything</h4>
+							<p>Lorem ipsum dolor sit amet, consetetu sadi
+								ps cinelitr, sed diam nonumy eirtem Lorem ipsum dolor sit amet, consetetur.</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-xl-4 col-lg-4 col-md-6">
+					<div class="single-skill wow fadeInUp" data-wow-delay=".4s">
+						<div class="skill-icon">
+							<i class="lni lni-grid-alt"></i>
+						</div>
+						<div class="skill-content">
+							<h4>Large Collection</h4>
+							<p>Lorem ipsum dolor sit amet, consetetu sadi
+								ps cinelitr, sed diam nonumy eirtem Lorem ipsum dolor sit amet, consetetur.</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-xl-4 col-lg-4 col-md-6">
+					<div class="single-skill wow fadeInUp" data-wow-delay=".6s">
+						<div class="skill-icon">
+							<i class="lni lni-certificate"></i>
+						</div>
+						<div class="skill-content">
+							<h4>Certified Instructors</h4>
+							<p>Lorem ipsum dolor sit amet, consetetu sadi
+								ps cinelitr, sed diam nonumy eirtem Lorem ipsum dolor sit amet, consetetur.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!--====== SKILL PART ENDS ======-->
+
+	<!--====== COURSES PART START ======-->
+	<section id="nhan-ma" class="course-area pt-140 pb-170">
+		<div class="container">
+			<div class="row">
+				<div class="col-xl-6 col-lg-7 col-md-10 mx-auto">
+					<div class="section-title text-center mb-50">
+						<h2 class="mb-15 wow fadeInUp" data-wow-delay=".2s">Popular Courses</h2>
+						<p class="wow fadeInUp" data-wow-delay=".4s">eStore UI Kit comes with all essential features, sections and elements you need
+							to design and develop web UI efficiently.</p>
+					</div>
+				</div>
+			</div>
+			<div class="row mb-30">
+				<div class="col-xl-4 col-lg-4 col-md-6">
+					<div class="single-course wow fadeInUp" data-wow-delay=".2s">
+						<div class="course-img">
+							<a href="course-single.html">
+							<img src="https://th.bing.com/th/id/R.c7b2653532b33dacdc09c925e8a00274?rik=bKU0gvzRmbpGLg&pid=ImgRaw&r=0" class="d-block w-100" alt="...">
+							</a>
+						</div>
+						<div class="course-info">
+							<h4><a href="course-single.html">3000+ bé huyện Mường Nhé Tỉnh Điện Biên</a></h4>
+							<div class="course-meta">
+								<div class="meta-item">
+									<i class="lni lni-user"></i>
+									<span>3.5k</span>
+								</div>
+								<div class="meta-item">
+									<i class="lni lni-eye"></i>
+									<span>12k</span>
+								</div>
+								<div class="meta-item">
+									<i class="lni lni-star"></i>
+									<span>5.0</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-xl-4 col-lg-4 col-md-6">
+					<div class="single-course wow fadeInUp" data-wow-delay=".4s">
+						<div class="course-img">
+							<a href="course-single.html">
+								<img src="resources/images/course/design.jpg" alt="">
+							</a>
+						</div>
+						<div class="course-info">
+							<h4><a href="course-single.html">UX/UI Design</a></h4>
+							<div class="course-meta">
+								<div class="meta-item">
+									<i class="lni lni-user"></i>
+									<span>3k</span>
+								</div>
+								<div class="meta-item">
+									<i class="lni lni-eye"></i>
+									<span>11k</span>
+								</div>
+								<div class="meta-item">
+									<i class="lni lni-star"></i>
+									<span>5.0</span>
+								</div>
+								<div class="price">
+									<span>$39.00</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-xl-4 col-lg-4 col-md-6">
+					<div class="single-course wow fadeInUp" data-wow-delay=".6s">
+						<div class="course-img">
+							<a href="course-single.html">
+								<img src="resources/images/course/js.jpg" alt="">
+							</a>
+						</div>
+						<div class="course-info">
+							<h4><a href="course-single.html">Modern JavaScript</a></h4>
+							<div class="course-meta">
+								<div class="meta-item">
+									<i class="lni lni-user"></i>
+									<span>2.5k</span>
+								</div>
+								<div class="meta-item">
+									<i class="lni lni-eye"></i>
+									<span>18k</span>
+								</div>
+								<div class="meta-item">
+									<i class="lni lni-star"></i>
+									<span>4.0</span>
+								</div>
+								<div class="price">
+									<span>$19.00</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row mb-30">
+				<div class="col-xl-4 col-lg-4 col-md-6">
+					<div class="single-course wow fadeInUp" data-wow-delay=".2s">
+						<div class="course-img">
+							<a href="course-single.html">
+								<img src="resources/images/course/business.jpg" alt="">
+							</a>
+						</div>
+						<div class="course-info">
+							<h4><a href="course-single.html">Business Development</a></h4>
+							<div class="course-meta">
+								<div class="meta-item">
+									<i class="lni lni-user"></i>
+									<span>1.5k</span>
+								</div>
+								<div class="meta-item">
+									<i class="lni lni-eye"></i>
+									<span>15k</span>
+								</div>
+								<div class="meta-item">
+									<i class="lni lni-star"></i>
+									<span>4.5</span>
+								</div>
+								<div class="price">
+									<span>$19.00</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-xl-4 col-lg-4 col-md-6">
+					<div class="single-course wow fadeInUp" data-wow-delay=".4s">
+						<div class="course-img">
+							<a href="course-single.html">
+								<img src="resources/images/course/marketing.jpg" alt="">
+							</a>
+						</div>
+						<div class="course-info">
+							<h4><a href="course-single.html">Email Marketing 101</a></h4>
+							<div class="course-meta">
+								<div class="meta-item">
+									<i class="lni lni-user"></i>
+									<span>1.9k</span>
+								</div>
+								<div class="meta-item">
+									<i class="lni lni-eye"></i>
+									<span>5k</span>
+								</div>
+								<div class="meta-item">
+									<i class="lni lni-star"></i>
+									<span>5.0</span>
+								</div>
+								<div class="price">
+									<span>$69.00</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-xl-4 col-lg-4 col-md-6">
+					<div class="single-course wow fadeInUp" data-wow-delay=".6s">
+						<div class="course-img">
+							<a href="course-single.html">
+								<img src="resources/images/course/python.jpg" alt="">
+							</a>
+						</div>
+						<div class="course-info">
+							<h4><a href="course-single.html">Getting Started with Python</a></h4>
+							<div class="course-meta">
+								<div class="meta-item">
+									<i class="lni lni-user"></i>
+									<span>1.2k</span>
+								</div>
+								<div class="meta-item">
+									<i class="lni lni-eye"></i>
+									<span>13k</span>
+								</div>
+								<div class="meta-item">
+									<i class="lni lni-star"></i>
+									<span>3.5</span>
+								</div>
+								<div class="price">
+									<span>$9.00</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-xl-12">
+					<div class="view-all-btn text-center">
+						<a href="courses.html" class="main-btn">View All Course</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!--====== COURSES PART ENDS ======-->
+
+
+	<!--====== WELCOME PART START ======-->
+	<section class="welcome-area">
+		<div class="container">
+			<div class="row align-items-center">
+				<div class="col-xl-6 col-lg-6">
+					<div class="welcome-content">
+						<div class="section-title">
+							<h2 class="mb-35 wow fadeInUp" data-wow-delay=".2s">TẠI SAO CẦN QUYÊN GÓP BỮA ĂN TRƯA CHO TRẺ EM VÙNG CAO?</h2>
+							<p>Trường học đã được xây dựng , sách vở cũng được quyên góp đầy đủ, các bé được giảng dạy miễn phí nhưng sau mỗi bữa trưa, lớp học lại càng thưa thớt. Sau vài hôm lại có 1 vài bé bỏ học. Khu trường cũng bỗng nhiên vắng lặng lạ thường. Các bạn có biết lí do là gì không</p>
+														<img src="	https://w.ladicdn.com/s1550x750/5c3219ef974b7861952fed1d/banner-20220808090753.png" alt="">
+						</div>
+						<div class="content">
+							<p class="mb-35 wow fadeInUp" data-wow-delay=".4s">Nhưng một vài tháng nay, khung cảnh trường học đã khác, buổi trưa đã không còn trống trải mà đầy ắp những tiếng nói cười và hình ảnh những đứa trẻ ăn những bữa ăn với khuôn mặt hạnh phúc. Đó nhờ vào sức mạnh mà dự án Nuôi em mang lại - sức mạnh của bữa ăn 8500. Tất cả các em học sinh được nuôi cơm trưa từ thứ hai tới thứ sáu. </p>
+							<div class="read-more" style="display: none;">
+							<img src="	https://w.ladicdn.com/s900x700/5c3219ef974b7861952fed1d/sgagwehw-20220808091422.png" alt="">
+							<p>Các bé vùng cao Tây Bắc xa xôi, hẻo lánh để đến với “con chữ” có rất nhiều khó khăn, gian khổ. Chỉ vì để được đến trường học tập với thầy cô và các bạn, các em bé ấy không ngại những quãng đường xa xôi hàng km hay thức dậy rất sớm để được cắp sách đếntrường.</p>
+							</div>
+							<button class="btn btn-link" onclick="toggleReadMore()">Xem Thêm</button>
+							<!-- <a href="https://rebrand.ly/learn-ud" rel="nofollow" class="read-more-btn wow fadeInUp" data-wow-delay=".5s">Purchase Now <i class="lni lni-arrow-right"></i></a> -->
+						</div>
+					</div>
+				</div>
+				<div class="col-xl-6 col-lg-6">
+					<div class="welcome-img">
+						<img src="https://w.ladicdn.com/s850x750/59fb4d0b9bc14c499ef70892/3-1541577888.png" alt="">
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!--====== WELCOME PART ENDS ======-->
+
+	<!--====== CATEGORIES PART START ======-->
+	<section class="categories-area pt-170 pb-170">
+		<div class="container">
+			<div class="row">
+				<div class="col-xl-8 col-lg-10 mx-auto">
+					<div class="section-title text-center">
+						<h2 class="wow fadeInUp" data-wow-delay=".2s">Quy Trình Hoạt Động</h2>
+					</div>
+				</div>
+			</div>
+			<div class="row mb-30">
+				<div class="col-xl-3 col-lg-3 col-md-4 col-sm-6">
+					<a href="javascript:void(0)" class="d-block category-wrapper">
+						<div class="single-category">
+							<i class="lni lni-code-alt"></i>
+							<h3>Nhận Em</h3>
+							<p>Ấn vào nút Nhận mã phía dưới rồi inbox tin nhắn fanpage Nuôi Em theo cú pháp: Nhận mã nuôi em</p>
+							<button class="quy-trinh-btn">Nhận Mã</button>
+						</div>
+					</a>
+				</div>
+				<div class="col-xl-3 col-lg-3 col-md-4 col-sm-6">
+					<a href="javascript:void(0)" class="d-block category-wrapper">
+						<div class="single-category">
+							<i class="lni lni-coin"></i>
+							<h3>Gửi Tiền</h3>
+							<p>Nội dung chuyển khoản ghi rõ “Mã bé nhận nuôi” + Tên bạn</p>
+							<p>Số tài khoản: 0123456789675</p>
+							<p>Ngân Hàng: VietComBank</p>
+							<p>Chủ TK: Nguyễn Thị Như Ý
+							<p>
+							<p>Số điện thoại: 0123456789</p>
+						</div>
+					</a>
+				</div>
+				<div class="col-xl-3 col-lg-3 col-md-4 col-sm-6">
+					<a href="javascript:void(0)" class="d-block category-wrapper">
+						<div class="single-category">
+							<i class="lni lni-target-customer"></i>
+							<h3>Vào group</h3>
+							<p>Group là nơi các anh chị nuôi được cập nhật thông tin mới nhất, lịch thăm em, vote công khai lấy ý kiến xây dựng dự án. Tham gia để chủ động nắm bắt thông tin!</p>
+							<button>Vào group</button>
+						</div>
+					</a>
+				</div>
+				<div class="col-xl-3 col-lg-3 col-md-4 col-sm-6">
+					<a href="javascript:void(0)" class="d-block category-wrapper">
+						<div class="single-category">
+							<i class="lni lni-seo"></i>
+							<h3>Tra Mã</h3>
+							<p>Tháng 9, các bé bắt đầu ăn, dự án bắt đầu nhận thông tin, hình ảnh từ PGD gửi về.
+								bắt đầu có thông báo có dữ liệu tra cứu trên Fanpage. Anh chị theo dõi và chủ động làm theo hướng dẫn đã gửi khi nhận mã.</p>
+						</div>
+					</a>
+				</div>
+				<div class="col-xl-3 col-lg-3 col-md-4 col-sm-6">
+					<a href="javascript:void(0)" class="d-block category-wrapper">
+						<div class="single-category">
+							<i class="lni lni-camera"></i>
+							<h3>Ảnh/Video Tháng</h3>
+							<p>Khi tra cứu thành công thông tin chi tiết các bé.Sẽ kèm theo riêng mỗi bé một đường link,nơi đây đầu mỗi tháng định kì sẽ được cập nhật ảnh/video của bé</p>
+						</div>
+					</a>
+				</div>
+				<div class="col-xl-3 col-lg-3 col-md-4 col-sm-6">
+					<a href="javascript:void(0)" class="d-block category-wrapper">
+						<div class="single-category">
+							<i class="lni lni-direction-alt"></i>
+							<h3>Thăm Em</h3>
+							<p>Ai nuôi bé nào đi thăm bé đó.Tuyệt đối không đưa trẻ ra khỏi địa bàn</p>
+							<p>Khi bạn tiện, có thể thăm không cùng đoàn,cần báo trước để được hỗ trợ </p>
+							<button>Lịch Thăm Em</button>
+						</div>
+					</a>
+				</div>
+				<div class="col-xl-3 col-lg-3 col-md-4 col-sm-6">
+					<a href="javascript:void(0)" class="d-block category-wrapper">
+						<div class="single-category">
+							<i class="lni lni-keyword-research"></i>
+							<h3>Quy Định</h3>
+							<p>Mỗi em một mã và 01 ảnh duy nhất, không trùng trong hàng NGHÌN em nhỏ.</p>
+							<p>Để đảm bảo an toàn, bảo mật thông tin cho các bé, mỗi bé chỉ có 01 người nhận nuôi duy nhất.</p>
+						</div>
+					</a>
+				</div>
+				<div class="col-xl-3 col-lg-3 col-md-4 col-sm-6">
+					<a href="javascript:void(0)" class="d-block category-wrapper">
+						<div class="single-category">
+							<i class="lni lni-android"></i>
+							<h3>Khuyến Khích</h3>
+							<p>Một người có thể nuôi nhiều bé: Chúng tôi không giới hạn số lượng bé trên mỗi người nuôi.</p>
+							<p>Khuyến khích nuôi bé nhiều hơn 1 năm: Mỗi bé đều đặn đi học, vì thế chúng tôi khuyến khích bạn tham gia nuôi bé nhiều hơn 1 năm.</p>
+						</div>
+					</a>
+				</div>
+			</div>
+			<!-- <div class="row">
+				<div class="col-xl-12">
+					<div class="view-all-btn text-center">
+						<a href="javascript:void(0)" class="main-btn">View All Course</a>
+					</div>
+				</div>
+			</div> -->
+		</div>
+	</section>
+	<!--====== CATEGORIES PART ENDS ======-->
+
+	<!--====== TEAM PART START ======-->
+	<section id="tra-ma" class="team-area pt-170 pb-140">
+		<div class="welcome-content text-center">
+			<div class="section-title">
+				<h2 class="mb-35 wow fadeInUp" data-wow-delay=".2s">You are using free lite version of Learn</h2>
+			</div>
+			<div class="content">
+				<p class="mb-35 wow fadeInUp" data-wow-delay=".4s">Please purchase full version of the template to get all pages, sections, features and permission to remove footer credits.</p>
+
+				<a href="https://rebrand.ly/learn-ud" rel="nofollow" class="main-btn wow fadeInUp" data-wow-delay=".5s">Purchase Now <i class="lni lni-arrow-right"></i></a>
+			</div>
+		</div>
+	</section>
+	<!--====== TEAM PART ENDS ======-->
+
+	<!--====== TESTIMONIAL PART START ======-->
+	<section class="testimonial-area pt-80 pb-90">
+
+	</section>
+	<!--====== TESTIMONIAL PART ENDS ======-->
+
+	<!--====== BLOG PART START ======-->
+	<section id="tham-em" class="blog-area pt-170 pb-140">
+		<div class="container">
+			<div class="row">
+				<div class="col-xl-6 col-lg-7">
+					<div class="section-title">
+						<h2 class="wow fadeInUp" data-wow-delay=".2s">Các Dự Án Liên Kết</h2>
+						<!-- <p class="wow fadeInUp" data-wow-delay=".4s">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt utlabo</p> -->
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xl-4 col-lg-4 col-md-6">
+					<div class="single-blog">
+						<div class="blog-img">
+							<a href="javascript:void(0)" class="d-block">
+								<img src="https://image-us.eva.vn/upload/2-2023/images/2023-05-29/3-1685333396-312-width780height516.jpg" alt="">
+							</a>
+						</div>
+						<div class="blog-content">
+							<h4><a href="javascript:void(0)">Dự án "Cơm cho em" của Trung tâm Hỗ trợ Giáo dục và Phát triển Cộng đồng (CED)</a></h4>
+							<p>Cung cấp bữa ăn trưa đầy đủ dinh dưỡng cho học sinh nghèo, học sinh bán trú tại các trường học vùng cao, giúp các em có đủ sức khỏe để học tập.</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-xl-4 col-lg-4 col-md-6">
+					<div class="single-blog">
+						<div class="blog-img">
+							<a href="javascript:void(0)" class="d-block">
+								<img src="https://th.bing.com/th/id/R.76768973648153db6db0c582b822d524?rik=2y6N0rk6%2f4cZJw&riu=http%3a%2f%2fmedia.baokiemtoannhanuoc.vn%2ffiles%2flibrary%2fimages%2fsite-3%2f20191015%2fweb%2fchum-anh-hoat-dong-thien-nguyen-cua-doan-thanh-nien-kiem-toan-nha-nuoc-tai-tinh-thanh-hoa-va-hoa-binh-310-130249.JPG&ehk=dyEBo9uqsF5JyJcklXXjuq2kyutuyd%2fJ9C7TNoT0oV0%3d&risl=&pid=ImgRaw&r=0" alt="">
+							</a>
+						</div>
+						<div class="blog-content">
+							<h4><a href="javascript:void(0)">Dự án "Vì em đến trường" của Quỹ Bảo trợ Trẻ em Việt Nam</a></h4>
+							<p>Hỗ trợ học sinh nghèo, học sinh có hoàn cảnh khó khăn tiếp tục đến trường. Giảm tỷ lệ học sinh bỏ học do thiếu điều kiện kinh tế, góp phần nâng cao chất lượng giáo dục tại các địa phương khó khăn.</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-xl-4 col-lg-4 col-md-6">
+					<div class="single-blog">
+						<div class="blog-img">
+							<a href="javascript:void(0)" class="d-block">
+								<img src="https://th.bing.com/th/id/R.13defcd63ae28f8de6acf24bf466ee8c?rik=Mf0k0%2b1R%2brbG7A&pid=ImgRaw&r=0" alt="">
+							</a>
+						</div>
+						<div class="blog-content">
+							<h4><a href="javascript:void(0)">Dự án "Hy vọng cho em" của Tập đoàn FPT</a></h4>
+							<p>Hỗ trợ trẻ em mồ côi, trẻ em có hoàn cảnh đặc biệt khó khăn tại Việt Nam, giúp các em có được cuộc sống tốt đẹp hơn, có cơ hội học tập và phát triển. Xây dựng và quản lý các mái ấm tình thương cho trẻ em mồ côi, trẻ em có hoàn cảnh đặc biệt khó khăn.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!--====== BLOG PART ENDS ======-->
+
+	<!--====== CONTACT PART START ======-->
+	<section id="he-sinh-thai" class="contact-area">
+		<div class="map-bg">
+			<img src="resources/images/map-bg.svg" alt="">
+		</div>
+		<div class="container">
+			<div class="row">
+				<div class="col-xl-5 col-lg-5">
+					<div class="section-title">
+						<h2 class="wow fadeInUp" data-wow-delay=".2s">Get In Touch</h2>
+						<p class="wow fadeInUp" data-wow-delay=".4s">Lorem ipsum dolor sit amet, consetetur sadipscing </br>elitr, sed diam nonumy eirmod tempor invidunt utlabo</p>
+					</div>
+					<div class="contact-content">
+						<h3>Hot Line Call Us 24/7</h3>
+						<h4><a href="javascript:void(0)">000-2222-5555</a></h4>
+						<h4><a href="javascript:void(0)">hello@gmail.com</a></h4>
+					</div>
+				</div>
+				<div class="col-xl-7 col-lg-7">
+					<div class="contact-form-wrapper">
+						<form action="resources/contact.php">
+							<div class="row">
+								<div class="col-md-6">
+									<input type="text" placeholder="Name" name="name" id="name">
+								</div>
+								<div class="col-md-6">
+									<input type="email" placeholder="Email" name="email" id="email">
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-12">
+									<input type="text" placeholder="Subject" name="subject" id="subject">
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-12">
+									<textarea name="message" id="message" rows="4" placeholder="Message"></textarea>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-12 text-right">
+									<button class="main-btn btn-hover" type="submit">Send</button>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!--====== CONTACT PART ENDS ======-->
+
+	<!--====== FOOTER PART START ======-->
+	<footer id="footer" class="footer-area pt-170">
+		<div class="container">
+			<div class="row">
+				<div class="col-xl-3 col-lg-3 col-md-6">
+					<div class="footer-widget">
+						<a href="index.html" class="logo d-blok">
+							<img src="resources/images/logo.svg" alt="">
+						</a>
+						<p>Mọi đóng góp của bạn, dù là nhỏ nhất, đều có thể tạo nên sự khác biệt lớn lao cho cuộc sống của những người đang cần giúp đỡ.</p>
+					</div>
+				</div>
+				<div class="col-xl-2 col-lg-2 offset-xl-1 offset-lg-1 col-md-6">
+					<div class="footer-widget">
+						<h5>Quick Links</h5>
+						<ul>
+							<li><a href="javascript:void(0)">Home</a></li>
+							<li><a href="javascript:void(0)">Courses</a></li>
+							<li><a href="javascript:void(0)">Eventd</a></li>
+							<li><a href="javascript:void(0)">Blog</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-xl-3 col-lg-3 col-md-6">
+					<div class="footer-widget">
+						<h5>Liên Hệ</h5>
+						<ul>
+							<li>
+								<p>Số ĐT: +84 3939 28815</p>
+							</li>
+							<li>
+								<p>Email: y021101022@tgu.edu.vn</p>
+							</li>
+							<li>
+								<p>Địa Chỉ: Phường 5<br> Mỹ Tho</p>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<!-- <div class="footer-credit">
+				<div class="row">
+					<div class="col-md-6">
+						<div class="copy-right text-center text-md-left">
+							<p>Designed and Developed by <a href="https://uideck.com" rel="nofollow">UIdeck</a></p>
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class="footer-social">
+							<ul class="d-flex justify-content-md-end justify-content-center">
+								<li><a href="javascript:void(0)"><i class="lni lni-facebook-filled"></i></a></li>
+								<li><a href="javascript:void(0)"><i class="lni lni-twitter-filled"></i></a></li>
+								<li><a href="javascript:void(0)"><i class="lni lni-instagram-filled"></i></a></li>
+								<li><a href="javascript:void(0)"><i class="lni lni-linkedin-original"></i></a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div> -->
+		</div>
+	</footer>
+	<!--====== FOOTER PART ENDS ======-->
+
+	<!--====== BACK TOP TOP PART START ======-->
+	<a href="#" class="back-to-top btn-hover"><i class="lni lni-chevron-up"></i></a>
+	<!--====== BACK TOP TOP PART ENDS ======-->
+
+
+	<!--====== Bootstrap js ======-->
+	<script src="resources/js/bootstrap.bundle-5.0.0.alpha-min.js"></script>
+
+	<!--====== wow js ======-->
+	<script src="resources/js/wow.min.js"></script>
+
+	<!--====== Main js ======-->
+	<script src="resources/js/main.js"></script>
+
+	<script>
+		// Get the navbar
+
+		// for menu scroll 
+		var pageLink = document.querySelectorAll('.page-scroll');
+
+		pageLink.forEach(elem => {
+			elem.addEventListener('click', e => {
+				e.preventDefault();
+				document.querySelector(elem.getAttribute('href')).scrollIntoView({
+					behavior: 'smooth',
+					offsetTop: 1 - 60,
+				});
+			});
+		});
+
+		// section menu active
+		function onScroll(event) {
+			var sections = document.querySelectorAll('.page-scroll');
+			var scrollPos = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
+
+			for (var i = 0; i < sections.length; i++) {
+				var currLink = sections[i];
+				var val = currLink.getAttribute('href');
+				var refElement = document.querySelector(val);
+				var scrollTopMinus = scrollPos + 73;
+				if (refElement.offsetTop <= scrollTopMinus && (refElement.offsetTop + refElement.offsetHeight > scrollTopMinus)) {
+					document.querySelector('.page-scroll').classList.remove('active');
+					currLink.classList.add('active');
+				} else {
+					currLink.classList.remove('active');
+				}
+			}
+		};
+
+		window.document.addEventListener('scroll', onScroll);
+
+
+		//===== close navbar-collapse when a  clicked
+		let navbarToggler = document.querySelector(".navbar-toggler");
+		var navbarCollapse = document.querySelector(".navbar-collapse");
+
+		document.querySelectorAll(".page-scroll").forEach(e =>
+			e.addEventListener("click", () => {
+				navbarToggler.classList.remove("active");
+				navbarCollapse.classList.remove('show')
+			})
+		);
+		navbarToggler.addEventListener('click', function() {
+			navbarToggler.classList.toggle("active");
+		});
+	</script>
+
+
 </body>
 
 </html>
-<style>
-  body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
-  }
-
-  header {
-    background-color: #333;
-    color: white;
-    padding: 10px;
-    text-align: center;
-  }
-
-  nav {
-    display: flex;
-    justify-content: center;
-    background-color: #ddd;
-    padding: 10px;
-  }
-
-  nav a {
-    text-decoration: none;
-    color: #333;
-    padding: 10px 20px;
-    margin: 0 10px;
-    border-radius: 5px;
-    background-color: #fff;
-    transition: background-color 0.3s;
-  }
-
-  nav a:hover {
-    background-color: #333;
-    color: white;
-  }
-
-  #carouselExampleFade {
-    width: 100%;
-    height: 500px;
-  }
-
-  .carousel-item>img {
-    width: 100%;
-    height: 500px;
-  }
-
-  .Com {
-    width: 100%;
-    height: 550px;
-    font-family: 'Courier New', Courier, monospace;
-    font-weight: bold;
-    margin-top: 20px
-  }
-
-  #hexagon-image {
-    width: 200px;
-    height: 200px;
-    position: absolute;
-    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-    margin-top: -16.5px;
-    margin-left: 9px;
-  }
-
-  #hexagon-image1 {
-    width: 200px;
-    height: 200px;
-    position: absolute;
-    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-    margin-top: -16.5px;
-    margin-left: 209px;
-  }
-
-  #hexagon-image2 {
-    width: 200px;
-    height: 200px;
-    position: absolute;
-    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-    margin-top: 133.5px;
-    margin-left: 110px;
-  }
-
-  #hexagon-image3 {
-    width: 200px;
-    height: 200px;
-    position: absolute;
-    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-    margin-top: 133.5px;
-    margin-left: 309px;
-  }
-
-  #hexagon-image4 {
-    width: 200px;
-    height: 200px;
-    position: absolute;
-    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-    margin-top: 284.5px;
-    margin-left: 210px;
-  }
-
-  #hexagon-image5 {
-    width: 200px;
-    height: 200px;
-    position: absolute;
-    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-    margin-top: 133.5px;
-    margin-left: -91px;
-  }
-
-  #hexagon-image6 {
-    width: 200px;
-    height: 200px;
-    position: absolute;
-    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-    margin-top: 283.5px;
-    margin-left: 9px;
-  }
-
-  .Com {
-    overflow: hidden;
-    /* Clear float để giữ cho container bao bọc cả nội dung và ảnh */
-    padding: 2%
-  }
-
-  .GT {
-    float: left;
-    width: 60%;
-  }
-
-  .GT>p {
-    width: 80%;
-  }
-
-  .DG {
-    float: left;
-    width: 40%;
-  }
-
-  .QuyTac {
-    width: 100%;
-    height: 400px;
-    display: grid;
-    grid-template-columns: 60% 40%;
-  }
-
-  .ThuPhong {
-    width: 100%;
-    height: 500px;
-    background-color: beige;
-  }
-</style>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 <script>
-  function toggleReadMore() {
-    var readMore = document.querySelector('.read-more');
-    var btn = document.querySelector('.btn');
+	function toggleReadMore() {
+		var readMore = document.querySelector('.read-more');
+		var btn = document.querySelector('.btn');
 
-    if (readMore.style.display === 'none') {
-      readMore.style.display = 'block';
-      btn.textContent = 'Ẩn Bớt';
-    } else {
-      readMore.style.display = 'none';
-      btn.textContent = 'Xem Thêm';
-    }
-  }
+		if (readMore.style.display === 'none') {
+			readMore.style.display = 'block';
+			btn.textContent = 'Ẩn Bớt';
+		} else {
+			readMore.style.display = 'none';
+			btn.textContent = 'Xem Thêm';
+		}
+	}
 </script>
