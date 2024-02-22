@@ -1781,6 +1781,7 @@ skill css
   font-size: 25px;
   line-height: 35px;
   margin-bottom: 25px;
+  min-height:200px;
 }
 
 .skill-area .single-skill .skill-content p {

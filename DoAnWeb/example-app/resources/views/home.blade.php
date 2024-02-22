@@ -131,8 +131,7 @@
 			<div class="row">
 				<div class="col-xl-6 col-lg-7 col-md-10 mx-auto">
 					<div class="section-title text-center">
-						<h2 class="mb-15 wow fadeInUp" data-wow-delay=".2s">Learn New Skills</h2>
-						<p class="wow fadeInUp" data-wow-delay=".4s">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt utlabo</p>
+						<h2 class="mb-15 wow fadeInUp" data-wow-delay=".2s"> Từ 2018, Không Chỉ Là Nuôi Cơm Trưa</h2>
 					</div>
 				</div>
 			</div>
@@ -140,36 +139,32 @@
 				<div class="col-xl-4 col-lg-4 col-md-6">
 					<div class="single-skill wow fadeInUp" data-wow-delay=".2s">
 						<div class="skill-icon">
-							<i class="lni lni-pencil-alt"></i>
+						<i class="lni lni-drop"></i>
 						</div>
 						<div class="skill-content">
-							<h4>Learn Anything</h4>
-							<p>Lorem ipsum dolor sit amet, consetetu sadi
-								ps cinelitr, sed diam nonumy eirtem Lorem ipsum dolor sit amet, consetetur.</p>
+							<h4>Dự án lọc nước bình gốm Unicef đã triển khai tại 500+ điểm bản từ 12/2018.</h4>
 						</div>
 					</div>
 				</div>
 				<div class="col-xl-4 col-lg-4 col-md-6">
 					<div class="single-skill wow fadeInUp" data-wow-delay=".4s">
 						<div class="skill-icon">
-							<i class="lni lni-grid-alt"></i>
+						<i class="lni lni-reddit"></i>
 						</div>
 						<div class="skill-content">
-							<h4>Large Collection</h4>
-							<p>Lorem ipsum dolor sit amet, consetetu sadi
-								ps cinelitr, sed diam nonumy eirtem Lorem ipsum dolor sit amet, consetetur.</p>
+							<h4>Dự án tủ đồ chơi cũ được triển khai 13 bản năm 2018 và mục tiêu phủ 100 điểm 2019-2020</h4>
+							
 						</div>
 					</div>
 				</div>
 				<div class="col-xl-4 col-lg-4 col-md-6">
 					<div class="single-skill wow fadeInUp" data-wow-delay=".6s">
 						<div class="skill-icon">
-							<i class="lni lni-certificate"></i>
+						<i class="lni lni-book"></i>
 						</div>
 						<div class="skill-content">
-							<h4>Certified Instructors</h4>
-							<p>Lorem ipsum dolor sit amet, consetetu sadi
-								ps cinelitr, sed diam nonumy eirtem Lorem ipsum dolor sit amet, consetetur.</p>
+							<h4>Từ Dự án tủ sách vùng cao được triển khai trên 150 điểm bản trong năm học 2019 - 2020</h4>
+							
 						</div>
 					</div>
 				</div>
@@ -184,9 +179,8 @@
 			<div class="row">
 				<div class="col-xl-6 col-lg-7 col-md-10 mx-auto">
 					<div class="section-title text-center mb-50">
-						<h2 class="mb-15 wow fadeInUp" data-wow-delay=".2s">Popular Courses</h2>
-						<p class="wow fadeInUp" data-wow-delay=".4s">eStore UI Kit comes with all essential features, sections and elements you need
-							to design and develop web UI efficiently.</p>
+						<h2 class="mb-15 wow fadeInUp" data-wow-delay=".2s">Danh Sách Các Em</h2>
+						<p class="wow fadeInUp" data-wow-delay=".4s">Các em cần được nhận nuôi để được hổ trọ về việc học tập và sinh hoạt,....</p>
 					</div>
 				</div>
 			</div>
