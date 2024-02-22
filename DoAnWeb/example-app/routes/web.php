@@ -22,3 +22,6 @@ Route::get('/home', function () {
 Route::get('/home2', function () {
     return view('home2');
 });
+Route::get('/Loginss', function () {
+    return view('Loginss');
+});
