@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\BenThu3Controller;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,9 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 Route::get('/home', function () {
     return view('home');
 });
@@ -25,6 +25,9 @@ Route::get('/home2', function () {
 Route::get('/Loginss', function () {
     return view('Loginss');
 });
-Route::get('/NLBenThu3', function () {
-    return view('NL_BenThu3');
-});
+Route::get('/save', [BenThu3Controller::class, 'index']);
+Route::post('/save', [BenThu3Controller::class, 'xuLyDuLieu']);
+// Route::get('/save', [BenThu3Controller::class, 'hienThiForm']);
+// Route::get('/NLBenThu3', function () {
+//     return view('NL_BenThu3');
+// });

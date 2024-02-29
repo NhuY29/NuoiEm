@@ -210,5 +210,5 @@ return [
     */
 
     'partitioned' => false,
-
+    'lifetime' => env('SESSION_LIFETIME', 120),
 ];

@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('_ben_thu3', function (Blueprint $table) {
-            $table->uuid("id")->primary();
+            $table->bigIncrements("id");
             $table->string("Ten")->nullable();
             $table->boolean("GioiTinh")->nullable();
             $table->string("DiaChi")->nullable();
@@ -23,12 +23,12 @@ return new class extends Migration
         });
 
         Schema::create('_tre_em', function (Blueprint $table) {
-            $table->uuid("id")->primary();
+            $table->bigIncrements("id");
             $table->string("Ten")->nullable();
             $table->boolean("GioiTinh")->nullable();
             $table->string("TenTruongHoc")->nullable();
             $table->string("DiaChi")->nullable();
-            $table->uuid('BenThu3_id');
+            $table->unsignedBigInteger('BenThu3_id');
             $table->foreign('BenThu3_id')->references('id')->on('_ben_thu3');
             $table->timestamps();
         });

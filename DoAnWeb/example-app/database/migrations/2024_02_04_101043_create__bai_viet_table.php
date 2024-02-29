@@ -12,13 +12,13 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('_bai_viet', function (Blueprint $table) {
-            $table->uuid("id")->primary();
+            $table->bigIncrements("id");
             $table->string("TieuDe")->nullable();
             $table->string("NoiDung")->nullable();
             $table->dateTime("NgayDang")->nullable();
-            $table->uuid('user_id');
+            $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
-            $table->uuid('TreEm_id');
+            $table->unsignedBigInteger('TreEm_id');
             $table->foreign('TreEm_id')->references('id')->on('_tre_em');
             $table->timestamps();
         });

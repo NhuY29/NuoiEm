@@ -12,13 +12,13 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('_quy', function (Blueprint $table) {
-            $table->uuid("id")->primary();
+            $table->bigIncrements("id");
             $table->string("Ten")->nullable();
             $table->string("MoTa")->nullable();
             $table->boolean("TrangThai")->nullable();
-            $table->uuid('TreEm_id');
+            $table->unsignedBigInteger('TreEm_id');
             $table->foreign('TreEm_id')->references('id')->on('_tre_em');
-            $table->uuid('ToChucTuThien_id');
+            $table->unsignedBigInteger('ToChucTuThien_id');
             $table->foreign('ToChucTuThien_id')->references('id')->on('ToChucTuThien');
             $table->timestamps();
         });
