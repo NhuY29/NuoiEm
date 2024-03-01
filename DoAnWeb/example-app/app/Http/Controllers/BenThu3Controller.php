@@ -63,4 +63,11 @@ if ($validator->fails()) {
     {
         return view('NL_BenThu3');
     }
+    public function delete($id)
+    {
+        $record = BenThu3::findOrFail($id);
+        $record->delete();
+        
+        return redirect()->back()->with('alert', 'Đã xóa bản ghi thành công');
+    }
 }

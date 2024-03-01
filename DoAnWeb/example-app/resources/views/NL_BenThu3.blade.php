@@ -106,8 +106,7 @@
         var id = button.getAttribute('data-id');
         if (confirm("Bạn có chắc chắn muốn xóa dòng này không?")) {
             document.getElementById("deleteForm" + id).submit();
-            // Xóa dòng khỏi bảng
-            document.getElementById("row" + id).remove();
         }
     }
 </script>
+

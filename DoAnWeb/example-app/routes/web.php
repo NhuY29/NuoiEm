@@ -27,6 +27,8 @@ Route::get('/Loginss', function () {
 });
 Route::get('/save', [BenThu3Controller::class, 'index']);
 Route::post('/save', [BenThu3Controller::class, 'xuLyDuLieu']);
+Route::delete('/delete/{id}', [BenThu3Controller::class, 'delete']);
+
 // Route::get('/save', [BenThu3Controller::class, 'hienThiForm']);
 // Route::get('/NLBenThu3', function () {
 //     return view('NL_BenThu3');
