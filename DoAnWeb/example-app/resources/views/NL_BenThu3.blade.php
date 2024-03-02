@@ -98,11 +98,13 @@
                             @csrf
                             @method('DELETE')
                             <button type="button" data-id="{{ $record->id }}" onclick="deleteRow(this)" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Xóa</button>
-                            <button type="button" onclick="editForm({{ $record->id }})" class="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Chỉnh Sửa</button>
+                            <!-- <button type="button" onclick="editForm({{ $record->id }})" class="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Chỉnh Sửa</button> -->
+                            <button type="button" onclick="toggleEditForm({{ $record->id }})" class="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Chỉnh Sửa</button>
                         </form>
                     </td>
                 </tr>
-                <form id="editForm{{ $record->id }}" action="/update/{{ $record->id }}" method="post" style="display: none;">
+                <div id="editForm{{ $record->id }}" style="display: none;">
+                <form  action="/update/{{ $record->id }}" method="post" style="display: none;">
                     @csrf
                     @method('PUT')
 
@@ -144,7 +146,7 @@
                         <input type="submit" value="Xác Nhận" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
                     </div>
                 </form>
-
+                </div>
                 @endforeach
             </tbody>
 
@@ -183,4 +185,23 @@
     // Show the edit form of the corresponding record
     document.getElementById('editForm' + id).style.display = 'block';
 }
+function cancelEdit(id) {
+        // Lấy element của form chỉnh sửa
+        var form = document.getElementById('editForm' + id);
+        
+        // Ẩn form
+        form.style.display = 'none';
+    }
+
+function toggleEditForm(id) {
+        // Lấy element của form chỉnh sửa
+        var form = document.getElementById('editForm' + id);
+
+        // Hiển thị form nếu đang ẩn, ẩn đi nếu đang hiển thị
+        if (form.style.display === 'none') {
+            form.style.display = 'table-row'; // Hiển thị form dưới dạng hàng của bảng
+        } else {
+            form.style.display = 'none'; // Ẩn form
+        }
+    }
 </script>
