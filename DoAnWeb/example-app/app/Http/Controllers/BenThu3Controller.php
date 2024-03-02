@@ -70,4 +70,31 @@ if ($validator->fails()) {
         
         return redirect()->back()->with('alert', 'Đã xóa bản ghi thành công');
     }
+    public function edit($id)
+{
+    $record = BenThu3::findOrFail($id);
+    return view('NL_BenThu3', compact('record'));
+}
+
+public function update(Request $request, $id)
+{
+    $validator = Validator::make($request->all(), [
+        'Ten' => 'required|string|max:255',
+        'GioiTinh' => 'required|string',
+        'DiaChi' => 'required|string|max:255',
+        'SDT' => 'required|numeric|digits:10', 
+        'NgheNghiep' => 'required|string|max:255',
+        'NoiCongTac' => 'required|string|max:255',
+    ]);
+    
+    if ($validator->fails()) {
+        return redirect()->back()->withErrors($validator)->withInput();
+    }
+
+    $record = BenThu3::findOrFail($id);
+    $record->update($request->all());
+
+    return redirect()->back()->with('success', 'Đã cập nhật bản ghi thành công');
+}
+
 }
