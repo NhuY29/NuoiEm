@@ -11,13 +11,23 @@
             flex: 1;
             /* Take up 20% of the space */
         }
+
+        .max-w-md {
+            width: 20%;
+            float: right;
+        }
+
+        .table-container {
+            width: 80%;
+            float: left;
+        }
     </style>
 </head>
 
 <body>
     <div class="max-w-md mx-auto">
         <form action="/save" method="post" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
-            @csrf 
+            @csrf
 
             <div class="mb-4">
                 <label for="Ten" class="block text-gray-700 text-sm font-bold mb-2">Tên:</label>
@@ -60,89 +70,99 @@
     </div>
 
     <!-- Bảng hiển thị dữ liệu từ cơ sở dữ liệu -->
-    <table class="min-w-full bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 border border-collapse">
-        <thead>
-            <tr>
-                <th class="px-4 py-2 bg-blue-500 text-white border">Tên</th>
-                <th class="px-4 py-2 bg-blue-500 text-white border">Giới tính</th>
-                <th class="px-4 py-2 bg-blue-500 text-white border">Địa chỉ</th>
-                <th class="px-4 py-2 bg-blue-500 text-white border">Số điện thoại</th>
-                <th class="px-4 py-2 bg-blue-500 text-white border">Nghề nghiệp</th>
-                <th class="px-4 py-2 bg-blue-500 text-white border">Nơi công tác</th>
-                <th class="px-4 py-2 bg-blue-500 text-white border">Thao Tác</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach($allBenThu3Records as $index => $record)
-            <tr id="row{{ $record->id }}" data-id="{{ $record->id }}" class="{{ $index % 2 === 0 ? 'bg-white' : 'bg-blue-100' }} border">
-                <td class="px-4 py-2 text-center border">{{ $record->Ten }}</td>
-                <td class="px-4 py-2 text-center border">{{ $record->GioiTinh ? 'Nam' : 'Nữ' }}</td>
-                <td class="px-4 py-2 text-center border">{{ $record->DiaChi }}</td>
-                <td class="px-4 py-2 text-center border">{{ $record->SDT }}</td>
-                <td class="px-4 py-2 text-center border">{{ $record->NgheNghiep }}</td>
-                <td class="px-4 py-2 text-center border">{{ $record->NoiCongTac }}</td>
-                <td class="px-4 py-2 text-center border">
-                    <form id="deleteForm{{ $record->id }}" action="/delete/{{ $record->id }}" method="post">
-                        @csrf
-                        @method('DELETE')
-                        <button type="button" data-id="{{ $record->id }}" onclick="deleteRow(this)" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Xóa</button>
-                        <button type="button" onclick="editRow({{ $record->id }})" class="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Chỉnh Sửa</button>
-                    </form>
-                </td>
-            </tr>
-            @endforeach
-        </tbody>
-        @if(Session::has('alert'))
-        <script>
-            alert("{{ Session::get('alert') }}");
-        </script>
-        @endif
+    <div class="table-container">
+        <h1 class="text-2xl font-bold mb-4 text-center text-blue-700 m-6">Nhập Liệu Bên Thứ 3 </h1>
+        <table class="min-w-full bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 border border-collapse">
+            <thead>
+                <tr>
+                    <th class="px-4 py-2 bg-blue-500 text-white border">Tên</th>
+                    <th class="px-4 py-2 bg-blue-500 text-white border">Giới tính</th>
+                    <th class="px-4 py-2 bg-blue-500 text-white border">Địa chỉ</th>
+                    <th class="px-4 py-2 bg-blue-500 text-white border">Số điện thoại</th>
+                    <th class="px-4 py-2 bg-blue-500 text-white border">Nghề nghiệp</th>
+                    <th class="px-4 py-2 bg-blue-500 text-white border">Nơi công tác</th>
+                    <th class="px-4 py-2 bg-blue-500 text-white border">Thao Tác</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach($allBenThu3Records as $index => $record)
+                <tr id="row{{ $record->id }}" data-id="{{ $record->id }}" class="{{ $index % 2 === 0 ? 'bg-white' : 'bg-blue-100' }} border">
+                    <td class="px-4 py-2 text-center border whitespace-normal max-w-xs">{{ $record->Ten }}</td>
+                    <td class="px-4 py-2 text-center border whitespace-normal max-w-xs">{{ $record->GioiTinh ? 'Nam' : 'Nữ' }}</td>
+                    <td class="px-4 py-2 text-center border whitespace-normal max-w-xs">{{ $record->DiaChi }}</td>
+                    <td class="px-4 py-2 text-center border whitespace-normal max-w-xs">{{ $record->SDT }}</td>
+                    <td class="px-4 py-2 text-center border whitespace-normal max-w-xs">{{ $record->NgheNghiep }}</td>
+                    <td class="px-4 py-2 text-center border whitespace-normal max-w-xs">{{ $record->NoiCongTac }}</td>
+                    <td class="px-4 py-2 text-center border whitespace-nowrap max-w-xs">
+                        <form id="deleteForm{{ $record->id }}" action="/delete/{{ $record->id }}" method="post">
+                            @csrf
+                            @method('DELETE')
+                            <button type="button" data-id="{{ $record->id }}" onclick="deleteRow(this)" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Xóa</button>
+                            <button type="button" onclick="editForm({{ $record->id }})" class="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Chỉnh Sửa</button>
+                        </form>
+                    </td>
+                </tr>
+                <form id="editForm{{ $record->id }}" action="/update/{{ $record->id }}" method="post" style="display: none;">
+                    @csrf
+                    @method('PUT')
 
-    </table>
-    <form id="editForm{{ $record->id }}" action="/update/{{ $record->id }}" method="post" style="display: none;">
-        @csrf
-        @method('PUT')
+                    <div class="mb-4">
+                        <label for="Ten_edit{{ $record->id }}" class="block text-gray-700 text-sm font-bold mb-2">Tên:</label>
+                        <input type="text" id="Ten_edit{{ $record->id }}" name="Ten" value="{{ $record->Ten }}" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                    </div>
 
-        <div class="mb-4">
-            <label for="Ten_edit{{ $record->id }}" class="block text-gray-700 text-sm font-bold mb-2">Tên:</label>
-            <input type="text" id="Ten_edit{{ $record->id }}" name="Ten" value="{{ $record->Ten }}" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                    <div class="mb-4">
+                        <label for="GioiTinh_edit{{ $record->id }}" class="block text-gray-700 text-sm font-bold mb-2">Giới tính:</label>
+                        <select id="GioiTinh_edit{{ $record->id }}" name="GioiTinh" class="block appearance-none w-full bg-white border border-gray-400 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:border-blue-500">
+                            <option value="1" {{ $record->GioiTinh == 1 ? 'selected' : '' }}>Nam</option>
+                            <option value="0" {{ $record->GioiTinh == 0 ? 'selected' : '' }}>Nữ</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-4">
+                        <label for="DiaChi_edit{{ $record->id }}" class="block text-gray-700 text-sm font-bold mb-2">Địa chỉ:</label>
+                        <textarea id="DiaChi_edit{{ $record->id }}" name="DiaChi" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">{{ $record->DiaChi }}</textarea>
+                    </div>
+
+                    <div class="mb-4">
+                        <label for="SDT_edit{{ $record->id }}" class="block text-gray-700 text-sm font-bold mb-2">Số điện thoại:</label>
+                        <input type="text" id="SDT_edit{{ $record->id }}" name="SDT" value="{{ $record->SDT }}" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                    </div>
+
+                    <div class="mb-4">
+                        <label for="NgheNghiep_edit{{ $record->id }}" class="block text-gray-700 text-sm font-bold mb-2">Nghề nghiệp:</label>
+                        <input type="text" id="NgheNghiep_edit{{ $record->id }}" name="NgheNghiep" value="{{ $record->NgheNghiep }}" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                    </div>
+
+                    <div class="mb-4">
+                        <label for="NoiCongTac_edit{{ $record->id }}" class="block text-gray-700 text-sm font-bold mb-2">Nơi công tác:</label>
+                        <input type="text" id="NoiCongTac_edit{{ $record->id }}" name="NoiCongTac" value="{{ $record->NoiCongTac }}" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                    </div>
+
+                    <div class="flex items-center justify-between">
+                        <button type="button" onclick="cancelEdit({{ $record->id }})" class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Hủy</button>
+                        <input type="submit" value="Xác Nhận" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+                    </div>
+                </form>
+
+                @endforeach
+            </tbody>
+
+        </table>
+        <div class="flex justify-center">
+            <a href="#" class="px-3 py-1 bg-gray-200 text-gray-700 mx-1 rounded">1</a>
+            <a href="#" class="px-3 py-1 bg-gray-200 text-gray-700 mx-1 rounded">2</a>
+            <a href="#" class="px-3 py-1 bg-gray-200 text-gray-700 mx-1 rounded">3</a>
+            <a href="#" class="px-3 py-1 bg-gray-200 text-gray-700 mx-1 rounded">Next</a>
         </div>
 
-        <div class="mb-4">
-            <label for="GioiTinh_edit{{ $record->id }}" class="block text-gray-700 text-sm font-bold mb-2">Giới tính:</label>
-            <select id="GioiTinh_edit{{ $record->id }}" name="GioiTinh" class="block appearance-none w-full bg-white border border-gray-400 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:border-blue-500">
-                <option value="1" {{ $record->GioiTinh == 1 ? 'selected' : '' }}>Nam</option>
-                <option value="0" {{ $record->GioiTinh == 0 ? 'selected' : '' }}>Nữ</option>
-            </select>
-        </div>
-
-        <div class="mb-4">
-            <label for="DiaChi_edit{{ $record->id }}" class="block text-gray-700 text-sm font-bold mb-2">Địa chỉ:</label>
-            <textarea id="DiaChi_edit{{ $record->id }}" name="DiaChi" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">{{ $record->DiaChi }}</textarea>
-        </div>
-
-        <div class="mb-4">
-            <label for="SDT_edit{{ $record->id }}" class="block text-gray-700 text-sm font-bold mb-2">Số điện thoại:</label>
-            <input type="text" id="SDT_edit{{ $record->id }}" name="SDT" value="{{ $record->SDT }}" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
-        </div>
-
-        <div class="mb-4">
-            <label for="NgheNghiep_edit{{ $record->id }}" class="block text-gray-700 text-sm font-bold mb-2">Nghề nghiệp:</label>
-            <input type="text" id="NgheNghiep_edit{{ $record->id }}" name="NgheNghiep" value="{{ $record->NgheNghiep }}" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
-        </div>
-
-        <div class="mb-4">
-            <label for="NoiCongTac_edit{{ $record->id }}" class="block text-gray-700 text-sm font-bold mb-2">Nơi công tác:</label>
-            <input type="text" id="NoiCongTac_edit{{ $record->id }}" name="NoiCongTac" value="{{ $record->NoiCongTac }}" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
-        </div>
-
-        <div class="flex items-center justify-between">
-            <button type="button" onclick="cancelEdit({{ $record->id }})" class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Hủy</button>
-            <input type="submit" value="Xác Nhận" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
-        </div>
-    </form>
-
+    </div>
 </body>
+@if(Session::has('alert'))
+<script>
+    alert("{{ Session::get('alert') }}");
+</script>
+@endif
 
 </html>
 <script>
@@ -154,16 +174,13 @@
     }
 
     function editRow(id) {
-        // Ẩn nội dung hiện tại của dòng
-        document.getElementById('row' + id).style.display = 'none';
-        // Hiện form chỉnh sửa
-        document.getElementById('editForm' + id).style.display = 'block';
-    }
+    // Hide all edit forms
+    var editForms = document.querySelectorAll('[id^=editForm]');
+    editForms.forEach(function(form) {
+        form.style.display = 'none';
+    });
 
-    function cancelEdit(id) {
-        // Hiện lại nội dung của dòng
-        document.getElementById('row' + id).style.display = 'table-row';
-        // Ẩn form chỉnh sửa
-        document.getElementById('editForm' + id).style.display = 'none';
-    }
+    // Show the edit form of the corresponding record
+    document.getElementById('editForm' + id).style.display = 'block';
+}
 </script>
