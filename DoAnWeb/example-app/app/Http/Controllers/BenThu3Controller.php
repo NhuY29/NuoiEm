@@ -59,6 +59,12 @@ class BenThu3Controller extends Controller
 
         return view('NL_BenThu3', ['allBenThu3Records' => $allBenThu3Records]);
     }
+    public function search(Request $request)
+    {
+        $query = $request->input('search-items-name');
+        $allBenThu3Records = BenThu3::where('Ten', 'like', '%'.$query.'%')->get(); // Thay YourModel và column_name bằng tên mô hình và tên cột của bạn
+        return view('NL_BenThu3', ['allBenThu3Records' => $allBenThu3Records]);
+    }
     public function hienThiForm()
     {
         return view('NL_BenThu3');
