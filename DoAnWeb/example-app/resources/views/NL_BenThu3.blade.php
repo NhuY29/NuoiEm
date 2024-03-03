@@ -11,32 +11,18 @@
             flex: 1;
             /* Take up 20% of the space */
         }
-/* 
-        .max-w-md {
-            width: 20%;
-            float: right;
-        }
-
-        .table-container {
-            width: 80%;
-            float: left;
-        } */
     </style>
 </head>
 
 <body>
-<h1 class="text-2xl font-bold mb-4 text-center text-blue-700 m-6">Nhập Liệu Bên Thứ 3 </h1>
+    <h1 class="text-2xl font-bold mb-4 text-center text-blue-700 m-16">Nhập Liệu Bên Thứ 3 </h1>
     <div class="max-w-md mx-auto">
-      
-
         <form id="addForm" action="/save" method="post" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" style="display: none;">
             @csrf
-
             <div class="mb-4">
                 <label for="Ten" class="block text-gray-700 text-sm font-bold mb-2">Tên:</label>
                 <input type="text" id="Ten" name="Ten" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
             </div>
-
             <div class="mb-4">
                 <label for="GioiTinh" class="block text-gray-700 text-sm font-bold mb-2">Giới tính:</label>
                 <select id="GioiTinh" name="GioiTinh" class="block appearance-none w-full bg-white border border-gray-400 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:border-blue-500">
@@ -44,17 +30,14 @@
                     <option value="0">Nữ</option>
                 </select>
             </div>
-
             <div class="mb-4">
                 <label for="DiaChi" class="block text-gray-700 text-sm font-bold mb-2">Địa chỉ:</label>
                 <textarea id="DiaChi" name="DiaChi" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"></textarea>
             </div>
-
             <div class="mb-4">
                 <label for="SDT" class="block text-gray-700 text-sm font-bold mb-2">Số điện thoại:</label>
                 <input type="text" id="SDT" name="SDT" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
             </div>
-
             <div class="mb-4">
                 <label for="NgheNghiep" class="block text-gray-700 text-sm font-bold mb-2">Nghề nghiệp:</label>
                 <input type="text" id="NgheNghiep" name="NgheNghiep" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
@@ -66,8 +49,8 @@
             </div>
 
             <div class="flex items-center justify-between">
-                <input type="submit" value="Xác Nhận" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
                 <button type="button" onclick="cancelAdd()" class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Hủy</button>
+                <input type="submit" value="Xác Nhận" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
             </div>
         </form>
 
@@ -75,7 +58,6 @@
 
     <!-- Bảng hiển thị dữ liệu từ cơ sở dữ liệu -->
     <div class="table-container">
-        <button onclick="toggleAddForm()" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Thêm</button>
         <table class="min-w-full bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 border border-collapse">
             <thead>
                 <tr>
@@ -107,92 +89,75 @@
                         </form>
                     </td>
                 </tr>
-                <div id="editForm{{ $record->id }}" style="display: none;">
-                <form  action="/update/{{ $record->id }}" method="post" style="display: none;">
+                <div id="editForm{{ $record->id }}" style="display: none;"class="max-w-md mx-auto my-16">
+                    <form action="/update/{{ $record->id }}" method="post" style="display: none;"  class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+                        @csrf
+                        @method('PUT')
+                        <div class="mb-4">
 
-@csrf
+                            <label for="Ten_edit{{ $record->id }}" class="block text-gray-700 text-sm font-bold mb-2">Tên:</label>
 
-@method('PUT')
+                            <input type="text" id="Ten_edit{{ $record->id }}" name="Ten" value="{{ $record->Ten }}" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
 
+                        </div>
+                        <div class="mb-4">
 
+                            <label for="GioiTinh_edit{{ $record->id }}" class="block text-gray-700 text-sm font-bold mb-2">Giới tính:</label>
 
-<div class="mb-4">
+                            <select id="GioiTinh_edit{{ $record->id }}" name="GioiTinh" class="block appearance-none w-full bg-white border border-gray-400 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:border-blue-500">
 
-    <label for="Ten_edit{{ $record->id }}" class="block text-gray-700 text-sm font-bold mb-2">Tên:</label>
+                                <option value="1" {{ $record->GioiTinh == 1 ? 'selected' : '' }}>Nam</option>
 
-    <input type="text" id="Ten_edit{{ $record->id }}" name="Ten" value="{{ $record->Ten }}" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                                <option value="0" {{ $record->GioiTinh == 0 ? 'selected' : '' }}>Nữ</option>
 
-</div>
+                            </select>
 
+                        </div>
+                        <div class="mb-4">
 
+                            <label for="DiaChi_edit{{ $record->id }}" class="block text-gray-700 text-sm font-bold mb-2">Địa chỉ:</label>
 
-<div class="mb-4">
+                            <textarea id="DiaChi_edit{{ $record->id }}" name="DiaChi" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">{{ $record->DiaChi }}</textarea>
 
-    <label for="GioiTinh_edit{{ $record->id }}" class="block text-gray-700 text-sm font-bold mb-2">Giới tính:</label>
+                        </div>
+                        <div class="mb-4">
 
-    <select id="GioiTinh_edit{{ $record->id }}" name="GioiTinh" class="block appearance-none w-full bg-white border border-gray-400 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:border-blue-500">
+                            <label for="SDT_edit{{ $record->id }}" class="block text-gray-700 text-sm font-bold mb-2">Số điện thoại:</label>
 
-        <option value="1" {{ $record->GioiTinh == 1 ? 'selected' : '' }}>Nam</option>
+                            <input type="text" id="SDT_edit{{ $record->id }}" name="SDT" value="{{ $record->SDT }}" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
 
-        <option value="0" {{ $record->GioiTinh == 0 ? 'selected' : '' }}>Nữ</option>
+                        </div>
+                        <div class="mb-4">
 
-    </select>
+                            <label for="NgheNghiep_edit{{ $record->id }}" class="block text-gray-700 text-sm font-bold mb-2">Nghề nghiệp:</label>
 
-</div>
+                            <input type="text" id="NgheNghiep_edit{{ $record->id }}" name="NgheNghiep" value="{{ $record->NgheNghiep }}" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
 
+                        </div>
+                        <div class="mb-4">
 
+                            <label for="NoiCongTac_edit{{ $record->id }}" class="block text-gray-700 text-sm font-bold mb-2">Nơi công tác:</label>
 
-<div class="mb-4">
+                            <input type="text" id="NoiCongTac_edit{{ $record->id }}" name="NoiCongTac" value="{{ $record->NoiCongTac }}" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
 
-    <label for="DiaChi_edit{{ $record->id }}" class="block text-gray-700 text-sm font-bold mb-2">Địa chỉ:</label>
+                        </div>
+                        <div class="flex items-center justify-between">
 
-    <textarea id="DiaChi_edit{{ $record->id }}" name="DiaChi" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">{{ $record->DiaChi }}</textarea>
+                            <button type="button" onclick="cancelEdit({{ $record->id }})" class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Hủy</button>
 
-</div>
+                            <input type="submit" value="Xác Nhận" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
 
-
-
-<div class="mb-4">
-
-    <label for="SDT_edit{{ $record->id }}" class="block text-gray-700 text-sm font-bold mb-2">Số điện thoại:</label>
-
-    <input type="text" id="SDT_edit{{ $record->id }}" name="SDT" value="{{ $record->SDT }}" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
-
-</div>
-
-
-
-<div class="mb-4">
-
-    <label for="NgheNghiep_edit{{ $record->id }}" class="block text-gray-700 text-sm font-bold mb-2">Nghề nghiệp:</label>
-
-    <input type="text" id="NgheNghiep_edit{{ $record->id }}" name="NgheNghiep" value="{{ $record->NgheNghiep }}" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
-
-</div>
-
-
-
-<div class="mb-4">
-
-    <label for="NoiCongTac_edit{{ $record->id }}" class="block text-gray-700 text-sm font-bold mb-2">Nơi công tác:</label>
-
-    <input type="text" id="NoiCongTac_edit{{ $record->id }}" name="NoiCongTac" value="{{ $record->NoiCongTac }}" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
-
-</div>
-
-
-
-<div class="flex items-center justify-between">
-
-    <button type="button" onclick="cancelEdit({{ $record->id }})" class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Hủy</button>
-
-    <input type="submit" value="Xác Nhận" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
-
-</div>
-
-</form>
+                        </div>
+                    </form>
                 </div>
                 @endforeach
+                <div class="flex items-center my-4">
+            <button onclick="toggleAddForm()" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Thêm</button>
+            <div class="flex items-center ml-4">
+                <input type="text" class="border-2 border-gray-300 bg-white h-10 px-5 pr-16 rounded-lg text-sm focus:outline-none" placeholder="Tìm Kiếm">
+                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg ml-2">Search</button>
+            </div>
+        </div>
             </tbody>
 
         </table>
@@ -245,7 +210,7 @@
 
         // Hiển thị form nếu đang ẩn, ẩn đi nếu đang hiển thị
         if (form.style.display === 'none') {
-            form.style.display = 'table-row'; // Hiển thị form dưới dạng hàng của bảng
+            form.style.display = 'block'; // Hiển thị form dưới dạng hàng của bảng
         } else {
             form.style.display = 'none'; // Ẩn form
         }
@@ -262,9 +227,10 @@
             form.style.display = 'none';
         }
     }
+
     function cancelAdd() {
-  // Assuming the form has an ID of 'addForm'
-  var form = document.getElementById('addForm');
-  form.style.display = 'none'; // Hide the form when the "Hủy" button is clicked
-}
+        // Assuming the form has an ID of 'addForm'
+        var form = document.getElementById('addForm');
+        form.style.display = 'none'; // Hide the form when the "Hủy" button is clicked
+    }
 </script>
