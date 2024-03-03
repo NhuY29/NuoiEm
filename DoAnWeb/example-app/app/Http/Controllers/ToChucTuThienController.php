@@ -2,21 +2,21 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\BenThu3;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use App\Models\ToChucTuThien;
 
-class BenThu3Controller extends Controller
+class ToChucTuThienController extends Controller
 {
     public function xuLyDuLieu(Request $request)
     {
         $validator = Validator::make($request->all(), [
             'Ten' => 'required|string|max:255',
-            'GioiTinh' => 'required|string',
+            'MoTa' => 'required|string',
             'DiaChi' => 'required|string|max:255',
             'SDT' => 'required|numeric|digits:10',
-            'NgheNghiep' => 'required|string|max:255',
-            'NoiCongTac' => 'required|string|max:255',
+            'Email' => 'required|email|max:255',
+            'ThongTin' => 'required|string|max:255',
         ]);
 
         if ($validator->fails()) {
@@ -25,7 +25,11 @@ class BenThu3Controller extends Controller
             // Kiểm tra lỗi cho từng trường
             if ($errors->has('SDT')) {
                 $errorMessage = 'Số điện thoại phải chứa đúng 10 chữ số và chỉ chấp nhận số.';
-            } else {
+            } 
+            else if($errors->has('Email')) {
+                $errorMessage = 'Địa chỉ email phải chứa đúng định dạng email.';
+            }
+            else {
                 $errorMessage = 'Đã xảy ra lỗi trong quá trình xử lý dữ liệu, không được rỗng';
             }
 
@@ -35,63 +39,62 @@ class BenThu3Controller extends Controller
 
         // Validate the incoming data
         $ten = $request->get('Ten');
-        $GioiTinh = $request->get('GioiTinh');
+        $MoTa = $request->get('MoTa');
         $DiaChi = $request->get('DiaChi');
         $SDT = $request->get('SDT');
-        $NgheNghiep = $request->get('NgheNghiep');
-        $NoiCongTac = $request->get('NoiCongTac');
-        BenThu3::create([
+        $Email = $request->get('Email');
+        $ThongTin = $request->get('ThongTin');
+        ToChucTuThien::create([
             'Ten' => $ten,
-            'GioiTinh' => $GioiTinh,
+            'MoTa' => $MoTa,
             'DiaChi' => $DiaChi,
             'SDT' => $SDT,
-            'NgheNghiep' => $NgheNghiep,
-            'NoiCongTac' => $NoiCongTac
+            'Email' => $Email,
+            'ThongTin' => $ThongTin
 
         ]);
-        return redirect()->to("/save");
+        return redirect()->to("/ToChucTuThien")->with('alert', 'Đã thêm thành công');
     }
     public function index()
     {
         // Lấy tất cả các bản ghi từ bảng BenThu3
-        $allBenThu3Records = BenThu3::all();
+        $allToChucTuThienRecords = ToChucTuThien::all();
 
 
-        return view('NL_BenThu3', ['allBenThu3Records' => $allBenThu3Records]);
+        return view('ToChucTuThien', ['allToChucTuThienRecords' =>  $allToChucTuThienRecords]);
     }
     public function hienThiForm()
     {
-        return view('NL_BenThu3');
+        return view('ToChucTuThien');
     }
     public function delete($id)
     {
-        $record = BenThu3::findOrFail($id);
+        $record = ToChucTuThien::findOrFail($id);
         $record->delete();
 
         return redirect()->back()->with('alert', 'Đã xóa bản ghi thành công');
     }
     public function edit($id)
     {
-        $record = BenThu3::findOrFail($id);
-        return view('NL_BenThu3', compact('record'));
+        $record = ToChucTuThien::findOrFail($id);
+        return view('ToChucTuThien', compact('record'));
     }
-
     public function update(Request $request, $id)
     {
         $validator = Validator::make($request->all(), [
             'Ten' => 'required|string|max:255',
-            'GioiTinh' => 'required|string',
+            'MoTa' => 'required|string',
             'DiaChi' => 'required|string|max:255',
             'SDT' => 'required|numeric|digits:10',
-            'NgheNghiep' => 'required|string|max:255',
-            'NoiCongTac' => 'required|string|max:255',
+            'Email' => 'required|email|max:255',
+            'ThongTin' => 'required|string|max:255',
         ]);
 
         if ($validator->fails()) {
             return redirect()->back()->withErrors($validator)->withInput();
         }
 
-        $record = BenThu3::findOrFail($id);
+        $record = ToChucTuThien::findOrFail($id);
         $record->update($request->all());
 
         return redirect()->back()->with('success', 'Đã cập nhật bản ghi thành công');

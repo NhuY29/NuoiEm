@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BenThu3Controller;
+use App\Http\Controllers\ToChucTuThienController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -30,7 +32,12 @@ Route::post('/save', [BenThu3Controller::class, 'xuLyDuLieu']);
 Route::delete('/delete/{id}', [BenThu3Controller::class, 'delete']);
 Route::get('/edit/{id}', [BenThu3Controller::class, 'edit']);
 Route::put('/update/{id}', [BenThu3Controller::class, 'update']);
-
+//Trang Tổ chức
+Route::get('/ToChucTuThien', [ToChucTuThienController::class, 'index']);
+Route::post('/ToChucTuThien', [ToChucTuThienController::class, 'xuLyDuLieu']);
+Route::delete('/delete/{id}', [ToChucTuThienController::class, 'delete']);
+Route::get('/edit/{id}', [ToChucTuThienController::class, 'edit']);
+Route::put('/update/{id}', [ToChucTuThienController::class, 'update']);
 // Route::get('/save', [BenThu3Controller::class, 'hienThiForm']);
 // Route::get('/NLBenThu3', function () {
 //     return view('NL_BenThu3');
