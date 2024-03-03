@@ -32,7 +32,8 @@ Route::post('/save', [BenThu3Controller::class, 'xuLyDuLieu']);
 Route::delete('/delete/{id}', [BenThu3Controller::class, 'delete']);
 Route::get('/edit/{id}', [BenThu3Controller::class, 'edit']);
 Route::put('/update/{id}', [BenThu3Controller::class, 'update']);
-Route::post('/search', [BenThu3Controller::class, 'search'])->name('search');
+// Route::post('/search', [BenThu3Controller::class, 'search'])->name('search');
+Route::match(['get', 'post'], '/search', [BenThu3Controller::class, 'search'])->name('search');
 //Trang Tổ chức
 Route::get('/ToChucTuThien', [ToChucTuThienController::class, 'index']);
 Route::post('/ToChucTuThien', [ToChucTuThienController::class, 'xuLyDuLieu']);

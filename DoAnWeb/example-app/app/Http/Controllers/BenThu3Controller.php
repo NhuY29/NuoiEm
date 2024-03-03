@@ -54,17 +54,30 @@ class BenThu3Controller extends Controller
     public function index()
     {
         // Lấy tất cả các bản ghi từ bảng BenThu3
-        $allBenThu3Records = BenThu3::all();
-
-
-        return view('NL_BenThu3', ['allBenThu3Records' => $allBenThu3Records]);
+        // $allBenThu3Records = BenThu3::all();
+        $allBenThu3Records = BenThu3::paginate(5);
+    return view('NL_BenThu3', compact('allBenThu3Records'))->with('i',(request()->input('page',1)-1)*5);
+        // return view('NL_BenThu3', ['allBenThu3Records' => $allBenThu3Records]);
     }
+    //phan trang
+
+//search
     public function search(Request $request)
     {
+        // $query = $request->input('search-items-name');
+        // $allBenThu3Records = BenThu3::where('Ten', 'like', '%'.$query.'%')->paginate(3);; // Thay YourModel và column_name bằng tên mô hình và tên cột của bạn
+        // return view('NL_BenThu3', ['allBenThu3Records' => $allBenThu3Records]);
         $query = $request->input('search-items-name');
-        $allBenThu3Records = BenThu3::where('Ten', 'like', '%'.$query.'%')->get(); // Thay YourModel và column_name bằng tên mô hình và tên cột của bạn
-        return view('NL_BenThu3', ['allBenThu3Records' => $allBenThu3Records]);
+        $allBenThu3Records = BenThu3::where('Ten', 'like', '%'.$query.'%')->paginate(5);
+        $i = 0; // Start counter at 1
+    
+        return view('NL_BenThu3', [
+            'allBenThu3Records' => $allBenThu3Records,
+            'i' => $i, // Pass the counter variable
+        ]);
+      
     }
+
     public function hienThiForm()
     {
         return view('NL_BenThu3');
