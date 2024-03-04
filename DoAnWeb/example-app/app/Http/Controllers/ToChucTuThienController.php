@@ -57,11 +57,24 @@ class ToChucTuThienController extends Controller
     }
     public function index()
     {
-        // Lấy tất cả các bản ghi từ bảng BenThu3
-        $allToChucTuThienRecords = ToChucTuThien::all();
-
-
-        return view('ToChucTuThien', ['allToChucTuThienRecords' =>  $allToChucTuThienRecords]);
+        $allToChucTuThienRecords = ToChucTuThien::paginate(5);
+    return view('ToChucTuThien', compact('allToChucTuThienRecords'))->with('i',(request()->input('page',1)-1)*5);
+    }
+    //phan trang
+    public function search(Request $request)
+    {
+        // $query = $request->input('search-items-name');
+        // $allBenThu3Records = BenThu3::where('Ten', 'like', '%'.$query.'%')->paginate(3);; // Thay YourModel và column_name bằng tên mô hình và tên cột của bạn
+        // return view('NL_BenThu3', ['allBenThu3Records' => $allBenThu3Records]);
+        $query = $request->input('search-items-name');
+        $allToChucTuThienRecords = ToChucTuThien::where('Ten', 'like', '%'.$query.'%')->paginate(5);
+        $i = 0; // Start counter at 1
+    
+        return view('ToChucTuThien', [
+            'allToChucTuThienRecords' => $allToChucTuThienRecords,
+            'i' => $i, // Pass the counter variable
+        ]);
+      
     }
     public function hienThiForm()
     {

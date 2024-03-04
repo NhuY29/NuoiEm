@@ -40,6 +40,7 @@ Route::post('/ToChucTuThien', [ToChucTuThienController::class, 'xuLyDuLieu']);
 Route::delete('/delete/{id}', [ToChucTuThienController::class, 'delete']);
 Route::get('/edit/{id}', [ToChucTuThienController::class, 'edit']);
 Route::put('/update/{id}', [ToChucTuThienController::class, 'update']);
+Route::match(['get', 'post'], '/search', [ToChucTuThienController::class, 'search'])->name('search');
 // Route::get('/save', [BenThu3Controller::class, 'hienThiForm']);
 // Route::get('/NLBenThu3', function () {
 //     return view('NL_BenThu3');

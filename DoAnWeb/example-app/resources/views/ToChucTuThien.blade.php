@@ -58,6 +58,7 @@
         <table class="min-w-full bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 border border-collapse">
             <thead>
                 <tr>
+                    <th class="px-4 py-2 bg-blue-500 text-white border">STT</th>
                     <th class="px-4 py-2 bg-blue-500 text-white border">Tên</th>
                     <th class="px-4 py-2 bg-blue-500 text-white border">Mô Tả</th>
                     <th class="px-4 py-2 bg-blue-500 text-white border">Địa chỉ</th>
@@ -70,6 +71,7 @@
             <tbody>
                 @foreach($allToChucTuThienRecords as $index => $record)
                 <tr id="row{{ $record->id }}" data-id="{{ $record->id }}" class="{{ $index % 2 === 0 ? 'bg-white' : 'bg-blue-100' }} border">
+                    <td class="px-4 py-2 text-center border whitespace-normal max-w-xs">{{ ++$i }}</td>
                     <td class="px-4 py-2 text-center border whitespace-normal max-w-xs">{{ $record->Ten }}</td>
                     <td class="px-4 py-2 text-center border whitespace-normal max-w-xs">{{ $record->MoTa }}</td>
                     <td class="px-4 py-2 text-center border whitespace-normal max-w-xs">{{ $record->DiaChi }}</td>
@@ -145,19 +147,19 @@
                 <div class="flex items-center my-4">
                     <button onclick="toggleAddForm()" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Thêm</button>
                     <div class="flex items-center ml-4">
-                        <input type="text" class="border-2 border-gray-300 bg-white h-10 px-5 pr-16 rounded-lg text-sm focus:outline-none" placeholder="Tìm Kiếm">
-                        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg ml-2">Search</button>
+                        <!-- <input type="text" class="border-2 border-gray-300 bg-white h-10 px-5 pr-16 rounded-lg text-sm focus:outline-none" placeholder="Tìm Kiếm">
+                        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg ml-2">Search</button> -->
+                        <form  action="{{ route('search') }}" method="POST">
+            @csrf
+                <input name="search-items-name" type="text" class="border-2 border-gray-300 bg-white h-10 px-5 pr-16 rounded-lg text-sm focus:outline-none" placeholder="Tìm Kiếm">
+                <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg ml-2">Search</button>
+                </form>
                     </div>
                 </div>
             </tbody>
 
         </table>
-        <div class="flex justify-center">
-            <a href="#" class="px-3 py-1 bg-gray-200 text-gray-700 mx-1 rounded">1</a>
-            <a href="#" class="px-3 py-1 bg-gray-200 text-gray-700 mx-1 rounded">2</a>
-            <a href="#" class="px-3 py-1 bg-gray-200 text-gray-700 mx-1 rounded">3</a>
-            <a href="#" class="px-3 py-1 bg-gray-200 text-gray-700 mx-1 rounded">Next</a>
-        </div>
+        {{ $allToChucTuThienRecords->links() }}
     </div>
 </body>
 @if(Session::has('alert'))
@@ -168,6 +170,13 @@
 
 </html>
 <script>
+      document.addEventListener('DOMContentLoaded', function () {
+    let form = document.getElementById('searchForm');
+    form.addEventListener('submit', function (event) {
+        event.preventDefault(); // Ngăn chặn sự kiện mặc định của form
+        // Thực hiện tìm kiếm bằng JavaScript hoặc gửi AJAX request tới server
+    });
+});
     function deleteRow(button) {
         var id = button.getAttribute('data-id');
         if (confirm("Bạn có chắc chắn muốn xóa dòng này không?")) {
