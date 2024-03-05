@@ -43,7 +43,7 @@ Route::get('/edit/{id}', [ToChucTuThienController::class, 'edit']);
 Route::put('/update/{id}', [ToChucTuThienController::class, 'update']);
 Route::match(['get', 'post'], '/search', [ToChucTuThienController::class, 'search'])->name('search');
 // Trang Trẻ Em
-Route::get('/TreEm', [TreEmController::class, 'index']);
+Route::get('/TreEm', [TreEmController::class, 'index2']);
 Route::post('/TreEm', [TreEmController::class, 'xuLyDuLieu']);
 Route::delete('/delete/{id}', [TreEmController::class, 'delete']);
 Route::get('/edit/{id}', [TreEmController::class, 'edit']);

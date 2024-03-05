@@ -61,14 +61,12 @@ class TreEmController extends Controller
     public function index2()
     {
         $allTreEmRecords = TreEm::paginate(5);
-    return view('TreEm', compact('allTreEmRecords'))->with('i',(request()->input('page',1)-1)*5);
-    }
-    public function index()
-{
-    $allBenThu3Records = BenThu3::all();
+    $allBenThubaRecords = BenThu3::all(); // Đảm bảo rằng bạn đã lấy dữ liệu từ bảng đúng
 
-    return view('TreEm', compact('allBenThu3Records'));
-}
+    return view('TreEm', compact('allTreEmRecords', 'allBenThubaRecords'))->with('i',(request()->input('page',1)-1)*5);
+    }
+    
+    
     //phan trang
     public function search(Request $request)
     {
