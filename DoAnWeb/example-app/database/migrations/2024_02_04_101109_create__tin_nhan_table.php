@@ -19,6 +19,7 @@ return new class extends Migration
             $table->foreign('NguoiGui_id')->references('id')->on('users');
             $table->unsignedBigInteger('NguoiNhan_id');
             $table->foreign('NguoiNhan_id')->references('id')->on('users');
+            $table->boolean('isDelete')->default(false);
             $table->timestamps();
         });
     }

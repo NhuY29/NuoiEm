@@ -55,7 +55,7 @@ class BenThu3Controller extends Controller
     {
         // Lấy tất cả các bản ghi từ bảng BenThu3
         // $allBenThu3Records = BenThu3::all();
-        $allBenThu3Records = BenThu3::paginate(5);
+        $allBenThu3Records = BenThu3::where('isDelete', false)->paginate(5);
     return view('NL_BenThu3', compact('allBenThu3Records'))->with('i',(request()->input('page',1)-1)*5);
         // return view('NL_BenThu3', ['allBenThu3Records' => $allBenThu3Records]);
     }
@@ -68,7 +68,9 @@ class BenThu3Controller extends Controller
         // $allBenThu3Records = BenThu3::where('Ten', 'like', '%'.$query.'%')->paginate(3);; // Thay YourModel và column_name bằng tên mô hình và tên cột của bạn
         // return view('NL_BenThu3', ['allBenThu3Records' => $allBenThu3Records]);
         $query = $request->input('search-items-name');
-        $allBenThu3Records = BenThu3::where('Ten', 'like', '%'.$query.'%')->paginate(5);
+        $allBenThu3Records = BenThu3::where('Ten', 'like', '%'.$query.'%')
+        ->where('isDelete', false) // Chỉ lấy các bản ghi có isDelete là false
+        ->paginate(5);
         $i = 0; // Start counter at 1
     
         return view('NL_BenThu3', [
@@ -85,8 +87,8 @@ class BenThu3Controller extends Controller
     public function delete($id)
     {
         $record = BenThu3::findOrFail($id);
-        $record->delete();
-
+        // $record->delete();
+        $record->update(['isDelete' => 1]);
         return redirect()->back()->with('alert', 'Đã xóa bản ghi thành công');
     }
     public function edit($id)

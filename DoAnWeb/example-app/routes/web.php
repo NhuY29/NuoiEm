@@ -38,17 +38,17 @@ Route::match(['get', 'post'], '/search', [BenThu3Controller::class, 'search'])->
 //Trang Tổ chức
 Route::get('/ToChucTuThien', [ToChucTuThienController::class, 'index']);
 Route::post('/ToChucTuThien', [ToChucTuThienController::class, 'xuLyDuLieu']);
-Route::delete('/delete/{id}', [ToChucTuThienController::class, 'delete']);
+Route::delete('/delete1/{id}', [ToChucTuThienController::class, 'delete']);
 Route::get('/edit/{id}', [ToChucTuThienController::class, 'edit']);
 Route::put('/update/{id}', [ToChucTuThienController::class, 'update']);
-Route::match(['get', 'post'], '/search', [ToChucTuThienController::class, 'search'])->name('search');
+Route::match(['get', 'post'], '/search1', [ToChucTuThienController::class, 'search'])->name('search2');
 // Trang Trẻ Em
 Route::get('/TreEm', [TreEmController::class, 'index2']);
 Route::post('/TreEm', [TreEmController::class, 'xuLyDuLieu']);
-Route::delete('/delete/{id}', [TreEmController::class, 'delete']);
+Route::delete('/delete2/{id}', [TreEmController::class, 'delete']);
 Route::get('/edit/{id}', [TreEmController::class, 'edit']);
 Route::put('/update/{id}', [TreEmController::class, 'update']);
-Route::match(['get', 'post'], '/search', [TreEmController::class, 'search'])->name('search');
+Route::match(['get', 'post'], '/search2', [TreEmController::class, 'search'])->name('search2');
 // Route::get('/save', [BenThu3Controller::class, 'hienThiForm']);
 // Route::get('/NLBenThu3', function () {
 //     return view('NL_BenThu3');

@@ -10,7 +10,7 @@ class BenThu3 extends Model
     use HasFactory;
     protected $table = '_ben_thu3'; // Tên của bảng trong CSDL
 
-    protected $fillable = ['Ten', 'GioiTinh', 'DiaChi', 'SDT', 'NgheNghiep', 'NoiCongTac'];
+    protected $fillable = ['Ten', 'GioiTinh', 'DiaChi', 'SDT', 'NgheNghiep', 'NoiCongTac','isDelete'];
     public function treEm()
 {
     return $this->hasMany(TreEm::class);

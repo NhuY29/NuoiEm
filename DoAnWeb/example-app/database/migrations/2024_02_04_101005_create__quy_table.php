@@ -20,6 +20,7 @@ return new class extends Migration
             $table->foreign('TreEm_id')->references('id')->on('_tre_em');
             $table->unsignedBigInteger('ToChucTuThien_id');
             $table->foreign('ToChucTuThien_id')->references('id')->on('ToChucTuThien');
+            $table->boolean('isDelete')->default(false);
             $table->timestamps();
         });
     }

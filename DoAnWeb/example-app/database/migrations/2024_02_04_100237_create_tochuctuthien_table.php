@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string("SDT")->nullable();
             $table->string("Email")->nullable();
             $table->string("ThongTin")->nullable();
+            $table->boolean('isDelete')->default(false);
             $table->timestamps();
         });
     }

@@ -11,15 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('_bai_viet', function (Blueprint $table) {
+        Schema::create('_quy_ca_nhan', function (Blueprint $table) {
             $table->bigIncrements("id");
-            $table->string("TieuDe")->nullable();
-            $table->string("NoiDung")->nullable();
-            $table->dateTime("NgayDang")->nullable();
-            $table->unsignedBigInteger('user_id');
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->double("SoTien")->nullable();
             $table->unsignedBigInteger('TreEm_id');
             $table->foreign('TreEm_id')->references('id')->on('_tre_em');
+            $table->dateTime("Ngay_gop")->nullable();
             $table->boolean('isDelete')->default(false);
             $table->timestamps();
         });
@@ -30,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('_bai_viet');
+        Schema::dropIfExists('table_name');
     }
 };

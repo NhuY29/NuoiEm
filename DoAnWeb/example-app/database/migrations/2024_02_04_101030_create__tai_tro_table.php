@@ -15,10 +15,10 @@ return new class extends Migration
             $table->bigIncrements("id");
             $table->unsignedBigInteger('Quy_id');
             $table->foreign('Quy_id')->references('id')->on('_quy');
-            $table->unsignedBigInteger('user_id');
-            $table->foreign('user_id')->references('id')->on('users');
-            $table->datetime("SoTien")->nullable();
-            $table->string("PhuongThucTaiTro")->nullable();
+        
+            $table->double("SoTien")->nullable();
+           
+            $table->boolean('isDelete')->default(false);
             $table->timestamps();
         });
     }

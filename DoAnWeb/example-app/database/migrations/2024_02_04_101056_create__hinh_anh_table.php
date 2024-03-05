@@ -19,6 +19,7 @@ return new class extends Migration
             $table->foreign('BaiViet_id')->references('id')->on('_bai_viet');
             $table->unsignedBigInteger('TreEm_id');
             $table->foreign('TreEm_id')->references('id')->on('_tre_em');
+            $table->boolean('isDelete')->default(false);
             $table->timestamps();
         });
     }
