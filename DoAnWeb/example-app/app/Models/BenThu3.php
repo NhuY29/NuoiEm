@@ -11,4 +11,9 @@ class BenThu3 extends Model
     protected $table = '_ben_thu3'; // Tên của bảng trong CSDL
 
     protected $fillable = ['Ten', 'GioiTinh', 'DiaChi', 'SDT', 'NgheNghiep', 'NoiCongTac'];
+    public function treEm()
+{
+    return $this->hasMany(TreEm::class);
+}
+
 }

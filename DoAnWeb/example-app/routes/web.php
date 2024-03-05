@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BenThu3Controller;
 use App\Http\Controllers\ToChucTuThienController;
+use App\Http\Controllers\TreEmController;
 
 /*
 |--------------------------------------------------------------------------
@@ -41,6 +42,13 @@ Route::delete('/delete/{id}', [ToChucTuThienController::class, 'delete']);
 Route::get('/edit/{id}', [ToChucTuThienController::class, 'edit']);
 Route::put('/update/{id}', [ToChucTuThienController::class, 'update']);
 Route::match(['get', 'post'], '/search', [ToChucTuThienController::class, 'search'])->name('search');
+// Trang Trẻ Em
+Route::get('/TreEm', [TreEmController::class, 'index']);
+Route::post('/TreEm', [TreEmController::class, 'xuLyDuLieu']);
+Route::delete('/delete/{id}', [TreEmController::class, 'delete']);
+Route::get('/edit/{id}', [TreEmController::class, 'edit']);
+Route::put('/update/{id}', [TreEmController::class, 'update']);
+Route::match(['get', 'post'], '/search', [TreEmController::class, 'search'])->name('search');
 // Route::get('/save', [BenThu3Controller::class, 'hienThiForm']);
 // Route::get('/NLBenThu3', function () {
 //     return view('NL_BenThu3');

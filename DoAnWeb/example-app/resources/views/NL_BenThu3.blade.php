@@ -25,10 +25,17 @@
             </div>
             <div class="mb-4">
                 <label for="GioiTinh" class="block text-gray-700 text-sm font-bold mb-2">Giới tính:</label>
-                <select id="GioiTinh" name="GioiTinh" class="block appearance-none w-full bg-white border border-gray-400 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:border-blue-500">
-                    <option value="1">Nam</option>
-                    <option value="0">Nữ</option>
-                </select>
+                <div class="relative">
+                    <select id="GioiTinh" name="GioiTinh" class="block appearance-none w-full bg-white border border-gray-400 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:border-blue-500">
+                        <option value="1">Nam</option>
+                        <option value="0">Nữ</option>
+                    </select>
+                    <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                        <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                            <path d="M9 9l3 3 3-3z" />
+                        </svg>
+                    </div>
+                </div>
             </div>
             <div class="mb-4">
                 <label for="DiaChi" class="block text-gray-700 text-sm font-bold mb-2">Địa chỉ:</label>
@@ -91,8 +98,8 @@
                         </form>
                     </td>
                 </tr>
-                <div id="editForm{{ $record->id }}" style="display: none;"class="max-w-md mx-auto my-16">
-                    <form action="/update/{{ $record->id }}" method="post" style="display: none;"  class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+                <div id="editForm{{ $record->id }}" style="display: none;" class="max-w-md mx-auto my-16">
+                    <form action="/update/{{ $record->id }}" method="post" style="display: none;" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
                         @csrf
                         @method('PUT')
                         <div class="mb-4">
@@ -154,25 +161,24 @@
                 </div>
                 @endforeach
                 <div class="flex items-center my-4">
-            <button onclick="toggleAddForm()" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Thêm</button>
-            <div class="flex items-center ml-4">
-         
-            <form  action="{{ route('search') }}" method="POST">
-            @csrf
-                <input name="search-items-name" type="text" class="border-2 border-gray-300 bg-white h-10 px-5 pr-16 rounded-lg text-sm focus:outline-none" placeholder="Tìm Kiếm">
-                <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg ml-2">Search</button>
-                </form>
-            </div>
-        </div>
+                    <button onclick="toggleAddForm()" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Thêm</button>
+                    <div class="flex items-center ml-4">
+
+                        <form action="{{ route('search') }}" method="POST">
+                            @csrf
+                            <input name="search-items-name" type="text" class="border-2 border-gray-300 bg-white h-10 px-5 pr-16 rounded-lg text-sm focus:outline-none" placeholder="Tìm Kiếm">
+                            <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg ml-2">Search</button>
+                        </form>
+                    </div>
+                </div>
             </tbody>
 
         </table>
-      
+
         {{ $allBenThu3Records->links() }}
-      
-</div>
 
     </div>
+ </div>
 </body>
 @if(Session::has('alert'))
 <script>
@@ -182,13 +188,14 @@
 
 </html>
 <script>
-    document.addEventListener('DOMContentLoaded', function () {
-    let form = document.getElementById('searchForm');
-    form.addEventListener('submit', function (event) {
-        event.preventDefault(); // Ngăn chặn sự kiện mặc định của form
-        // Thực hiện tìm kiếm bằng JavaScript hoặc gửi AJAX request tới server
+    document.addEventListener('DOMContentLoaded', function() {
+        let form = document.getElementById('searchForm');
+        form.addEventListener('submit', function(event) {
+            event.preventDefault(); // Ngăn chặn sự kiện mặc định của form
+            // Thực hiện tìm kiếm bằng JavaScript hoặc gửi AJAX request tới server
+        });
     });
-});
+
     function deleteRow(button) {
         var id = button.getAttribute('data-id');
         if (confirm("Bạn có chắc chắn muốn xóa dòng này không?")) {
