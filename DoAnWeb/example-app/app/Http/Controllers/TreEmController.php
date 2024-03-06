@@ -58,10 +58,10 @@ class TreEmController extends Controller
         ]);
         return redirect()->to("/TreEm")->with('alert', 'Đã thêm thành công');
     }
-    public function index2()
+    public function index()
     {
         $allTreEmRecords = TreEm::paginate(5);
-    $allBenThubaRecords = BenThu3::all(); // Đảm bảo rằng bạn đã lấy dữ liệu từ bảng đúng
+        $allBenThubaRecords = BenThu3::where('isdelete', 0)->get();
 
     return view('TreEm', compact('allTreEmRecords', 'allBenThubaRecords'))->with('i',(request()->input('page',1)-1)*5);
     }

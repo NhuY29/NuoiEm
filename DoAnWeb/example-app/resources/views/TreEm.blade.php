@@ -48,9 +48,9 @@
             <label for="BenThu3_id" class="block text-gray-700 text-sm font-bold mb-2"> Bên Thứ 3:</label>
             <div class="relative">
                 <select name="BenThu3_id" class="block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
-                @foreach ($allBenThubaRecords as $record)
-    <option value="{{ $record->id }}">{{ $record->Ten }}</option>
-    @endforeach
+                    @foreach ($allBenThubaRecords->where('isdelete', 0) as $record)
+                    <option value="{{ $record->id }}">{{ $record->Ten }}</option>
+                    @endforeach
                 </select>
                 <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
                     <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
@@ -58,6 +58,7 @@
                     </svg>
                 </div>
             </div>
+
             <br>
             <div class="flex items-center justify-between">
                 <button type="button" onclick="cancelAdd()" class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Hủy</button>
@@ -82,7 +83,7 @@
                 </tr>
             </thead>
             <tbody>
-            @foreach($allTreEmRecords as $index => $record)
+                @foreach($allTreEmRecords as $index => $record)
                 <tr id="row{{ $record->id }}" data-id="{{ $record->id }}" class="{{ $index % 2 === 0 ? 'bg-white' : 'bg-blue-100' }} border">
                     <td class="px-4 py-2 text-center border whitespace-normal max-w-xs">{{ ++$i }}</td>
                     <td class="px-4 py-2 text-center border whitespace-normal max-w-xs">{{ $record->Ten }}</td>
@@ -91,7 +92,7 @@
                     <td class="px-4 py-2 text-center border whitespace-normal max-w-xs">{{ $record->DiaChi }}</td>
                     <td class="px-4 py-2 text-center border whitespace-normal max-w-xs">{{ $record->BenThu3_id }}</td>
                     <td class="px-4 py-2 text-center border whitespace-nowrap max-w-xs">
-                        <form id="deleteForm{{ $record->id }}" action="/delete/{{ $record->id }}" method="post">
+                        <form id="deleteForm{{ $record->id }}" action="/deleteTreEm/{{ $record->id }}" method="post">
                             @csrf
                             @method('DELETE')
                             <button type="button" data-id="{{ $record->id }}" onclick="deleteRow(this)" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Xóa</button>
@@ -101,10 +102,11 @@
                     </td>
                 </tr>
                 <div id="editForm{{ $record->id }}" style="display: none;" class="max-w-md mx-auto my-14">
-                    <form action="/update/{{ $record->id }}" method="post" style="display: none;" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+                    <form action="/updateTreEm/{{ $record->id }}" method="post" style="display: none;" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
                         @csrf
                         @method('PUT')
                         <div class="mb-4">
+
 
                             <label for="Ten_edit{{ $record->id }}" class="block text-gray-700 text-sm font-bold mb-2">Tên:</label>
 
@@ -140,13 +142,19 @@
                         </div>
 
 
-                        <div class="mb-4">
-
-                            <label for="BenThu3_edit{{ $record->id }}" class="block text-gray-700 text-sm font-bold mb-2">Bên thứ 3:</label>
-
-                            <input type="text" id="BenThu3_edit{{ $record->id }}" name="BenThu3_id" value="{{ $record->NoiCongTac }}" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
-
-                        </div>
+                        <label for="BenThu3_id" class="block text-gray-700 text-sm font-bold mb-2"> Bên Thứ 3:</label>
+            <div class="relative">
+                <select name="BenThu3_id" class="block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
+                    @foreach ($allBenThubaRecords->where('isdelete', 0) as $record)
+                    <option value="{{ $record->id }}">{{ $record->Ten }}</option>
+                    @endforeach
+                </select>
+                <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                    <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                        <path d="M9 9l3 3 3-3z" />
+                    </svg>
+                </div>
+            </div>
                         <div class="flex items-center justify-between">
 
                             <button type="button" onclick="cancelEdit({{ $record->id }})" class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Hủy</button>
@@ -161,7 +169,7 @@
                     <button onclick="toggleAddForm()" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Thêm</button>
                     <div class="flex items-center ml-4">
 
-                        <form action="{{ route('search') }}" method="POST">
+                        <form action="{{ route('search2') }}" method="POST">
                             @csrf
                             <input name="search-items-name" type="text" class="border-2 border-gray-300 bg-white h-10 px-5 pr-16 rounded-lg text-sm focus:outline-none" placeholder="Tìm Kiếm">
                             <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg ml-2">Search</button>
@@ -185,6 +193,7 @@
             // Thực hiện tìm kiếm bằng JavaScript hoặc gửi AJAX request tới server
         });
     });
+
 
     function deleteRow(button) {
         var id = button.getAttribute('data-id');

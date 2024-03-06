@@ -89,7 +89,7 @@
                     <td class="px-4 py-2 text-center border whitespace-normal max-w-xs">{{ $record->NgheNghiep }}</td>
                     <td class="px-4 py-2 text-center border whitespace-normal max-w-xs">{{ $record->NoiCongTac }}</td>
                     <td class="px-4 py-2 text-center border whitespace-nowrap max-w-xs">
-                        <form id="deleteForm{{ $record->id }}" action="/delete/{{ $record->id }}" method="post">
+                        <form id="deleteForm{{ $record->id }}" action="/deleteBenThu3/{{ $record->id }}" method="post">
                             @csrf
                             @method('DELETE')
                             <button type="button" data-id="{{ $record->id }}" onclick="deleteRow(this)" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Xóa</button>
@@ -99,7 +99,7 @@
                     </td>
                 </tr>
                 <div id="editForm{{ $record->id }}" style="display: none;" class="max-w-md mx-auto my-16">
-                    <form action="/update/{{ $record->id }}" method="post" style="display: none;" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+                    <form action="/updateBenThu3/{{ $record->id }}" method="post" style="display: none;" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
                         @csrf
                         @method('PUT')
                         <div class="mb-4">
@@ -164,7 +164,7 @@
                     <button onclick="toggleAddForm()" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Thêm</button>
                     <div class="flex items-center ml-4">
 
-                        <form action="{{ route('search') }}" method="POST">
+                        <form action="{{ route('search3') }}" method="POST">
                             @csrf
                             <input name="search-items-name" type="text" class="border-2 border-gray-300 bg-white h-10 px-5 pr-16 rounded-lg text-sm focus:outline-none" placeholder="Tìm Kiếm">
                             <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg ml-2">Search</button>
