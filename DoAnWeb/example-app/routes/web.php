@@ -28,6 +28,9 @@ Route::get('/home2', function () {
 Route::get('/Loginss', function () {
     return view('Loginss');
 });
+Route::get('/menu', function () {
+    return view('menu');
+});
 Route::get('/save', [BenThu3Controller::class, 'index']);
 Route::post('/save', [BenThu3Controller::class, 'xuLyDuLieu']);
 Route::delete('/deleteBenThu3/{id}', [BenThu3Controller::class, 'delete']);

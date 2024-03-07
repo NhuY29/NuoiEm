@@ -28,6 +28,8 @@
 
 
 </head>
+<script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+<df-messenger intent="WELCOME" chat-title="NuoiEm" agent-id="13f734de-d4f4-42a3-b5f0-e13ca2e8878d" language-code="en"></df-messenger>
 
 <body>
 	<!--[if IE]>
@@ -139,7 +141,7 @@
 				<div class="col-xl-4 col-lg-4 col-md-6">
 					<div class="single-skill wow fadeInUp" data-wow-delay=".2s">
 						<div class="skill-icon">
-						<i class="lni lni-drop"></i>
+							<i class="lni lni-drop"></i>
 						</div>
 						<div class="skill-content">
 							<h4>Dự án lọc nước bình gốm Unicef đã triển khai tại 500+ điểm bản từ 12/2018.</h4>
@@ -149,22 +151,22 @@
 				<div class="col-xl-4 col-lg-4 col-md-6">
 					<div class="single-skill wow fadeInUp" data-wow-delay=".4s">
 						<div class="skill-icon">
-						<i class="lni lni-reddit"></i>
+							<i class="lni lni-reddit"></i>
 						</div>
 						<div class="skill-content">
 							<h4>Dự án tủ đồ chơi cũ được triển khai 13 bản năm 2018 và mục tiêu phủ 100 điểm 2019-2020</h4>
-							
+
 						</div>
 					</div>
 				</div>
 				<div class="col-xl-4 col-lg-4 col-md-6">
 					<div class="single-skill wow fadeInUp" data-wow-delay=".6s">
 						<div class="skill-icon">
-						<i class="lni lni-book"></i>
+							<i class="lni lni-book"></i>
 						</div>
 						<div class="skill-content">
 							<h4>Từ Dự án tủ sách vùng cao được triển khai trên 150 điểm bản trong năm học 2019 - 2020</h4>
-							
+
 						</div>
 					</div>
 				</div>
@@ -189,7 +191,7 @@
 					<div class="single-course wow fadeInUp" data-wow-delay=".2s">
 						<div class="course-img">
 							<a href="course-single.html">
-							<img src="https://th.bing.com/th/id/R.c7b2653532b33dacdc09c925e8a00274?rik=bKU0gvzRmbpGLg&pid=ImgRaw&r=0" class="d-block w-100" alt="...">
+								<img src="https://th.bing.com/th/id/R.c7b2653532b33dacdc09c925e8a00274?rik=bKU0gvzRmbpGLg&pid=ImgRaw&r=0" class="d-block w-100" alt="...">
 							</a>
 						</div>
 						<div class="course-info">
@@ -381,13 +383,13 @@
 						<div class="section-title">
 							<h2 class="mb-35 wow fadeInUp" data-wow-delay=".2s">TẠI SAO CẦN QUYÊN GÓP BỮA ĂN TRƯA CHO TRẺ EM VÙNG CAO?</h2>
 							<p>Trường học đã được xây dựng , sách vở cũng được quyên góp đầy đủ, các bé được giảng dạy miễn phí nhưng sau mỗi bữa trưa, lớp học lại càng thưa thớt. Sau vài hôm lại có 1 vài bé bỏ học. Khu trường cũng bỗng nhiên vắng lặng lạ thường. Các bạn có biết lí do là gì không</p>
-														<img src="	https://w.ladicdn.com/s1550x750/5c3219ef974b7861952fed1d/banner-20220808090753.png" alt="">
+							<img src="	https://w.ladicdn.com/s1550x750/5c3219ef974b7861952fed1d/banner-20220808090753.png" alt="">
 						</div>
 						<div class="content">
 							<p class="mb-35 wow fadeInUp" data-wow-delay=".4s">Nhưng một vài tháng nay, khung cảnh trường học đã khác, buổi trưa đã không còn trống trải mà đầy ắp những tiếng nói cười và hình ảnh những đứa trẻ ăn những bữa ăn với khuôn mặt hạnh phúc. Đó nhờ vào sức mạnh mà dự án Nuôi em mang lại - sức mạnh của bữa ăn 8500. Tất cả các em học sinh được nuôi cơm trưa từ thứ hai tới thứ sáu. </p>
 							<div class="read-more" style="display: none;">
-							<img src="	https://w.ladicdn.com/s900x700/5c3219ef974b7861952fed1d/sgagwehw-20220808091422.png" alt="">
-							<p>Các bé vùng cao Tây Bắc xa xôi, hẻo lánh để đến với “con chữ” có rất nhiều khó khăn, gian khổ. Chỉ vì để được đến trường học tập với thầy cô và các bạn, các em bé ấy không ngại những quãng đường xa xôi hàng km hay thức dậy rất sớm để được cắp sách đếntrường.</p>
+								<img src="	https://w.ladicdn.com/s900x700/5c3219ef974b7861952fed1d/sgagwehw-20220808091422.png" alt="">
+								<p>Các bé vùng cao Tây Bắc xa xôi, hẻo lánh để đến với “con chữ” có rất nhiều khó khăn, gian khổ. Chỉ vì để được đến trường học tập với thầy cô và các bạn, các em bé ấy không ngại những quãng đường xa xôi hàng km hay thức dậy rất sớm để được cắp sách đếntrường.</p>
 							</div>
 							<button class="btn btn-link" onclick="toggleReadMore()">Xem Thêm</button>
 							<!-- <a href="https://rebrand.ly/learn-ud" rel="nofollow" class="read-more-btn wow fadeInUp" data-wow-delay=".5s">Purchase Now <i class="lni lni-arrow-right"></i></a> -->
