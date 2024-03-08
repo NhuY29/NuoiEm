@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Transparent Login Form UI</title>
+    <title>Đăng nhập</title>
     <link rel="stylesheet" href="{{ asset('resources/css/Login.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   </head>

@@ -17,5 +17,10 @@ public function benThu3()
     // return $this->belongsTo(BenThu3::class);
     return $this->belongsTo(BenThu3::class, 'BenThu3_id', 'id');
 }
+public function Quy()
+{
+    return $this->hasMany(Quy::class);
+}
+
 
 }

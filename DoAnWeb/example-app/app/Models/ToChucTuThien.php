@@ -11,4 +11,9 @@ class ToChucTuThien extends Model
     protected $table = 'tochuctuthien'; // Tên của bảng trong CSDL
 
     protected $fillable = ['Ten', 'MoTa', 'DiaChi', 'SDT', 'Email', 'ThongTin'];
+    public function Quy()
+    {
+        return $this->hasMany(Quy::class);
+    }
+    
 }

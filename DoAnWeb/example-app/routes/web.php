@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BenThu3Controller;
 use App\Http\Controllers\ToChucTuThienController;
 use App\Http\Controllers\TreEmController;
+use App\Http\Controllers\QuyController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,8 +26,8 @@ Route::get('/home', function () {
 Route::get('/home2', function () {
     return view('home2');
 });
-Route::get('/Loginss', function () {
-    return view('Loginss');
+Route::get('/', function () {
+    return view('index');
 });
 Route::get('/menu', function () {
     return view('menu');
@@ -52,6 +53,13 @@ Route::delete('/deleteTreEm/{id}', [TreEmController::class, 'delete']);
 Route::get('/editTreEm/{id}', [TreEmController::class, 'edit']);
 Route::put('/updateTreEm/{id}', [TreEmController::class, 'update']);
 Route::match(['get', 'post'], '/search2', [TreEmController::class, 'search'])->name('search2');
+// Quỹ
+Route::get('/Quy', [QuyController::class, 'index']);
+Route::post('/Quy', [QuyController::class, 'xuLyDuLieu']);
+Route::delete('/deleteQuy/{id}', [QuyController::class, 'delete']);
+Route::get('/editQuy/{id}', [QuyController::class, 'edit']);
+Route::put('/updateQuy/{id}', [QuyController::class, 'update']);
+Route::match(['get', 'post'], '/searchQuy', [QuyController::class, 'search'])->name('searchQuy');
 // Route::get('/save', [BenThu3Controller::class, 'hienThiForm']);
 // Route::get('/NLBenThu3', function () {
 //     return view('NL_BenThu3');
