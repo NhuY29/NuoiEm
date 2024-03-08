@@ -70,17 +70,27 @@ class TreEmController extends Controller
     //phan trang
     public function search(Request $request)
     {
-        // $query = $request->input('search-items-name');
-        // $allBenThu3Records = BenThu3::where('Ten', 'like', '%'.$query.'%')->paginate(3);; // Thay YourModel và column_name bằng tên mô hình và tên cột của bạn
-        // return view('NL_BenThu3', ['allBenThu3Records' => $allBenThu3Records]);
+        
         $query = $request->input('search-items-name');
         $allTreEmRecords = TreEm::where('Ten', 'like', '%'.$query.'%')->paginate(5);
         $i = 0; // Start counter at 1
     
+        // Lấy dữ liệu BenThu3 nếu cần
+        $allBenThubaRecords = BenThu3::where('isdelete', 0)->get();
+    
         return view('TreEm', [
             'allTreEmRecords' => $allTreEmRecords,
+            'allBenThubaRecords' => $allBenThubaRecords, // Pass the BenThu3 data to the view
             'i' => $i, // Pass the counter variable
         ]);
+        // $query = $request->input('search-items-name');
+        // $allTreEmRecords = TreEm::where('Ten', 'like', '%'.$query.'%')->paginate(5);
+        // $i = 0; // Start counter at 1
+    
+        // return view('TreEm', [
+        //     'allTreEmRecords' => $allTreEmRecords,
+        //     'i' => $i, // Pass the counter variable
+        // ]);
       
     }
     public function hienThiForm()
