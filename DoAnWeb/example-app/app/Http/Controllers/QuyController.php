@@ -66,7 +66,7 @@ class QuyController extends Controller
         $allTreEmRecords = TreEm::where('isdelete', 0)->get();
         $allToChucTuThienRecords = ToChucTuThien::where('isdelete', 0)->get();
 
-        return view('Quy', compact('allQuyRecords', 'allTreEmRecords',' allToChucTuThienRecords'))->with('i',(request()->input('page',1)-1)*5);
+        return view('Quy', compact('allQuyRecords', 'allTreEmRecords', 'allToChucTuThienRecords'))->with('i', (request()->input('page', 1) - 1) * 5);
     }
     
     //phan trang
