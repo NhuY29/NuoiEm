@@ -28,6 +28,7 @@ return new class extends Migration
             $table->string("Ten")->nullable();
             $table->boolean("GioiTinh")->nullable();
             $table->string("TenTruongHoc")->nullable();
+            $table->boolean("TrangThai")->nullable();
             $table->string("DiaChi")->nullable();
             $table->unsignedBigInteger('BenThu3_id');
             $table->foreign('BenThu3_id')->references('id')->on('_ben_thu3');
