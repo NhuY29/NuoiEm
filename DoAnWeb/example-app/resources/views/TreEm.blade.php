@@ -17,7 +17,7 @@
 <body>
     <h1 class="text-2xl font-bold mb-4 text-center text-blue-700 m-16">Nhập Liệu Trẻ Em</h1>
     <div class="max-w-md mx-auto m-16">
-        <form id="addForm" action="/save" method="post" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+        <form id="addForm" action="/TreEm" method="post" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" style="display: none;">
             @csrf
             <div class="mb-4">
                 <label for="Ten" class="block text-gray-700 text-sm font-bold mb-2">Tên:</label>
@@ -103,7 +103,7 @@
                         </form>
                     </td>
                 </tr>
-                <div id="editForm{{ $record->id }}" style="display: none;" class="max-w-md mx-auto my-14">
+                <div id="editForm{{ $record->id }}" style="display: none;" class="max-w-md mx-auto my-20">
                     <form action="/updateTreEm/{{ $record->id }}" method="post" style="display: none;" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
                         @csrf
                         @method('PUT')
@@ -145,18 +145,21 @@
 
 
                         <label for="BenThu3_id" class="block text-gray-700 text-sm font-bold mb-2"> Bên Thứ 3:</label>
-            <div class="relative">
-                <select name="BenThu3_id" class="block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
-                    @foreach ($allBenThubaRecords->where('isdelete', 0) as $record)
-                    <option value="{{ $record->id }}">{{ $record->Ten }}</option>
-                    @endforeach
-                </select>
-                <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
-                    <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                        <path d="M9 9l3 3 3-3z" />
-                    </svg>
-                </div>
-            </div>
+                        <div class="relative">
+                            <select name="BenThu3_id" class="block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
+                                @foreach ($allBenThubaRecords->where('isdelete', 0) as $benThu3Record)
+                                <option value="{{ $benThu3Record->id }}" {{ $benThu3Record->id == $record->BenThu3_id ? 'selected' : '' }}>
+                                    {{ $benThu3Record->Ten }}
+                                </option>
+                                @endforeach
+                            </select>
+                            <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                                <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                                    <path d="M9 9l3 3 3-3z" />
+                                </svg>
+                            </div>
+                        </div>
+                        <br>
                         <div class="flex items-center justify-between">
 
                             <button type="button" onclick="cancelEdit({{ $record->id }})" class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Hủy</button>
