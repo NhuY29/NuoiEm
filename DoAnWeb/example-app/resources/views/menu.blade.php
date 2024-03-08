@@ -2,101 +2,63 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-
-    <!--====== Title ======-->
-    <title>Dự Án Nuôi Em</title>
-
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!--====== Favicon Icon ======-->
-    <link rel="shortcut icon" href="resources/images/logo.svg" type="image/png">
-
-    <!--====== Animate CSS ======-->
-    <!-- <link rel="stylesheet" href="resources/css/animate.css"> -->
-    <link rel="stylesheet" href="{{ asset('resources/css/animate.css') }}">
-
-    <!--====== Line Icons CSS ======-->
-    <link rel="stylesheet" href="resources/css/LineIcons.2.0.css">
-
-    <!--====== Bootstrap CSS ======-->
-    <link rel="stylesheet" href="resources/css/bootstrap-5.0.5-alpha.min.css">
-
-    <!--====== Style CSS ======-->
-    <link rel="stylesheet" href="{{ asset('resources/css/style.css') }}">
-
-
-</head>>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.15/dist/tailwind.min.css" rel="stylesheet">
+</head>
 <body>
-    <header class="header_area">
-        <div id="header_navbar" class="header_navbar">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-xl-12">
-                        <nav class="navbar navbar-expand-lg">
-                            <a class="navbar-brand" href="index.html">
-                                <img id="logo" src="resources/images/logo.svg" alt="Logo">
-                            </a>
-                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                                <span class="toggler-icon"></span>
-                                <span class="toggler-icon"></span>
-                                <span class="toggler-icon"></span>
-                            </button>
-                            <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
-                                <ul id="nav" class="navbar-nav ml-auto">
-                                    <!-- <li class="nav-item">
-										<a class="page-scroll" href="#gioi-thieu">Giới Thiệu</a>
-									</li> -->
-                                    <li class="nav-item">
-                                        <nav id="nav" class="navbar-nav ml-auto">
-                                    <li class="nav-item dropdown hover:bg-gray-200">
-                                        <a class="nav-link dropdown-toggle text-white hover:text-gray-800 focus:outline-none py-2 px-3" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            Menu
-                                        </a>
-                                        <div class="dropdown-menu shadow-sm rounded-md mt-2 absolute right-0 bg-white w-48 z-50 hidden" aria-labelledby="navbarDropdown">
-                                            <a class="dropdown-item block py-2 px-4 text-sm hover:bg-gray-100" href="#">Nhận Mã</a>
-                                            <a class="dropdown-item block py-2 px-4 text-sm hover:bg-gray-100" href="#">Tra Mã</a>
-                                            <a class="dropdown-item block py-2 px-4 text-sm hover:bg-gray-100" href="#">Thăm Em</a>
-                                            <a class="dropdown-item block py-2 px-4 text-sm hover:bg-gray-100" href="#">Hệ Sinh Thái</a>
-                                            <a class="dropdown-item block py-2 px-4 text-sm hover:bg-gray-100" href="#">Đăng Xuất</a>
-                                        </div>
-                                    </li>
-                        </nav>
-
-                        </li>
-                        <li class="nav-item">
-                            <a class="page-scroll" href="#tra-ma">Tra Mã</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="page-scroll" href="#tham-em">Thăm Em</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="page-scroll" href="#he-sinh-thai">Hệ Sinh Thái</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="header-btn btn-hover" href="#courses">Đăng Xuất</a>
-                        </li>
-                        </ul>
-                    </div> <!-- navbar collapse -->
-                    </nav> <!-- navbar -->
+<nav class="bg-blue-500">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16">
+      <div class="flex items-center">
+        <div class="flex-shrink-0">
+          <img class="h-8 w-8" src="resources/images/logo.svg" alt="Logo">
+        </div>
+        <div class="hidden md:block">
+          <div class="ml-10 flex items-baseline space-x-4">
+            <!-- Thêm menu xổ xuống dưới đây -->
+            <div class="relative">
+              <button type="button" class="px-3 py-2 rounded-md text-sm font-medium text-white hover:text-gray-300 focus:outline-none focus:text-gray-300" id="aboutMenu">
+                Danh sách
+                <svg class="h-4 w-4 inline-block ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+              </button>
+              <div class="absolute right-0 mt-2 w-56 origin-top-right bg-white rounded-md shadow-lg hidden" id="aboutMenuDropdown">
+                <div class="py-1" role="menu" aria-orientation="vertical" aria-labelledby="aboutMenu">
+                  <a href="/TreEm" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Trẻ Em</a>
+                  <a href="/save" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Bên Thứ 3</a>
+                  <a href="/ToChucTuThien" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Tổ Chức Từ Thiện</a>
                 </div>
-            </div> <!-- row -->
-        </div> <!-- container -->
-        </div> <!-- header navbar -->
-    </header>
+              </div>
+            </div>
+            <a href="#" class="px-3 py-2 rounded-md text-sm font-medium text-white hover:text-gray-300">Users</a>
+          </div>
+        </div>
+      </div>
+      <div class="hidden md:block">
+        <div class="ml-4 flex items-center md:ml-6">
+          <!-- Thêm nút đăng nhập và đăng xuất tại đây -->
+          <button class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow">Đăng Xuất</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
 </body>
 
-</html>
-<style>
-    .header_navbar {
-        background-color: darkblue;
-        height: 90px;
-        display: flex;
-        align-items: center;
-        /* Căn giữa theo chiều dọc */
-        justify-content: space-between;
-        /* Căn giữa theo chiều ngang và tạo khoảng cách giữa các phần tử */
+<script>
+  const aboutMenu = document.getElementById('aboutMenu');
+  const aboutMenuDropdown = document.getElementById('aboutMenuDropdown');
+
+  aboutMenu.addEventListener('click', () => {
+    aboutMenuDropdown.classList.toggle('hidden');
+  });
+
+  // Đóng menu nếu click ra ngoài
+  window.addEventListener('click', (e) => {
+    if (!aboutMenu.contains(e.target) && !aboutMenuDropdown.contains(e.target)) {
+      aboutMenuDropdown.classList.add('hidden');
     }
-</style>
+  });
+</script>

@@ -15,7 +15,10 @@
 </head>
 
 <body>
-    <h1 class="text-2xl font-bold mb-4 text-center text-blue-700 m-16">Nhập Liệu Tổ Chức Từ Thiện </h1>
+<header>
+    @include('menu')
+    </header>
+    <h1 class="text-2xl font-bold mb-4 text-center text-blue-700 m-12">Nhập Liệu Tổ Chức Từ Thiện </h1>
     <div class="max-w-md mx-auto">
         <form id="addForm" action="/ToChucTuThien" method="post" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" style="display: none;">
             @csrf
@@ -88,7 +91,7 @@
                         </form>
                     </td>
                 </tr>
-                <div id="editForm{{ $record->id }}" style="display: none;" class="max-w-md mx-auto my-16">
+                <div id="editForm{{ $record->id }}" style="display: none;" class="max-w-md mx-auto my-8">
                     <form action="/updateToChucTuThien/{{ $record->id }}" method="post" style="display: none;" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
                         @csrf
                         @method('PUT')
