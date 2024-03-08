@@ -32,7 +32,17 @@
             </div>
             <div class="mb-4">
                 <label for="TrangThai" class="block text-gray-700 text-sm font-bold mb-2">Trạng Thái:</label>
-                <input type="text" id="TrangThai" name="TrangThai" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                <div class="relative">
+                    <select id="TrangThai" name="TrangThai" class="block appearance-none w-full bg-white border border-gray-400 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:border-blue-500">
+                        <option value="1">Ngưng hoạt động</option>
+                        <option value="0">Còn hoạt động</option>
+                    </select>
+                    <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                        <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                            <path d="M9 9l3 3 3-3z" />
+                        </svg>
+                    </div>
+                </div>
             </div>
             <label for="TreEm_id" class="block text-gray-700 text-sm font-bold mb-2"> Trẻ Em:</label>
             <div class="relative">
