@@ -60,10 +60,10 @@ class TreEmController extends Controller
     }
     public function index()
     {
-        $allTreEmRecords = TreEm::paginate(5);
+        $allTreEmRecords = TreEm::with('benThu3')->paginate(5);
         $allBenThubaRecords = BenThu3::where('isdelete', 0)->get();
 
-    return view('TreEm', compact('allTreEmRecords', 'allBenThubaRecords'))->with('i',(request()->input('page',1)-1)*5);
+      return view('TreEm', compact('allTreEmRecords', 'allBenThubaRecords'))->with('i',(request()->input('page',1)-1)*5);
     }
     
     
