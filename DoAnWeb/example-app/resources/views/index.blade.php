@@ -10,14 +10,15 @@
     <div class="bg-img">
       <div class="content">
         <header>Login Form</header>
-        <form action="#">
+        <form method="POST" action="{{ route('login') }}">
+        @csrf
           <div class="field">
             <span class="fa fa-user"></span>
-            <input type="text" required placeholder="Email or Phone">
+            <input type="text" name="email" required placeholder="Email or Phone">
           </div>
           <div class="field space">
             <span class="fa fa-lock"></span>
-            <input type="password" class="pass-key" required placeholder="Password">
+            <input type="password" name="password" class="pass-key" required placeholder="Password">
             <span class="show">SHOW</span>
           </div>
           <div class="pass">

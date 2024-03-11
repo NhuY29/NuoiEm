@@ -5,7 +5,12 @@ use App\Http\Controllers\BenThu3Controller;
 use App\Http\Controllers\ToChucTuThienController;
 use App\Http\Controllers\TreEmController;
 use App\Http\Controllers\QuyController;
+use App\Http\Controllers\UserController;
 
+use App\Models\User;
+use App\Models\Roles;
+use App\Models\UserModel;
+use Illuminate\Support\Facades\Hash;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -26,8 +31,21 @@ Route::get('/home', function () {
 Route::get('/home2', function () {
     return view('home2');
 });
-Route::get('/', function () {
-    return view('index');
+//user
+Route::get('/User', [UserController::class, 'index']);
+Route::post('/User', [UserController::class, 'xuLyDuLieu']);
+Route::delete('/deleteUser/{id}', [UserController::class, 'delete']);
+Route::get('/editUser/{id}', [UserController::class, 'edit']);
+Route::put('/updateUser/{id}', [UserController::class, 'update']);
+Route::match(['get', 'post'], '/searchUser', [UserController::class, 'search'])->name('searchUser');
+//login
+Route::get('/', [UserController::class, 'Loginsss']);
+Route::post('/login', [UserController::class, 'login'])->name('login');
+
+// Route::post('/register', [UserController::class, 'register']);
+
+Route::get('/Resgisted', function () {
+    return view('Resgisted');
 });
 Route::get('/menu', function () {
     return view('menu');

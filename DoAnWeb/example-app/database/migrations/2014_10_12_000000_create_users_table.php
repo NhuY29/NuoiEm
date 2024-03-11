@@ -9,12 +9,21 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
+    
     public function up(): void
     {
+        Schema::create('roles', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->string("name")->nullable();
+            $table->timestamps();
+        });
+
         Schema::create('users', function (Blueprint $table) {
             $table->bigIncrements("id");
             $table->string('name');
             $table->string('email')->unique();
+            $table->unsignedBigInteger('roles_id');
+            $table->foreign('roles_id')->references('id')->on('roles');
             $table->string('Phone')->nullable();
             $table->string('Address')->nullable();
             $table->timestamp('email_verified_at')->nullable();
@@ -30,6 +39,7 @@ return new class extends Migration
      */
     public function down(): void
     {
+        Schema::dropIfExists('roles');
         Schema::dropIfExists('users');
     }
 };
