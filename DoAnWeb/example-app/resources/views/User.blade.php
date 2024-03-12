@@ -87,7 +87,7 @@
                     <td class="px-4 py-2 text-center border whitespace-normal max-w-xs">{{ $record->Address }}</td>
                     <td class="px-4 py-2 text-center border whitespace-normal max-w-xs">{{ $record->roles->name }}</td>
                     <td class="px-4 py-2 text-center border whitespace-nowrap max-w-xs">
-                        <form id="deleteForm{{ $record->id }}" action="/deleteTreEm/{{ $record->id }}" method="post">
+                        <form id="deleteForm{{ $record->id }}" action="/deleteUser/{{ $record->id }}" method="post">
                             @csrf
                             @method('DELETE')
                             <button type="button" data-id="{{ $record->id }}" onclick="deleteRow(this)" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Xóa</button>
