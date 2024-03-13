@@ -27,16 +27,16 @@
                 <input type="text" id="name" name="name" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
             </div>
             <div class="mb-4">
-                <label for="email" class="block text-gray-700 text-sm font-bold mb-2">Email:</label>
-                <textarea id="email" name="email" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"></textarea>
-            </div>
-            <div class="mb-4">
-                <label for="Phone" class="block text-gray-700 text-sm font-bold mb-2">Số điện thoại:</label>
-                <textarea id="Phone" name="Phone" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"></textarea>
+                <label for="Email" class="block text-gray-700 text-sm font-bold mb-2">Email:</label>
+                <input type="text" id="Email" name="Email" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
             </div>
             <div class="mb-4">
                 <label for="Address" class="block text-gray-700 text-sm font-bold mb-2">Địa Chỉ:</label>
-                <input type="text" id="Address" name="Address" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                <textarea id="Address" name="Address" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"></textarea>
+            </div>
+            <div class="mb-4">
+                <label for="Phone" class="block text-gray-700 text-sm font-bold mb-2">Điện Thoại:</label>
+                <input type="text" id="Phone" name="Phone" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
             </div>
             <label for="BenThu3_id" class="block text-gray-700 text-sm font-bold mb-2"> Role :</label>
             <div class="relative">
@@ -85,7 +85,17 @@
                     <td class="px-4 py-2 text-center border whitespace-normal max-w-xs">{{ $record->email }}</td>
                     <td class="px-4 py-2 text-center border whitespace-normal max-w-xs">{{ $record->Phone }}</td>
                     <td class="px-4 py-2 text-center border whitespace-normal max-w-xs">{{ $record->Address }}</td>
-                    <td class="px-4 py-2 text-center border whitespace-normal max-w-xs">{{ $record->roles->name }}</td>
+                    <td class="px-4 py-2 text-center border whitespace-normal max-w-xs">
+                    @if($record->roles->roles_id == 1)
+                        SuperAdmin
+                    @elseif($record->roles->roles_id == 2)
+                        Admin
+                    @elseif($record->roles->roles_id == 3)
+                        Nhanvien
+                    @else
+                        Unknown Role
+                    @endif
+                </td>
                     <td class="px-4 py-2 text-center border whitespace-nowrap max-w-xs">
                         <form id="deleteForm{{ $record->id }}" action="/deleteTreEm/{{ $record->id }}" method="post">
                             @csrf
