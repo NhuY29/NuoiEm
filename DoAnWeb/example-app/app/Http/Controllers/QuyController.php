@@ -62,7 +62,7 @@ class QuyController extends Controller
     
     public function index()
     {
-        $allQuyRecords = Quy::with('TreEm')->paginate(5);
+        $allQuyRecords = Quy::where('isDelete', false)->paginate(5);
         $allTreEmRecords = TreEm::where('isdelete', 0)->get();
         $allToChucTuThienRecords = ToChucTuThien::where('isdelete', 0)->get();
 
@@ -82,9 +82,12 @@ class QuyController extends Controller
         ->where('isDelete', false) // Chỉ lấy các bản ghi có isDelete là false
         ->paginate(5);
         $i = 0; // Start counter at 1
-    
+        $allTreEmRecords = TreEm::where('isdelete', 0)->get();
+        $allToChucTuThienRecords = ToChucTuThien::where('isdelete', 0)->get();
         return view('Quy', [
             'allQuyRecords' => $allQuyRecords,
+            'allTreEmRecords' => $allTreEmRecords,
+            'allToChucTuThienRecords' => $allToChucTuThienRecords,
             'i' => $i, // Pass the counter variable
         ]);
       
