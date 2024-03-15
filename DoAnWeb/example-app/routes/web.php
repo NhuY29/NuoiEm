@@ -40,6 +40,7 @@ Route::put('/updateUser/{id}', [UserController::class, 'update']);
 Route::match(['get', 'post'], '/searchUser', [UserController::class, 'search'])->name('searchUser');
 //login
 Route::get('/', [UserController::class, 'Loginsss']);
+Route::get('/Logout', [UserController::class, 'logout'])->name('logout');
 Route::post('/login', [UserController::class, 'login'])->name('login');
 
 // Route::post('/register', [UserController::class, 'register']);

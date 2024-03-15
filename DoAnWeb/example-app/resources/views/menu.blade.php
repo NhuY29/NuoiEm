@@ -39,7 +39,11 @@
       <div class="hidden md:block">
         <div class="ml-4 flex items-center md:ml-6">
           <!-- Thêm nút đăng nhập và đăng xuất tại đây -->
-          <button class="text-white hover:bg-blue-100 hover:text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow">Đăng Xuất</button>
+          <form id="logout-form" action="{{ route('logout') }}" method="GET" >
+    @csrf
+    <button class="text-white hover:bg-blue-100 hover:text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow">Đăng Xuất</button>
+</form>
+         
         </div> 
       </div>
     </div>

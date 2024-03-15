@@ -9,6 +9,7 @@ use App\Models\UserModel;
 use App\Models\Roles;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Cookie;
 
 use function Laravel\Prompts\alert;
 
@@ -49,6 +50,8 @@ class UserController extends Controller
 
         if (Auth::attempt($credentials)) {
             // Authentication passed...
+            $user = Auth::user();
+            Cookie::queue('user_id', $user->id, 60);
             return redirect()->intended('/User');
         }
 
@@ -56,7 +59,17 @@ class UserController extends Controller
             'email' => 'Email hoặc mật khẩu không chính xác.',
         ]);
     }
-
+    public function logout()
+    {
+        // Xóa cookie đã lưu
+        Cookie::queue(Cookie::forget('user_id'));
+    
+        // Thực hiện đăng xuất
+        Auth::logout();
+    
+        // Redirect về trang đăng nhập hoặc trang chính
+        return redirect('/');
+    }
 
     public function xuLyDuLieu(Request $request)
     {
