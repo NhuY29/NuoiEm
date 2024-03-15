@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nhập Liệu Trẻ Em</title>
+    <title>Nhập Liệu Quỹ</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.15/dist/tailwind.min.css" rel="stylesheet">
     <style>
         .max-w-md {
@@ -18,43 +18,32 @@
     <header>
         @include('menu')
     </header>
-    <h1 class="text-2xl font-bold mb-4 text-center text-blue-700 m-12">Nhập Liệu Trẻ Em</h1>
-    <div class="max-w-md mx-auto m-16">
-        <form id="addForm" action="/TreEm" method="post" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" style="display: none;">
+    <h1 class="text-2xl font-bold mb-4 text-center text-blue-700 m-12">Nhập Liệu Quỹ</h1>
+    <div class="max-w-md mx-auto">
+        <form id="addForm" action="/Quy" method="post" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-20" style="display: none;">
             @csrf
             <div class="mb-4">
                 <label for="Ten" class="block text-gray-700 text-sm font-bold mb-2">Tên:</label>
                 <input type="text" id="Ten" name="Ten" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
             </div>
             <div class="mb-4">
-                <label for="GioiTinh" class="block text-gray-700 text-sm font-bold mb-2">Giới tính:</label>
-                <div class="relative">
-                    <select id="GioiTinh" name="GioiTinh" class="block appearance-none w-full bg-white border border-gray-400 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:border-blue-500">
-                        <option value="1">Nam</option>
-                        <option value="0">Nữ</option>
-                    </select>
-                    <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
-                        <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                            <path d="M9 9l3 3 3-3z" />
-                        </svg>
-                    </div>
-                </div>
+                <label for="MoTa" class="block text-gray-700 text-sm font-bold mb-2">Mô Tả:</label>
+                <input type="text" id="MoTa" name="MoTa" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
             </div>
             <div class="mb-4">
-                <label for="TenTruongHoc" class="block text-gray-700 text-sm font-bold mb-2">Tên Trường Học:</label>
-                <input type="text" id="TenTruongHoc" name="TenTruongHoc" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                <label for="TrangThai" class="block text-gray-700 text-sm font-bold mb-2">Trạng Thái:</label>
+                <select id="TrangThai" name="TrangThai" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                    <option value="0">Đang hoạt động</option>
+                    <option value="1">Ngưng hoạt động</option>
+                </select>
             </div>
-            <div class="mb-4">
-                <label for="DiaChi" class="block text-gray-700 text-sm font-bold mb-2">Địa Chỉ:</label>
-                <textarea id="DiaChi" name="DiaChi" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"></textarea>
-            </div>
-            <label for="BenThu3_id" class="block text-gray-700 text-sm font-bold mb-2"> Bên Thứ 3:</label>
+
+
+            <label for="TreEm_id" class="block text-gray-700 text-sm font-bold mb-2">Trẻ Em:</label>
             <div class="relative">
-                <select name="BenThu3_id" class="block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
-                    @foreach ($allBenThubaRecords as $record)
-                    @if($record->isdelete == 0)
+                <select name="TreEm_id" class="block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
+                    @foreach ($allTreEmRecords as $record)
                     <option value="{{ $record->id }}">{{ $record->Ten }}</option>
-                    @endif
                     @endforeach
                 </select>
                 <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
@@ -62,9 +51,22 @@
                         <path d="M9 9l3 3 3-3z" />
                     </svg>
                 </div>
+                <br>
             </div>
-
-            <br>
+            <label for="ToChucTuThien_id" class="block text-gray-700 text-sm font-bold mb-2">Tổ Chức Từ Thiện:</label>
+            <div class="relative">
+                <select name="ToChucTuThien_id" class="block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
+                    @foreach ($allToChucTuThienRecords as $record)
+                    <option value="{{ $record->id }}">{{ $record->Ten }}</option>
+                    @endforeach
+                </select>
+                <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                    <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                        <path d="M9 9l3 3 3-3z" />
+                    </svg>
+                </div>
+                <br>
+            </div>
             <div class="flex items-center justify-between">
                 <button type="button" onclick="cancelAdd()" class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Hủy</button>
                 <input type="submit" value="Xác Nhận" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
@@ -80,24 +82,24 @@
                 <tr>
                     <th class="px-4 py-2 bg-blue-500 text-white border">STT</th>
                     <th class="px-4 py-2 bg-blue-500 text-white border">Tên</th>
-                    <th class="px-4 py-2 bg-blue-500 text-white border">Giới tính</th>
-                    <th class="px-4 py-2 bg-blue-500 text-white border">Tên Trường Học</th>
-                    <th class="px-4 py-2 bg-blue-500 text-white border">Địa chỉ</th>
-                    <th class="px-4 py-2 bg-blue-500 text-white border">Bên Thứ 3</th>
+                    <th class="px-4 py-2 bg-blue-500 text-white border">Mô Tả</th>
+                    <th class="px-4 py-2 bg-blue-500 text-white border">Trạng Thái</th>
+                    <th class="px-4 py-2 bg-blue-500 text-white border">Trẻ Em</th>
+                    <th class="px-4 py-2 bg-blue-500 text-white border">Tổ Chức Từ Thiện</th>
                     <th class="px-4 py-2 bg-blue-500 text-white border">Thao Tác</th>
                 </tr>
             </thead>
             <tbody>
-                @foreach($allTreEmRecords as $index => $record)
+                @foreach($allQuyRecords as $index => $record)
                 <tr id="row{{ $record->id }}" data-id="{{ $record->id }}" class="{{ $index % 2 === 0 ? 'bg-white' : 'bg-blue-100' }} border">
                     <td class="px-4 py-2 text-center border whitespace-normal max-w-xs">{{ ++$i }}</td>
                     <td class="px-4 py-2 text-center border whitespace-normal max-w-xs">{{ $record->Ten }}</td>
-                    <td class="px-4 py-2 text-center border whitespace-normal max-w-xs">{{ $record->GioiTinh ? 'Nam' : 'Nữ' }}</td>
-                    <td class="px-4 py-2 text-center border whitespace-normal max-w-xs">{{ $record->TenTruongHoc }}</td>
-                    <td class="px-4 py-2 text-center border whitespace-normal max-w-xs">{{ $record->DiaChi }}</td>
-                    <td class="px-4 py-2 text-center border whitespace-normal max-w-xs">{{ $record->benThu3->Ten }}</td>
-                    <td class="px-4 py-2 text-center border whitespace-nowrap max-w-xs">
-                        <form id="deleteForm{{ $record->id }}" action="/deleteTreEm/{{ $record->id }}" method="post">
+                    <td class="px-4 py-2 text-center border whitespace-normal max-w-xs">{{ $record->MoTa }}</td>
+                    <td class="px-4 py-2 text-center border whitespace-normal max-w-xs">{{ $record->TrangThai }}</td>
+                    <td class="px-4 py-2 text-center border whitespace-normal max-w-xs">{{ $record->TreEm->Ten }}</td>
+                    <td class="px-4 py-2 text-center border whitespace-normal max-w-xs">{{ $record->ToChucTuThien->Ten }}</td>
+                    <td>
+                        <form id="deleteForm{{ $record->id }}" action="/deleteQuy/{{ $record->id }}" method="post">
                             @csrf
                             @method('DELETE')
                             <button type="button" data-id="{{ $record->id }}" onclick="deleteRow(this)" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Xóa</button>
@@ -106,12 +108,11 @@
                         </form>
                     </td>
                 </tr>
-                <div id="editForm{{ $record->id }}" style="display: none;" class="max-w-md mx-auto my-20">
-                    <form action="/updateTreEm/{{ $record->id }}" method="post" style="display: none;" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+                <div id="editForm{{ $record->id }}" style="display: none;" class="max-w-md mx-auto my-8">
+                    <form action="/updateQuy/{{ $record->id }}" method="post" style="display: none;" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
                         @csrf
                         @method('PUT')
                         <div class="mb-4">
-
 
                             <label for="Ten_edit{{ $record->id }}" class="block text-gray-700 text-sm font-bold mb-2">Tên:</label>
 
@@ -120,49 +121,56 @@
                         </div>
                         <div class="mb-4">
 
-                            <label for="GioiTinh_edit{{ $record->id }}" class="block text-gray-700 text-sm font-bold mb-2">Giới tính:</label>
+                            <label for="MoTa_edit{{ $record->id }}" class="block text-gray-700 text-sm font-bold mb-2">Mô Tả:</label>
 
-                            <select id="GioiTinh_edit{{ $record->id }}" name="GioiTinh" class="block appearance-none w-full bg-white border border-gray-400 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:border-blue-500">
+                            <input type="text" id="MoTa_edit{{ $record->id }}" name="MoTa" value="{{ $record->MoTa }}" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
 
-                                <option value="1" {{ $record->GioiTinh == 1 ? 'selected' : '' }}>Nam</option>
+                        </div>
+                        <div class="mb-4">
 
-                                <option value="0" {{ $record->GioiTinh == 0 ? 'selected' : '' }}>Nữ</option>
+                            <label for="TrangThai_edit{{ $record->id }}" class="block text-gray-700 text-sm font-bold mb-2">Trạng Thái:</label>
+
+                            <select id="TrangThai_edit{{ $record->id }}" name="TrangThai" class="block appearance-none w-full bg-white border border-gray-400 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:border-blue-500">
+
+                                <option value="1" {{ $record->TrangThai == 1 ? 'selected' : '' }}>Ngưng Hoạt Động</option>
+
+                                <option value="0" {{ $record->TrangThai == 0 ? 'selected' : '' }}>Còn Hoạt Động</option>
 
                             </select>
 
                         </div>
                         <div class="mb-4">
-
-                            <label for="TenTruongHoc_edit{{ $record->id }}" class="block text-gray-700 text-sm font-bold mb-2">Tên Trường Học:</label>
-
-                            <textarea id="TenTruongHoc_edit{{ $record->id }}" name="TenTruongHoc" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">{{ $record->DiaChi }}</textarea>
-
-                        </div>
-                        <div class="mb-4">
-
-                            <label for="DiaChi_edit{{ $record->id }}" class="block text-gray-700 text-sm font-bold mb-2">Địa chỉ:</label>
-
-                            <textarea id="DiaChi_edit{{ $record->id }}" name="DiaChi" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">{{ $record->DiaChi }}</textarea>
-
-                        </div>
-
-
-                        <label for="BenThu3_id" class="block text-gray-700 text-sm font-bold mb-2"> Bên Thứ 3:</label>
-                        <div class="relative">
-                            <select name="BenThu3_id" class="block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
-                                @foreach ($allBenThubaRecords->where('isdelete', 0) as $benThu3Record)
-                                <option value="{{ $benThu3Record->id }}" {{ $benThu3Record->id == $record->BenThu3_id ? 'selected' : '' }}>
-                                    {{ $benThu3Record->Ten }}
-                                </option>
-                                @endforeach
-                            </select>
-                            <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
-                                <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                                    <path d="M9 9l3 3 3-3z" />
-                                </svg>
+                            <label for="TreEm_id_edit{{ $record->id }}" class="block text-gray-700 text-sm font-bold mb-2">Trẻ Em:</label>
+                            <div class="relative">
+                                <select id="TreEm_id_edit{{ $record->id }}" name="TreEm_id" class="block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
+                                    @foreach ($allTreEmRecords as $treEmRecord)
+                                    <option value="{{ $treEmRecord->id }}" {{ $treEmRecord->id == $record->TreEm_id ? 'selected' : '' }}>{{ $treEmRecord->Ten }}</option>
+                                    @endforeach
+                                </select>
+                                <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                                    <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                                        <path d="M9 9l3 3 3-3z" />
+                                    </svg>
+                                </div>
                             </div>
                         </div>
-                        <br>
+
+                        <div class="mb-4">
+                            <label for="ToChucTuThien_id_edit{{ $record->id }}" class="block text-gray-700 text-sm font-bold mb-2">Tổ Chức Từ Thiện:</label>
+                            <div class="relative">
+                                <select id="ToChucTuThien_id_edit{{ $record->id }}" name="ToChucTuThien_id" class="block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
+                                    @foreach ($allToChucTuThienRecords as $toChucTuThienRecord)
+                                    <option value="{{ $toChucTuThienRecord->id }}" {{ $toChucTuThienRecord->id == $record->ToChucTuThien_id ? 'selected' : '' }}>{{ $toChucTuThienRecord->Ten }}</option>
+                                    @endforeach
+                                </select>
+                                <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                                    <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                                        <path d="M9 9l3 3 3-3z" />
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+
                         <div class="flex items-center justify-between">
 
                             <button type="button" onclick="cancelEdit({{ $record->id }})" class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Hủy</button>
@@ -176,8 +184,9 @@
                 <div class="flex items-center my-4">
                     <button onclick="toggleAddForm()" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Thêm</button>
                     <div class="flex items-center ml-4">
-
-                        <form action="{{ route('search2') }}" method="POST">
+                        <!-- <input type="text" class="border-2 border-gray-300 bg-white h-10 px-5 pr-16 rounded-lg text-sm focus:outline-none" placeholder="Tìm Kiếm">
+                        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg ml-2">Search</button> -->
+                        <form action="{{ route('searchQuy') }}" method="POST">
                             @csrf
                             <input name="search-items-name" type="text" class="border-2 border-gray-300 bg-white h-10 px-5 pr-16 rounded-lg text-sm focus:outline-none" placeholder="Tìm Kiếm">
                             <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg ml-2">Search</button>
@@ -187,12 +196,16 @@
             </tbody>
 
         </table>
-
-        {{ $allTreEmRecords->links() }}
-
-    </div>
+        {{ $allQuyRecords->links() }}
     </div>
 </body>
+@if(Session::has('alert'))
+<script>
+    alert("{{ Session::get('alert') }}");
+</script>
+@endif
+
+</html>
 <script>
     document.addEventListener('DOMContentLoaded', function() {
         let form = document.getElementById('searchForm');
@@ -201,7 +214,6 @@
             // Thực hiện tìm kiếm bằng JavaScript hoặc gửi AJAX request tới server
         });
     });
-
 
     function deleteRow(button) {
         var id = button.getAttribute('data-id');
