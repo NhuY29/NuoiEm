@@ -96,14 +96,23 @@ class UserController extends Controller
         $Phone = $request->get('Phone');
         $Address = $request->get('Address');
         $roles_id = $request->get('roles_id');
+        $password = $request->get('password');
         UserModel::create([
             'name' =>  $name,
             'email' => $email ,
             'Phone' => $Phone,
             'Address' => $Address,
+            'password' => Hash::make($password),
             'roles_id' => $roles_id,
 
         ]);
+
+        // $user = new User();
+        //     $user->name = $name;
+        //     $user->email =  $email;
+        //     $user->password = Hash::make('password');
+        //     $user->roles_id = $roles_id;
+        //     $user->save();
         return redirect()->to("/User")->with('alert', 'Đã thêm thành công');
     }
     public function index()

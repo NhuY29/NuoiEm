@@ -28,19 +28,23 @@
             </div>
             <div class="mb-4">
                 <label for="Email" class="block text-gray-700 text-sm font-bold mb-2">Email:</label>
-                <input type="text" id="Email" name="Email" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                <input type="text" id="Email" name="email" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
             </div>
             <div class="mb-4">
                 <label for="Address" class="block text-gray-700 text-sm font-bold mb-2">Địa Chỉ:</label>
                 <textarea id="Address" name="Address" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"></textarea>
             </div>
             <div class="mb-4">
+                <label for="password" class="block text-gray-700 text-sm font-bold mb-2">Địa Chỉ:</label>
+                <input type="password" id="password" name="password" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"></input>
+            </div>
+            <div class="mb-4">
                 <label for="Phone" class="block text-gray-700 text-sm font-bold mb-2">Điện Thoại:</label>
                 <input type="text" id="Phone" name="Phone" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
             </div>
-            <label for="BenThu3_id" class="block text-gray-700 text-sm font-bold mb-2"> Role :</label>
+            <label for="roles_id" class="block text-gray-700 text-sm font-bold mb-2"> Role :</label>
             <div class="relative">
-                <select name="BenThu3_id" class="block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
+                <select name="roles_id" class="block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
                 @foreach ($allRolesRecords as $record)
   
             <option value="{{ $record->id }}">{{ $record->name }}</option>

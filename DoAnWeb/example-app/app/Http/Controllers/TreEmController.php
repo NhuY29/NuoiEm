@@ -100,7 +100,7 @@ class TreEmController extends Controller
     public function delete($id)
     {
         $record = TreEm::findOrFail($id);
-        $record->delete();
+        $record->update(['isDelete' => 1]);
 
         return redirect()->back()->with('alert', 'Đã xóa bản ghi thành công');
     }
