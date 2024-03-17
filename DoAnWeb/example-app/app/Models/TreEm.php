@@ -22,5 +22,9 @@ public function Quy()
     return $this->hasMany(Quy::class);
 }
 
+public function QuyCaNhan()
+{
+    return $this->hasMany(QuyCaNhan::class);
+}
 
 }

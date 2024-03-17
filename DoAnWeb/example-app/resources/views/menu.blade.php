@@ -29,10 +29,12 @@
                   <a href="/save" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Bên Thứ 3</a>
                   <a href="/ToChucTuThien" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Tổ Chức Từ Thiện</a>
                   <a href="/Quy" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Quỹ</a>
+                  <a href="/QuyCaNhan" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Quỹ Cá Nhân</a>
                 </div>
               </div>
             </div>
             <a href="/User" class="px-3 py-2 rounded-md text-sm font-medium text-white hover:text-gray-300">Users</a>
+            <a href="/" class="px-3 py-2 rounded-md text-sm font-medium text-white hover:text-gray-300">Thống Kê</a>
           </div>
         </div>
       </div>

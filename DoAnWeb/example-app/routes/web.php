@@ -5,6 +5,7 @@ use App\Http\Controllers\BenThu3Controller;
 use App\Http\Controllers\ToChucTuThienController;
 use App\Http\Controllers\TreEmController;
 use App\Http\Controllers\QuyController;
+use App\Http\Controllers\QuyCaNhanController;
 use App\Http\Controllers\UserController;
 
 use App\Models\User;
@@ -79,6 +80,13 @@ Route::delete('/deleteQuy/{id}', [QuyController::class, 'delete']);
 Route::get('/editQuy/{id}', [QuyController::class, 'edit']);
 Route::put('/updateQuy/{id}', [QuyController::class, 'update']);
 Route::match(['get', 'post'], '/searchQuy', [QuyController::class, 'search'])->name('searchQuy');
+// Quỹ Cá Nhân
+Route::get('/QuyCaNhan', [QuyCaNhanController::class, 'index']);
+Route::post('/QuyCaNhan', [QuyCaNhanController::class, 'xuLyDuLieu']);
+Route::delete('/deleteQuyCaNhan/{id}', [QuyCaNhanController::class, 'delete']);
+Route::get('/editQuyCaNhan/{id}', [QuyCaNhanController::class, 'edit']);
+Route::put('/updateQuyCaNhan/{id}', [QuyCaNhanController::class, 'update']);
+Route::match(['get', 'post'], '/searchQuyCaNhan', [QuyCaNhanController::class, 'search'])->name('searchQuyCaNhan');
 // Route::get('/save', [BenThu3Controller::class, 'hienThiForm']);
 // Route::get('/NLBenThu3', function () {
 //     return view('NL_BenThu3');
