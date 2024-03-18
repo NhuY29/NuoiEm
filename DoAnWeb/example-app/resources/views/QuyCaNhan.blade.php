@@ -88,7 +88,7 @@
 
                             <label for="SoTien_edit{{ $record->id }}" class="block text-gray-700 text-sm font-bold mb-2">Số Tiền:</label>
 
-                            <input type="text" id="SoTien_edit{{ $record->id }}" name="SoTien" value="{{ $record->Ten }}" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                            <input type="text" id="SoTien_edit{{ $record->id }}" name="SoTien" value="{{ $record->SoTien }}" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
 
                         </div>
                         <div class="mb-4">
@@ -110,8 +110,11 @@
 
                             <label for="Ngay_gop_edit{{ $record->id }}" class="block text-gray-700 text-sm font-bold mb-2">Ngày Góp:</label>
 
-                            <input type="date" id="Ngay_gop_edit{{ $record->id }}" name="Ngay_gop" value="{{ $record->Ten }}" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
-
+                            <input type="date"
+       id="Ngay_gop_edit{{ $record->id }}"
+       name="Ngay_gop"
+       value="{{ isset($record->Ngay_gop) ? (new DateTime($record->Ngay_gop))->format('Y-m-d') : '' }}"
+       class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
                         </div>
                         
 

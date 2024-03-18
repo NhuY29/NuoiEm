@@ -100,9 +100,9 @@ public function search(Request $request)
     public function update(Request $request, $id)
     {
         $validator = Validator::make($request->all(), [
-            'SoTien' => 'required|int|max:255',
+            'SoTien' => 'required|numeric',
             'TreEm_id' => 'required|string|max:255',
-            'Ngay_gop' => 'required|date|max:255',
+            'Ngay_gop' => 'required|date',
         ]);
 
         if ($validator->fails()) {
