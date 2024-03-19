@@ -23,9 +23,9 @@
         <form id="addForm" action="/QuyCaNhan" method="post" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-20" style="display: none;">
             @csrf
             <div class="mb-4">
-                <label for="SoTien" class="block text-gray-700 text-sm font-bold mb-2">Số Tiền:</label>
-                <input type="text" id="SoTien" name="SoTien" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
-            </div>
+  <label for="SoTien" class="block text-gray-700 text-sm font-bold mb-2">Số Tiền:</label>
+  <input type="text" id="SoTien" name="SoTien" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" oninput="formatCurrency(this)">
+</div>
             <label for="TreEm_id" class="block text-gray-700 text-sm font-bold mb-2">Trẻ Em:</label>
             <div class="relative">
                 <select name="TreEm_id" class="block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
@@ -69,7 +69,7 @@
                 <tr id="row{{ $record->id }}" data-id="{{ $record->id }}" class="{{ $index % 2 === 0 ? 'bg-white' : 'bg-blue-100' }} border">
                     <td class="px-4 py-2 text-center border whitespace-normal max-w-xs">{{ ++$i }}</td>
                     <td class="px-4 py-2 text-center border whitespace-normal max-w-xs">
-                {{ number_format($record->SoTien, 0, ',', '.') }}                     </td>
+                {{ number_format($record->SoTien, 0, ',', ',') }}                     </td>
                     <td class="px-4 py-2 text-center border whitespace-normal max-w-xs">{{ $record->TreEm->Ten }}</td>
                     <td class="px-4 py-2 text-center border whitespace-normal max-w-xs">
                         {{ date('d/m/Y', strtotime($record->Ngay_gop)) }}
@@ -215,4 +215,17 @@
         var form = document.getElementById('addForm');
         form.style.display = 'none'; // Hide the form when the "Hủy" button is clicked
     }
+    function formatCurrency(input) {
+  // Remove non-numeric characters and allow only one decimal point
+  const value = input.value.replace(/[^0-9.]/g, '');
+
+  // Split the value into integer and decimal parts (handling empty decimal)
+  const [integer = '', decimal = ''] = value.split('.');
+
+  // Format the integer part with commas (Western style)
+  const formattedInteger = integer.replace(/(\d)(?=(?:\d{3})+$)/g, '$1,');
+
+  // Combine the formatted parts
+  input.value = `${formattedInteger}${decimal ? `.${decimal}` : ''}`;
+}
 </script>
