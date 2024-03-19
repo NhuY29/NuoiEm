@@ -68,9 +68,12 @@
                 @foreach($allQuyCaNhanRecords as $index => $record)
                 <tr id="row{{ $record->id }}" data-id="{{ $record->id }}" class="{{ $index % 2 === 0 ? 'bg-white' : 'bg-blue-100' }} border">
                     <td class="px-4 py-2 text-center border whitespace-normal max-w-xs">{{ ++$i }}</td>
-                    <td class="px-4 py-2 text-center border whitespace-normal max-w-xs">{{ $record->SoTien }}</td>
+                    <td class="px-4 py-2 text-center border whitespace-normal max-w-xs">
+                {{ number_format($record->SoTien, 0, ',', '.') }}                     </td>
                     <td class="px-4 py-2 text-center border whitespace-normal max-w-xs">{{ $record->TreEm->Ten }}</td>
-                    <td class="px-4 py-2 text-center border whitespace-normal max-w-xs">{{ $record->Ngay_gop }}</td>
+                    <td class="px-4 py-2 text-center border whitespace-normal max-w-xs">
+                        {{ date('d/m/Y', strtotime($record->Ngay_gop)) }}
+                    </td>
                     <td>
                         <form id="deleteForm{{ $record->id }}" action="/deleteQuyCaNhan/{{ $record->id }}" method="post">
                             @csrf
@@ -80,6 +83,7 @@
                         </form>
                     </td>
                 </tr>
+
                 <div id="editForm{{ $record->id }}" style="display: none;" class="max-w-md mx-auto my-8">
                     <form action="/updateQuyCaNhan/{{ $record->id }}" method="post" style="display: none;" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
                         @csrf
@@ -110,13 +114,9 @@
 
                             <label for="Ngay_gop_edit{{ $record->id }}" class="block text-gray-700 text-sm font-bold mb-2">Ngày Góp:</label>
 
-                            <input type="date"
-       id="Ngay_gop_edit{{ $record->id }}"
-       name="Ngay_gop"
-       value="{{ isset($record->Ngay_gop) ? (new DateTime($record->Ngay_gop))->format('Y-m-d') : '' }}"
-       class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                            <input type="date" id="Ngay_gop_edit{{ $record->id }}" name="Ngay_gop" value="{{ isset($record->Ngay_gop) ? (new DateTime($record->Ngay_gop))->format('Y-m-d') : '' }}" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
                         </div>
-                        
+
 
                         <div class="flex items-center justify-between">
 
