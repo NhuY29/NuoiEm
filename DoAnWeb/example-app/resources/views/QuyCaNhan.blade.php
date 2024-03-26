@@ -215,17 +215,25 @@
         var form = document.getElementById('addForm');
         form.style.display = 'none'; // Hide the form when the "Hủy" button is clicked
     }
-    function formatCurrency(input) {
-  // Remove non-numeric characters and allow only one decimal point
-  const value = input.value.replace(/[^0-9.]/g, '');
 
-  // Split the value into integer and decimal parts (handling empty decimal)
-  const [integer = '', decimal = ''] = value.split('.');
+    function formatNumberWithCommas(number) {
+    return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
 
-  // Format the integer part with commas (Western style)
-  const formattedInteger = integer.replace(/(\d)(?=(?:\d{3})+$)/g, '$1,');
+function formatCurrency(input) {
+    const rawValue = input.value; // Giữ nguyên giá trị đã bị loại bỏ dấu phẩy
 
-  // Combine the formatted parts
-  input.value = `${formattedInteger}${decimal ? `.${decimal}` : ''}`;
+    // Loại bỏ dấu phẩy để chuẩn bị định dạng lại
+    const value = rawValue.replace(/,/g, '');
+
+    // Kiểm tra nếu giá trị là một số hợp lệ
+    if (!isNaN(value)) {
+        // Định dạng giá trị với dấu phẩy sau mỗi ba chữ số
+        const formattedValue = formatNumberWithCommas(value);
+
+        // Gán giá trị đã được định dạng vào input
+        input.value = rawValue; // Gán lại giá trị đã bị loại bỏ dấu phẩy vào input
+        input.nextElementSibling.textContent = formattedValue; // Gán giá trị đã được định dạng vào text kế tiếp của input
+    }
 }
 </script>

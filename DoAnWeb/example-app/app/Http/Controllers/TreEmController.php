@@ -6,6 +6,10 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use App\Models\TreEm;
 use App\Models\BenThu3;
+use Maatwebsite\Excel\Facades\Excel;
+use Illuminate\Support\Facades\Session;
+
+
 
 class TreEmController extends Controller
 {
@@ -127,5 +131,12 @@ class TreEmController extends Controller
         $record->update($request->all());
 
         return redirect()->back()->with('success', 'Đã cập nhật bản ghi thành công');
+    }
+
+    public function export()
+    {
+        $records = TreEm::all();
+
+        return Excel::download(new FromCollection($records), 'users.xlsx');
     }
 }

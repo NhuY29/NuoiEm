@@ -91,3 +91,5 @@ Route::match(['get', 'post'], '/searchQuyCaNhan', [QuyCaNhanController::class, '
 // Route::get('/NLBenThu3', function () {
 //     return view('NL_BenThu3');
 // });
+
+Route::post('/export-excel', [TreEmController::class, 'export'])->name('export.excel');

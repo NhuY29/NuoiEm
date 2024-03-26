@@ -192,6 +192,10 @@
 
     </div>
     </div>
+    <form action="{{ route('export.excel') }}" method="POST">
+        @csrf
+        <button type="submit">Xuất Excel</button>
+    </form>
 </body>
 <script>
     document.addEventListener('DOMContentLoaded', function() {
