@@ -17,4 +17,8 @@ public function roles()
     // return $this->belongsTo(BenThu3::class);
     return $this->belongsTo(UserModel::class, 'roles_id', 'id');
 }
+public function BaiViet()
+{
+    return $this->hasMany(Baiviet::class);
+}
 }

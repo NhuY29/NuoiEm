@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BaiVietController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BenThu3Controller;
 use App\Http\Controllers\ToChucTuThienController;
@@ -91,5 +92,13 @@ Route::match(['get', 'post'], '/searchQuyCaNhan', [QuyCaNhanController::class, '
 // Route::get('/NLBenThu3', function () {
 //     return view('NL_BenThu3');
 // });
+// Bài Viết 
+Route::get('/BaiViet', [BaiVietController::class, 'index']);
+Route::post('/BaiViet', [BaiVietController::class, 'xuLyDuLieu']);
+Route::delete('/deleteBaiViet/{id}', [BaiVietController::class, 'delete']);
+Route::get('/editBaiViet/{id}', [BaiVietController::class, 'edit']);
+Route::put('/updateBaiViet/{id}', [BaiVietController::class, 'update']);
+Route::match(['get', 'post'], '/searchBaiViet', [BaiVietController::class, 'search'])->name('searchBaiViet');
+
 
 Route::post('/export-excel', [TreEmController::class, 'export'])->name('export.excel');
