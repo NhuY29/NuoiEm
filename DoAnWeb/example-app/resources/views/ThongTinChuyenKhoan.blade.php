@@ -184,7 +184,7 @@
     const notification = document.querySelector("#copied-notification");
 
     function copyHello() {
-        navigator.clipboard.writeText("Nội dung cần copy");
+        navigator.clipboard.writeText("1026752391");
         notification.classList.add("visible");
         setTimeout(() => {
             notification.classList.remove("visible");
