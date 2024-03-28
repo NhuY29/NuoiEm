@@ -30,6 +30,9 @@ use Illuminate\Support\Facades\Hash;
 Route::get('/home', function () {
     return view('home');
 });
+Route::get('/chuyenkhoan', function () {
+    return view('ThongTinChuyenKhoan');
+});
 Route::get('/home2', function () {
     return view('home2');
 });

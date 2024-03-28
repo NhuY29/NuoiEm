@@ -30,6 +30,7 @@
                   <a href="/ToChucTuThien" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Tổ Chức Từ Thiện</a>
                   <a href="/Quy" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Quỹ</a>
                   <a href="/QuyCaNhan" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Quỹ Cá Nhân</a>
+                  <a href="/BaiViet" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Bài Viết</a>
                 </div>
               </div>
             </div>
