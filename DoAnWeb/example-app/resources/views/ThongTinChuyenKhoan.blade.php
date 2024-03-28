@@ -7,7 +7,6 @@
     <title>Chuyển khoản</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/3.2.4/tailwind.min.css" integrity="sha512-lHj/wtAXeo+o1829u2e839y87rF40m17/b2bVN4380+7a/8+f676345e23a49b298c2954f599" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
-        /* Override Tailwind classes for a more customized look */
         body {
             background-color: #f5f5f5;
             font-family: Arial, sans-serif;
@@ -20,6 +19,7 @@
             border-radius: 8px;
             background-color: #fff;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            position: relative;
         }
 
         .form-title {
@@ -56,9 +56,7 @@
 
         .qr-code {
             width: 300px;
-            /* Adjust width for larger image */
             height: 300px;
-            /* Adjust height for larger image */
             border: 5px solid #ddd;
             border-radius: 50%;
         }
@@ -81,21 +79,85 @@
             color: #666;
         }
 
-        .important-note,.important-note2 {
+        .important-note,
+        .important-note2 {
             color: #f00;
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 40px 10px;
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: all 0.2s ease-in-out;
+            animation: shake 0.8s cubic-bezier(0.215, 0.61, 0.35, 1) infinite alternate;
+        }
+
+        .container:hover .btn-primary {
+            visibility: visible;
+            animation: shake 2s linear infinite;
+        }
+
+        @keyframes shake {
+            0% {
+                transform: translateX(0);
+            }
+
+            25% {
+                transform: translateY(-5px);
+            }
+
+            50% {
+                transform: translateX(5px);
+            }
+
+            75% {
+                transform: translateY(5px);
+            }
+
+            100% {
+                transform: translateX(0);
+            }
+        }
+
+        .btn-primary {
+            visibility: hidden;
+        }
+
+        .btn-primary:hover {
+            background-color: #0062cc;
+        }
+
+        #copied-notification {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            padding: 5px 10px;
+            background-color: #808080;
+            color: #fff;
+            border-radius: 5px;
+            opacity: 0;
+            transition: all 0.2s ease-in-out;
+            z-index: 1;
+        }
+
+        #copied-notification.visible {
+            opacity: 1;
         }
     </style>
 </head>
 
 <body>
     <div class="container">
-        <h2 class="form-title">Đóng góp trực tiếp vào STK:</h2>
+        <h2 class="form-title">Đóng góp trực tiếp vào STK: <button type="submit" class="btn btn-primary" onclick="copyHello()">Ấn để coppy STK</button></h2>
         <div class="qr-code-container">
             <img src="{{ asset('resources/images/chuyenkhoan.jpg') }}" alt="Mã QR" class="qr-code">
         </div>
         <div class="form-group">
             <div class="info-text">
-                <p>Số tài khoản: 1026752391</p>
+                <p id="hello">Số tài khoản: 1026752391 </p>
                 <p>Ngân hàng: VietComBank</p>
                 <p>Chủ TK: Nguyễn Thị Như Ý</p>
                 <p>Chi Nhánh: Mỹ Tho</p>
@@ -112,7 +174,20 @@
             <p>Báo cáo tài chính công khai tại <a href="#">taichinh.nuoiem</a>. Team tài chính sẽ xác nhận chuyển khoản thành công vào email cho bạn trong 2-5 ngày kèm theo mã giao dịch</p>
             <p class="important-note2">* Lưu ý, số tiền chuyển dư sẽ được đưa vào dự án xây trường</p>
         </div>
+        <div id="copied-notification">Copied!</div>
     </div>
 </body>
 
 </html>
+<script>
+    const button = document.querySelector(".btn-primary");
+    const notification = document.querySelector("#copied-notification");
+
+    function copyHello() {
+        navigator.clipboard.writeText("Nội dung cần copy");
+        notification.classList.add("visible");
+        setTimeout(() => {
+            notification.classList.remove("visible");
+        }, 1000);
+    }
+</script>
