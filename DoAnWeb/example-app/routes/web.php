@@ -77,6 +77,7 @@ Route::delete('/deleteTreEm/{id}', [TreEmController::class, 'delete']);
 Route::get('/editTreEm/{id}', [TreEmController::class, 'edit']);
 Route::put('/updateTreEm/{id}', [TreEmController::class, 'update']);
 Route::match(['get', 'post'], '/search2', [TreEmController::class, 'search'])->name('search2');
+Route::get('/export-excel', [TreEmController::class, 'exportToExcel'])->name('export.excel');
 // Quỹ
 Route::get('/Quy', [QuyController::class, 'index']);
 Route::post('/Quy', [QuyController::class, 'xuLyDuLieu']);
