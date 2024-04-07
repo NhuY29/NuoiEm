@@ -3,27 +3,14 @@
 
 <head>
 	<meta charset="utf-8">
-
-	<!--====== Title ======-->
 	<title>Dự Án Nuôi Em</title>
 
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-
-	<!--====== Favicon Icon ======-->
 	<link rel="shortcut icon" href="resources/images/logo.svg" type="image/png">
-
-	<!--====== Animate CSS ======-->
-	<!-- <link rel="stylesheet" href="resources/css/animate.css"> -->
 	<link rel="stylesheet" href="{{ asset('resources/css/animate.css') }}">
-
-	<!--====== Line Icons CSS ======-->
 	<link rel="stylesheet" href="resources/css/LineIcons.2.0.css">
-
-	<!--====== Bootstrap CSS ======-->
 	<link rel="stylesheet" href="resources/css/bootstrap-5.0.5-alpha.min.css">
-
-	<!--====== Style CSS ======-->
 	<link rel="stylesheet" href="{{ asset('resources/css/style.css') }}">
 
 
@@ -32,12 +19,6 @@
 <df-messenger intent="WELCOME" chat-title="NuoiEm" agent-id="13f734de-d4f4-42a3-b5f0-e13ca2e8878d" language-code="en"></df-messenger>
 
 <body>
-	<!--[if IE]>
-    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
-    <![endif]-->
-
-	<!--====== PRELOADER PART START ======-->
-
 	<div class="preloader">
 		<div class="loader">
 			<div class="ytp-spinner">
@@ -54,11 +35,6 @@
 			</div>
 		</div>
 	</div>
-
-	<!--====== PRELOADER PART ENDS ======-->
-
-	<!--====== HEADER PART START ======-->
-
 	<header class="header_area">
 		<div id="header_navbar" class="header_navbar">
 			<div class="container">
@@ -75,9 +51,6 @@
 							</button>
 							<div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
 								<ul id="nav" class="navbar-nav ml-auto">
-									<!-- <li class="nav-item">
-										<a class="page-scroll" href="#gioi-thieu">Giới Thiệu</a>
-									</li> -->
 									<li class="nav-item">
 										<a class="page-scroll" href="#nhan-ma">Nhận Mã</a>
 									</li>
@@ -91,20 +64,19 @@
 										<a class="page-scroll" href="#he-sinh-thai">Hệ Sinh Thái</a>
 									</li>
 									<li class="nav-item">
+									<a href="/chuyenkhoan" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Số Tài Khoản</a>
+									</li>
+									<li class="nav-item">
 										<a class="header-btn btn-hover" href="#courses">Get Started</a>
 									</li>
 								</ul>
-							</div> <!-- navbar collapse -->
-						</nav> <!-- navbar -->
+							</div> 
+						</nav> 
 					</div>
-				</div> <!-- row -->
-			</div> <!-- container -->
-		</div> <!-- header navbar -->
+				</div> 
+			</div> 
+		</div>
 	</header>
-
-	<!--====== HEADER PART ENDS ======-->
-
-	<!--====== HERO PART START ======-->
 	<section id="gioi-thieu" class="hero-area bg_cover">
 		<div class="container">
 			<div class="row align-items-center">
@@ -125,9 +97,6 @@
 			<img src="https://img.cand.com.vn/NewFiles/Images/2022/10/27/1-1666870392779.jpg" alt="">
 		</div>
 	</section>
-	<!--====== HERO PART END ======-->
-
-	<!--====== SKILL PART START ======-->
 	<section id="skill" class="skill-area pt-170">
 		<div class="container">
 			<div class="row">
@@ -173,9 +142,6 @@
 			</div>
 		</div>
 	</section>
-	<!--====== SKILL PART ENDS ======-->
-
-	<!--====== COURSES PART START ======-->
 	<section id="nhan-ma" class="course-area pt-140 pb-170">
 		<div class="container">
 			<div class="row">
@@ -191,7 +157,7 @@
 					<div class="single-course wow fadeInUp" data-wow-delay=".2s">
 						<div class="course-img">
 							<a href="course-single.html">
-								<img src="https://th.bing.com/th/id/R.c7b2653532b33dacdc09c925e8a00274?rik=bKU0gvzRmbpGLg&pid=ImgRaw&r=0" class="d-block w-100" alt="...">
+								<img src="https://scontent.fsgn23-1.fna.fbcdn.net/v/t1.6435-9/42734639_498874713911925_3248776802440577024_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=5f2048&_nc_ohc=VSjWqPK3pvQAb62B7fB&_nc_ht=scontent.fsgn23-1.fna&oh=00_AfCsPhkSnyrlJYsp2M1L454qhplHXuWlcZxYZADM3XD6Iw&oe=6639C5DC" class="d-block w-100" alt="...">
 							</a>
 						</div>
 						<div class="course-info">
@@ -217,11 +183,11 @@
 					<div class="single-course wow fadeInUp" data-wow-delay=".4s">
 						<div class="course-img">
 							<a href="course-single.html">
-								<img src="resources/images/course/design.jpg" alt="">
+								<img src="https://scontent.fsgn23-1.fna.fbcdn.net/v/t1.6435-9/42916545_1451952921615651_8749642963786661888_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=5f2048&_nc_ohc=E7WyK3EXehkAb5fGaRy&_nc_ht=scontent.fsgn23-1.fna&oh=00_AfDtTuz6GxWyrvegRLTF6HUHvU5R6yagMy3A1wlAOz7yDQ&oe=6639D3A7" alt="">
 							</a>
 						</div>
 						<div class="course-info">
-							<h4><a href="course-single.html">UX/UI Design</a></h4>
+							<h4><a href="course-single.html">3000+ bé huyện Nậm Pồ Tỉnh Điện Biên</a></h4>
 							<div class="course-meta">
 								<div class="meta-item">
 									<i class="lni lni-user"></i>
@@ -234,10 +200,7 @@
 								<div class="meta-item">
 									<i class="lni lni-star"></i>
 									<span>5.0</span>
-								</div>
-								<div class="price">
-									<span>$39.00</span>
-								</div>
+								</div>												
 							</div>
 						</div>
 					</div>
@@ -246,11 +209,11 @@
 					<div class="single-course wow fadeInUp" data-wow-delay=".6s">
 						<div class="course-img">
 							<a href="course-single.html">
-								<img src="resources/images/course/js.jpg" alt="">
+								<img src="https://scontent.fsgn23-1.fna.fbcdn.net/v/t1.6435-9/43114194_500705173728879_5458069780063846400_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=5f2048&_nc_ohc=jD5P0PDEqkEAb7JWaIC&_nc_ht=scontent.fsgn23-1.fna&oh=00_AfA0o_hkCS53BKYMyq9AKwoh890wCu8fLS1_OrBVn9LMfQ&oe=6639CD97" alt="">
 							</a>
 						</div>
 						<div class="course-info">
-							<h4><a href="course-single.html">Modern JavaScript</a></h4>
+							<h4><a href="course-single.html">644+ bé huyện Điện Biên Đông Tỉnh Điện Biên</a></h4>
 							<div class="course-meta">
 								<div class="meta-item">
 									<i class="lni lni-user"></i>
@@ -263,10 +226,7 @@
 								<div class="meta-item">
 									<i class="lni lni-star"></i>
 									<span>4.0</span>
-								</div>
-								<div class="price">
-									<span>$19.00</span>
-								</div>
+								</div>								
 							</div>
 						</div>
 					</div>
@@ -277,11 +237,11 @@
 					<div class="single-course wow fadeInUp" data-wow-delay=".2s">
 						<div class="course-img">
 							<a href="course-single.html">
-								<img src="resources/images/course/business.jpg" alt="">
+								<img src="https://scontent.fsgn23-1.fna.fbcdn.net/v/t1.6435-9/43019946_500705417062188_4177365276049801216_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=5f2048&_nc_ohc=IpPn3PuZql8Ab4Eh_Bn&_nc_ht=scontent.fsgn23-1.fna&oh=00_AfA7vJClxqVCw1M4X9xHVIQi_0kxlTnnhf3Ulr57uNNa4w&oe=6639D39A" alt="">
 							</a>
 						</div>
 						<div class="course-info">
-							<h4><a href="course-single.html">Business Development</a></h4>
+							<h4><a href="course-single.html">500+ bé Tỉnh Bắc Kạn</a></h4>
 							<div class="course-meta">
 								<div class="meta-item">
 									<i class="lni lni-user"></i>
@@ -295,9 +255,6 @@
 									<i class="lni lni-star"></i>
 									<span>4.5</span>
 								</div>
-								<div class="price">
-									<span>$19.00</span>
-								</div>
 							</div>
 						</div>
 					</div>
@@ -306,11 +263,11 @@
 					<div class="single-course wow fadeInUp" data-wow-delay=".4s">
 						<div class="course-img">
 							<a href="course-single.html">
-								<img src="resources/images/course/marketing.jpg" alt="">
+								<img src="https://scontent.fsgn23-1.fna.fbcdn.net/v/t1.6435-9/43127774_500704550395608_4670148112533159936_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=5f2048&_nc_ohc=StGV8Q7bZUwAb6_ZqeL&_nc_ht=scontent.fsgn23-1.fna&oh=00_AfDQPq_zCq7VzF3ZU0pSH6oX0kch7XfZP_IrBFpZKri8VQ&oe=6639D78A" alt="">
 							</a>
 						</div>
 						<div class="course-info">
-							<h4><a href="course-single.html">Email Marketing 101</a></h4>
+							<h4><a href="course-single.html">200+ bé Tỉnh Đắk Lắk  </a></h4>
 							<div class="course-meta">
 								<div class="meta-item">
 									<i class="lni lni-user"></i>
@@ -324,9 +281,6 @@
 									<i class="lni lni-star"></i>
 									<span>5.0</span>
 								</div>
-								<div class="price">
-									<span>$69.00</span>
-								</div>
 							</div>
 						</div>
 					</div>
@@ -335,11 +289,11 @@
 					<div class="single-course wow fadeInUp" data-wow-delay=".6s">
 						<div class="course-img">
 							<a href="course-single.html">
-								<img src="resources/images/course/python.jpg" alt="">
+								<img src="https://scontent.fsgn23-1.fna.fbcdn.net/v/t1.6435-9/43130972_500926653706731_6862288425295282176_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=5f2048&_nc_ohc=0FVjY2AfkSIAb6ORPUl&_nc_ht=scontent.fsgn23-1.fna&oh=00_AfA6mThSDtZaSIhQPljWlH8JHxSEELSpUhsXQc99uVsGng&oe=6639CB67" alt="">
 							</a>
 						</div>
 						<div class="course-info">
-							<h4><a href="course-single.html">Getting Started with Python</a></h4>
+							<h4><a href="course-single.html">355+ bé Tỉnh Lào Cai</a></h4>
 							<div class="course-meta">
 								<div class="meta-item">
 									<i class="lni lni-user"></i>
@@ -353,9 +307,6 @@
 									<i class="lni lni-star"></i>
 									<span>3.5</span>
 								</div>
-								<div class="price">
-									<span>$9.00</span>
-								</div>
 							</div>
 						</div>
 					</div>
@@ -365,16 +316,12 @@
 			<div class="row">
 				<div class="col-xl-12">
 					<div class="view-all-btn text-center">
-						<a href="courses.html" class="main-btn">View All Course</a>
+						<a href="/danhsachtreem" class="main-btn">Xem Nhiều Hơn</a>
 					</div>
 				</div>
 			</div>
 		</div>
 	</section>
-	<!--====== COURSES PART ENDS ======-->
-
-
-	<!--====== WELCOME PART START ======-->
 	<section class="welcome-area">
 		<div class="container">
 			<div class="row align-items-center">
@@ -392,7 +339,6 @@
 								<p>Các bé vùng cao Tây Bắc xa xôi, hẻo lánh để đến với “con chữ” có rất nhiều khó khăn, gian khổ. Chỉ vì để được đến trường học tập với thầy cô và các bạn, các em bé ấy không ngại những quãng đường xa xôi hàng km hay thức dậy rất sớm để được cắp sách đếntrường.</p>
 							</div>
 							<button class="btn btn-link" onclick="toggleReadMore()">Xem Thêm</button>
-							<!-- <a href="https://rebrand.ly/learn-ud" rel="nofollow" class="read-more-btn wow fadeInUp" data-wow-delay=".5s">Purchase Now <i class="lni lni-arrow-right"></i></a> -->
 						</div>
 					</div>
 				</div>
@@ -404,9 +350,6 @@
 			</div>
 		</div>
 	</section>
-	<!--====== WELCOME PART ENDS ======-->
-
-	<!--====== CATEGORIES PART START ======-->
 	<section class="categories-area pt-170 pb-170">
 		<div class="container">
 			<div class="row">
@@ -447,7 +390,7 @@
 							<i class="lni lni-target-customer"></i>
 							<h3>Vào group</h3>
 							<p>Group là nơi các anh chị nuôi được cập nhật thông tin mới nhất, lịch thăm em, vote công khai lấy ý kiến xây dựng dự án. Tham gia để chủ động nắm bắt thông tin!</p>
-							<button>Vào group</button>
+							<button class="quy-trinh-btn">Vào group</button>
 						</div>
 					</a>
 				</div>
@@ -477,7 +420,7 @@
 							<h3>Thăm Em</h3>
 							<p>Ai nuôi bé nào đi thăm bé đó.Tuyệt đối không đưa trẻ ra khỏi địa bàn</p>
 							<p>Khi bạn tiện, có thể thăm không cùng đoàn,cần báo trước để được hỗ trợ </p>
-							<button>Lịch Thăm Em</button>
+							<button class="quy-trinh-btn">Lịch Thăm Em</button>
 						</div>
 					</a>
 				</div>
@@ -502,46 +445,17 @@
 					</a>
 				</div>
 			</div>
-			<!-- <div class="row">
-				<div class="col-xl-12">
-					<div class="view-all-btn text-center">
-						<a href="javascript:void(0)" class="main-btn">View All Course</a>
-					</div>
-				</div>
-			</div> -->
 		</div>
 	</section>
-	<!--====== CATEGORIES PART ENDS ======-->
-
-	<!--====== TEAM PART START ======-->
-	<section id="tra-ma" class="team-area pt-170 pb-140">
-		<div class="welcome-content text-center">
-			<div class="section-title">
-				<h2 class="mb-35 wow fadeInUp" data-wow-delay=".2s">You are using free lite version of Learn</h2>
-			</div>
-			<div class="content">
-				<p class="mb-35 wow fadeInUp" data-wow-delay=".4s">Please purchase full version of the template to get all pages, sections, features and permission to remove footer credits.</p>
-
-				<a href="https://rebrand.ly/learn-ud" rel="nofollow" class="main-btn wow fadeInUp" data-wow-delay=".5s">Purchase Now <i class="lni lni-arrow-right"></i></a>
-			</div>
-		</div>
-	</section>
-	<!--====== TEAM PART ENDS ======-->
-
-	<!--====== TESTIMONIAL PART START ======-->
 	<section class="testimonial-area pt-80 pb-90">
 
 	</section>
-	<!--====== TESTIMONIAL PART ENDS ======-->
-
-	<!--====== BLOG PART START ======-->
 	<section id="tham-em" class="blog-area pt-170 pb-140">
 		<div class="container">
 			<div class="row">
 				<div class="col-xl-6 col-lg-7">
 					<div class="section-title">
 						<h2 class="wow fadeInUp" data-wow-delay=".2s">Các Dự Án Liên Kết</h2>
-						<!-- <p class="wow fadeInUp" data-wow-delay=".4s">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt utlabo</p> -->
 					</div>
 				</div>
 			</div>
@@ -588,9 +502,6 @@
 			</div>
 		</div>
 	</section>
-	<!--====== BLOG PART ENDS ======-->
-
-	<!--====== CONTACT PART START ======-->
 	<section id="he-sinh-thai" class="contact-area">
 		<div class="map-bg">
 			<img src="resources/images/map-bg.svg" alt="">
@@ -599,12 +510,12 @@
 			<div class="row">
 				<div class="col-xl-5 col-lg-5">
 					<div class="section-title">
-						<h2 class="wow fadeInUp" data-wow-delay=".2s">Get In Touch</h2>
-						<p class="wow fadeInUp" data-wow-delay=".4s">Lorem ipsum dolor sit amet, consetetur sadipscing </br>elitr, sed diam nonumy eirmod tempor invidunt utlabo</p>
+						<h2 class="wow fadeInUp" data-wow-delay=".2s">Nhắn Gửi Yêu Thương</h2>
+						<p class="wow fadeInUp" data-wow-delay=".4s">Các bạn có thể gửi thông tin những em bé có cần giúp đỡ đến cho chúng tôi có cơ hội giúp đỡ các em trên bước đường tương lai!</p>
 					</div>
 					<div class="contact-content">
-						<h3>Hot Line Call Us 24/7</h3>
-						<h4><a href="javascript:void(0)">000-2222-5555</a></h4>
+						<h3>Hoặc Liên Hệ</h3>
+						<h4><a href="javascript:void(0)">0123456789</a></h4>
 						<h4><a href="javascript:void(0)">hello@gmail.com</a></h4>
 					</div>
 				</div>
@@ -613,7 +524,7 @@
 						<form action="resources/contact.php">
 							<div class="row">
 								<div class="col-md-6">
-									<input type="text" placeholder="Name" name="name" id="name">
+									<input type="text" placeholder="Tên" name="name" id="name">
 								</div>
 								<div class="col-md-6">
 									<input type="email" placeholder="Email" name="email" id="email">
@@ -621,12 +532,7 @@
 							</div>
 							<div class="row">
 								<div class="col-12">
-									<input type="text" placeholder="Subject" name="subject" id="subject">
-								</div>
-							</div>
-							<div class="row">
-								<div class="col-12">
-									<textarea name="message" id="message" rows="4" placeholder="Message"></textarea>
+									<textarea name="message" id="message" rows="8" placeholder="Thông Tin Về bé "></textarea>
 								</div>
 							</div>
 							<div class="row">
@@ -640,9 +546,6 @@
 			</div>
 		</div>
 	</section>
-	<!--====== CONTACT PART ENDS ======-->
-
-	<!--====== FOOTER PART START ======-->
 	<footer id="footer" class="footer-area pt-170">
 		<div class="container">
 			<div class="row">
@@ -682,47 +585,26 @@
 					</div>
 				</div>
 			</div>
-			<!-- <div class="footer-credit">
-				<div class="row">
-					<div class="col-md-6">
-						<div class="copy-right text-center text-md-left">
-							<p>Designed and Developed by <a href="https://uideck.com" rel="nofollow">UIdeck</a></p>
-						</div>
-					</div>
-					<div class="col-md-6">
-						<div class="footer-social">
-							<ul class="d-flex justify-content-md-end justify-content-center">
-								<li><a href="javascript:void(0)"><i class="lni lni-facebook-filled"></i></a></li>
-								<li><a href="javascript:void(0)"><i class="lni lni-twitter-filled"></i></a></li>
-								<li><a href="javascript:void(0)"><i class="lni lni-instagram-filled"></i></a></li>
-								<li><a href="javascript:void(0)"><i class="lni lni-linkedin-original"></i></a></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div> -->
 		</div>
 	</footer>
-	<!--====== FOOTER PART ENDS ======-->
 
-	<!--====== BACK TOP TOP PART START ======-->
+
+
 	<a href="#" class="back-to-top btn-hover"><i class="lni lni-chevron-up"></i></a>
-	<!--====== BACK TOP TOP PART ENDS ======-->
 
 
-	<!--====== Bootstrap js ======-->
+
+
 	<script src="resources/js/bootstrap.bundle-5.0.0.alpha-min.js"></script>
 
-	<!--====== wow js ======-->
+
 	<script src="resources/js/wow.min.js"></script>
 
-	<!--====== Main js ======-->
+
 	<script src="resources/js/main.js"></script>
 
 	<script>
-		// Get the navbar
 
-		// for menu scroll 
 		var pageLink = document.querySelectorAll('.page-scroll');
 
 		pageLink.forEach(elem => {
@@ -735,7 +617,7 @@
 			});
 		});
 
-		// section menu active
+
 		function onScroll(event) {
 			var sections = document.querySelectorAll('.page-scroll');
 			var scrollPos = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
@@ -757,7 +639,6 @@
 		window.document.addEventListener('scroll', onScroll);
 
 
-		//===== close navbar-collapse when a  clicked
 		let navbarToggler = document.querySelector(".navbar-toggler");
 		var navbarCollapse = document.querySelector(".navbar-collapse");
 
@@ -790,3 +671,37 @@
 		}
 	}
 </script>
+<style>
+	.quy-trinh-btn {
+  width: 150px;
+  height: 40px;
+  background-color: #337ab7;
+  color: #ffffff;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+  transition: all 0.2s ease-in-out;
+  &:hover {
+    background-color: #286090;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+  }
+  &:active {
+    background-color: #1e476a;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+  }
+}
+.back-to-top {
+  position: fixed;
+  right: 100px; 
+  bottom: 20px;
+  display: none;
+}
+
+.btn-hover:hover .back-to-top { 
+  display: block;
+}
+
+</style>
