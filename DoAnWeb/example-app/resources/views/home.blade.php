@@ -471,7 +471,7 @@
         </ul>
         <h2>Kết luận</h2>
         <p>Sửa khun là một kỹ thuật an toàn và hiệu quả giúp điều chỉnh ngón chân cong vẹo cho bé. Cha mẹ nên đưa bé đi khám sớm để được tư vấn và điều trị kịp thời.</p>
-		<div class="fb-like" data-href="http://127.0.0.1:8000/home" data-width="" data-layout="" data-action="" data-size="" data-share="true"></div>
+		<div class="fb-like" data-href="https://f1a9-2001-ee0-570c-c720-8092-44fc-fba4-33a1.ngrok-free.app/home" data-width="" data-layout="" data-action="" data-size="" data-share="true"></div>
 	</div>
 	</section>
 	<section class="testimonial-area pt-80 pb-90">
@@ -680,7 +680,7 @@
 		});
 	</script>
 	<!-- fb -->
-	<script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v19.0" nonce="5ueCLu3y"></script>
+	<script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v19.0" nonce="Sae79XD8"></script>
 
 </body>
 
