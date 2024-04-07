@@ -44,6 +44,13 @@
       cursor: pointer; /* Indicate clickable button */
       
     }
+    .custom-div {
+    width: 300px;
+    height: 400px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    word-wrap: break-word;
+  }
   </style>
 </head>
 
@@ -53,9 +60,9 @@
       @foreach($allTreEmRecords as $Ds => $record)
       <div class="custom-div">
         @if(isset($record->imagePath) && !empty($record->imagePath))
-          <img src="{{ $record->imagePath }}" alt="Ảnh trẻ em">
+        <img src="https://th.bing.com/th/id/OIP.SvrKyZhazpRfhDeGMq59yQAAAA?rs=1&pid=ImgDetMain" alt="Ảnh của bạn">
         @endif
-        <p class="text-lg font-medium"><strong>Mã Nhận Em:</strong> {{ $Ds + 1 }}</p>
+        <!-- <p class="text-lg font-medium"><strong>Mã Nhận Em:</strong> {{ $Ds + 1 }}</p> -->
         <p><strong>Tên Em:</strong> {{ $record->Ten }} </p>
         <p><strong>Giới tính:</strong> {{ $record->GioiTinh ? 'Nam' : 'Nữ' }}</p>
         <p><strong>Học Tại:</strong> {{ $record->TenTruongHoc }}</p>
@@ -64,9 +71,9 @@
         <button class="bg-blue-500 hover:bg-blue-700">Nhận Em</button>
       </div>
       
-  <?php $Ds++; ?>  @if ($Ds % 5 === 0)
+  <?php $Ds++; ?>  @if ($Ds % 4 === 0)
         <div class="custom-flex">
-        @if ($Ds % 5 !== 0)
+        @if ($Ds % 4 !== 0)
     </div>
     @endif
       @endif
