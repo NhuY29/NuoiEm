@@ -24,9 +24,9 @@
         <form id="addForm" action="/BaiViet" method="post" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-20" style="display: none;">
             @csrf
             <div class="mb-4">
-  <label for="TieuDe" class="block text-gray-700 text-sm font-bold mb-2">Tiêu Đề:</label>
-  <input type="text" id="TieuDe" name="TieuDe" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" >
-</div>
+                <label for="TieuDe" class="block text-gray-700 text-sm font-bold mb-2">Tiêu Đề:</label>
+                <input type="text" id="TieuDe" name="TieuDe" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+            </div>
             <label for="TreEm_id" class="block text-gray-700 text-sm font-bold mb-2">Trẻ Em:</label>
             <div class="relative">
                 <select name="TreEm_id" class="block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
@@ -60,9 +60,9 @@
                 <br>
             </div>
             <div class="mb-4">
-  <label for="NoiDung" class="block text-gray-700 text-sm font-bold mb-2">Nội Dung:</label>
-  <input type="text" id="NoiDung" name="NoiDung" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" >
-</div>
+                <label for="NoiDung" class="block text-gray-700 text-sm font-bold mb-2">Nội Dung:</label>
+                <input type="text" id="NoiDung" name="NoiDung" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+            </div>
             <div class="flex items-center justify-between">
                 <button type="button" onclick="cancelAdd()" class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Hủy</button>
                 <input type="submit" value="Xác Nhận" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
@@ -75,14 +75,15 @@
     <div class="table-container">
         <table class="min-w-full bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 border border-collapse">
             <thead>
-                   
+
                 <tr>
-                <th class="px-4 py-2 bg-blue-500 text-white border">STT</th>
+                    <th class="px-4 py-2 bg-blue-500 text-white border">STT</th>
                     <th class="px-4 py-2 bg-blue-500 text-white border">Tiêu Đề</th>
                     <th class="px-4 py-2 bg-blue-500 text-white border">Nội Dung</th>
                     <th class="px-4 py-2 bg-blue-500 text-white border">Trẻ Em</th>
                     <th class="px-4 py-2 bg-blue-500 text-white border">Ngày Đăng</th>
                     <th class="px-4 py-2 bg-blue-500 text-white border">Người Dùng</th>
+                    <th class="px-4 py-2 bg-blue-500 text-white border">Thao Tác</th>
                 </tr>
             </thead>
             <tbody>
@@ -90,9 +91,11 @@
                 <tr id="row{{ $record->id }}" data-id="{{ $record->id }}" class="{{ $index % 2 === 0 ? 'bg-white' : 'bg-blue-100' }} border">
                     <td class="px-4 py-2 text-center border whitespace-normal max-w-xs">{{ ++$i }}</td>
                     <td class="px-4 py-2 text-center border whitespace-normal max-w-xs">
-                {{ $record->TieuDe }}                     </td>
-                <td class="px-4 py-2 text-center border whitespace-normal max-w-xs">
-                {{ $record->NoiDung }}                     </td>
+                        {{ $record->TieuDe }}
+                    </td>
+                    <td class="px-4 py-2 text-center border whitespace-normal max-w-xs">
+                        {{ $record->NoiDung }}
+                    </td>
                     <td class="px-4 py-2 text-center border whitespace-normal max-w-xs">{{ $record->TreEm->Ten }}</td>
                     <td class="px-4 py-2 text-center border whitespace-normal max-w-xs">
                         {{ date('d/m/Y', strtotime($record->NgayDang)) }}
@@ -122,11 +125,11 @@
 
                         <div class="mb-4">
 
-<label for="NoiDung_edit{{ $record->id }}" class="block text-gray-700 text-sm font-bold mb-2">Nội Dung:</label>
+                            <label for="NoiDung_edit{{ $record->id }}" class="block text-gray-700 text-sm font-bold mb-2">Nội Dung:</label>
 
-<input type="text" id="NoiDung_edit{{ $record->id }}" name="NoiDung" value="{{ $record->NoiDung }}" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                            <input type="text" id="NoiDung_edit{{ $record->id }}" name="NoiDung" value="{{ $record->NoiDung }}" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
 
-</div>
+                        </div>
                         <div class="mb-4">
                             <label for="TreEm_id_edit{{ $record->id }}" class="block text-gray-700 text-sm font-bold mb-2">Trẻ Em:</label>
                             <div class="relative">
@@ -263,23 +266,23 @@
     }
 
     function formatNumberWithCommas(number) {
-    return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-}
-
-function formatCurrency(input) {
-    const rawValue = input.value; // Giữ nguyên giá trị đã bị loại bỏ dấu phẩy
-
-    // Loại bỏ dấu phẩy để chuẩn bị định dạng lại
-    const value = rawValue.replace(/,/g, '');
-
-    // Kiểm tra nếu giá trị là một số hợp lệ
-    if (!isNaN(value)) {
-        // Định dạng giá trị với dấu phẩy sau mỗi ba chữ số
-        const formattedValue = formatNumberWithCommas(value);
-
-        // Gán giá trị đã được định dạng vào input
-        input.value = rawValue; // Gán lại giá trị đã bị loại bỏ dấu phẩy vào input
-        input.nextElementSibling.textContent = formattedValue; // Gán giá trị đã được định dạng vào text kế tiếp của input
+        return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     }
-}
+
+    function formatCurrency(input) {
+        const rawValue = input.value; // Giữ nguyên giá trị đã bị loại bỏ dấu phẩy
+
+        // Loại bỏ dấu phẩy để chuẩn bị định dạng lại
+        const value = rawValue.replace(/,/g, '');
+
+        // Kiểm tra nếu giá trị là một số hợp lệ
+        if (!isNaN(value)) {
+            // Định dạng giá trị với dấu phẩy sau mỗi ba chữ số
+            const formattedValue = formatNumberWithCommas(value);
+
+            // Gán giá trị đã được định dạng vào input
+            input.value = rawValue; // Gán lại giá trị đã bị loại bỏ dấu phẩy vào input
+            input.nextElementSibling.textContent = formattedValue; // Gán giá trị đã được định dạng vào text kế tiếp của input
+        }
+    }
 </script>

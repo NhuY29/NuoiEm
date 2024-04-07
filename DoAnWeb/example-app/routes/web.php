@@ -36,6 +36,7 @@ Route::get('/chuyenkhoan', function () {
 Route::get('/home2', function () {
     return view('home2');
 });
+Route::get('/danhsachtreem', [TreEmController::class, 'Ds']);
 //user
 Route::get('/User', [UserController::class, 'index']);
 Route::post('/User', [UserController::class, 'xuLyDuLieu']);
