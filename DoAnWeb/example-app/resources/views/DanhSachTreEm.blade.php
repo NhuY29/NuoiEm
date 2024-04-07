@@ -21,11 +21,11 @@
 
     .custom-div {
       flex: 1 0 auto;
-      padding: 2rem; /* Increase padding for better readability */
+      padding: 2rem; 
       border: 1px solid #e5e7eb;
       border-radius: 0.375rem;
-      background-color: #fff; /* Set background color */
-      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
+      background-color: #fff;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); 
     }
 
     .custom-div img {
@@ -48,7 +48,7 @@
 </head>
 
 <body>
-  <div class="container mx-auto">
+<div class="container mx-auto">
     <div class="p-4 border-b border-gray-200 hover:bg-gray-100 custom-flex">
       @foreach($allTreEmRecords as $Ds => $record)
       <div class="custom-div">
@@ -63,9 +63,19 @@
         <p><strong>Hổ Trợ Bởi:</strong> {{ $record->benThu3->Ten }}</p>
         <button class="bg-blue-500 hover:bg-blue-700">Nhận Em</button>
       </div>
+      
+  <?php $Ds++; ?>  @if ($Ds % 5 === 0)
+        <div class="custom-flex">
+        @if ($Ds % 5 !== 0)
+    </div>
+    @endif
+      @endif
       @endforeach
+      
     </div>
   </div>
+
 </body>
 
 </html>
+

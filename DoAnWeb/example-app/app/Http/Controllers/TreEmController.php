@@ -74,7 +74,7 @@ class TreEmController extends Controller
     }
     public function Ds()
     {
-        $allTreEmRecords = TreEm::with('benThu3')->paginate(5);
+        $allTreEmRecords = TreEm::with('benThu3')->paginate(1000);
         $allBenThubaRecords = BenThu3::where('isdelete', 0)->get();
 
         return view('danhsachtreem', compact('allTreEmRecords', 'allBenThubaRecords'));
