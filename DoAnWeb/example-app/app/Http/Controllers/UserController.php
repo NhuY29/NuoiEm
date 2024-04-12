@@ -10,6 +10,8 @@ use App\Models\Roles;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Cookie;
+use Socialite;
+use Exception;
 
 use function Laravel\Prompts\alert;
 

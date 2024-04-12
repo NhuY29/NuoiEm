@@ -58,6 +58,8 @@
 <div class="container mx-auto">
     <div class="p-4 border-b border-gray-200 hover:bg-gray-100 custom-flex">
       @foreach($allTreEmRecords as $Ds => $record)
+      <form method="GET" action="{{ route('danhsachtreem', ['id' => $record->id]) }}">
+      <input type="hidden" name="treem_id" value="{{ $record->id }}">
       <div class="custom-div">
         @if(isset($record->imagePath) && !empty($record->imagePath))
         <img src="https://th.bing.com/th/id/OIP.SvrKyZhazpRfhDeGMq59yQAAAA?rs=1&pid=ImgDetMain" alt="Ảnh của bạn">
@@ -68,9 +70,10 @@
         <p><strong>Học Tại:</strong> {{ $record->TenTruongHoc }}</p>
         <p><strong>Địa chỉ:</strong> {{ $record->DiaChi }}</p>
         <p><strong>Hổ Trợ Bởi:</strong> {{ $record->benThu3->Ten }}</p>
-        <button class="bg-blue-500 hover:bg-blue-700">Nhận Em</button>
+
+        <button type="submit" class="bg-blue-500 hover:bg-blue-700">Nhận Em</button>
       </div>
-      
+      </form>
   <?php $Ds++; ?>  @if ($Ds % 4 === 0)
         <div class="custom-flex">
         @if ($Ds % 4 !== 0)

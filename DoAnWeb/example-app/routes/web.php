@@ -8,7 +8,8 @@ use App\Http\Controllers\TreEmController;
 use App\Http\Controllers\QuyController;
 use App\Http\Controllers\QuyCaNhanController;
 use App\Http\Controllers\UserController;
-
+use App\Http\Controllers\FacebookSocialiteController;
+use App\Http\Controllers\EmailController;
 use App\Models\User;
 use App\Models\Roles;
 use App\Models\UserModel;
@@ -104,6 +105,15 @@ Route::delete('/deleteBaiViet/{id}', [BaiVietController::class, 'delete']);
 Route::get('/editBaiViet/{id}', [BaiVietController::class, 'edit']);
 Route::put('/updateBaiViet/{id}', [BaiVietController::class, 'update']);
 Route::match(['get', 'post'], '/searchBaiViet', [BaiVietController::class, 'search'])->name('searchBaiViet');
-
-
 Route::post('/export-excel', [TreEmController::class, 'export'])->name('export.excel');
+
+
+Route::get('auth/facebook', [FacebookSocialiteController::class, 'redirectToFB']);
+Route::get('callback/facebook', [FacebookSocialiteController::class, 'handleCallback']);
+// Route::get('/danhsachtreem/{id}', [BenThu3Controller::class, 'redirectToOtherPage'])->name('danhsachtreem');
+Route::get('/danhsachtreem/{id}', [BenThu3Controller::class, 'redirectToOtherPage'])->name('danhsachtreem');
+
+Route::get('/gui-email', [EmailController ::class, 'sendEmail']);
+// Route::post('/gui-email', [EmailController ::class, 'sendEmail']);
+Route::get('/gui-emailtask', [EmailController ::class, 'index'])->name('index');
+Route::post('/task', [EmailController ::class, 'store'])->name('store.task');

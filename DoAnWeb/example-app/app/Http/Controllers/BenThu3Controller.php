@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\BenThu3;
+use App\Models\TreEm;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
-
+use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Auth;
 class BenThu3Controller extends Controller
 {
     public function xuLyDuLieu(Request $request)
@@ -121,5 +123,21 @@ class BenThu3Controller extends Controller
 {
     $benthu3Data = Benthu3::all();
     return response()->json($benthu3Data);
+}
+
+public function redirectToOtherPage(Request $request) {
+    $treem_id = $request->input('treem_id');
+    // Thực hiện các thao tác bạn cần với $treem_id
+    // Ví dụ:
+    $treem = TreEm::find($treem_id);
+    $allTreEmRecords = TreEm::all();
+    if ($treem) {
+        // Nếu tìm thấy trẻ em, bạn có thể thực hiện thêm các thao tác khác ở đây
+        // Ví dụ: trả về một view hiển thị thông tin của trẻ em
+        return view('thongtinnguoi', ['treem' => $treem] , ['allTreEmRecords' => $allTreEmRecords]);
+    } else {
+        // Nếu không tìm thấy trẻ em, bạn có thể xử lý tùy ý ở đây, ví dụ:
+        return redirect()->back()->with('error', 'Không tìm thấy trẻ em');
+    }
 }
 }
