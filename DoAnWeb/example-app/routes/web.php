@@ -113,7 +113,7 @@ Route::get('callback/facebook', [FacebookSocialiteController::class, 'handleCall
 // Route::get('/danhsachtreem/{id}', [BenThu3Controller::class, 'redirectToOtherPage'])->name('danhsachtreem');
 Route::get('/danhsachtreem/{id}', [BenThu3Controller::class, 'redirectToOtherPage'])->name('danhsachtreem');
 
-Route::get('/gui-email', [EmailController ::class, 'sendEmail']);
-// Route::post('/gui-email', [EmailController ::class, 'sendEmail']);
+// Route::get('/gui-email', [EmailController ::class, 'sendEmail']);
+Route::post('/gui-email', [EmailController ::class, 'sendEmail'])->name('gui-email');
 Route::get('/gui-emailtask', [EmailController ::class, 'index'])->name('index');
 Route::post('/task', [EmailController ::class, 'store'])->name('store.task');
