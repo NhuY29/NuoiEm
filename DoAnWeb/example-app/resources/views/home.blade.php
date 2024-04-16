@@ -551,15 +551,21 @@
 						<form action="resources/contact.php">
 							<div class="row">
 								<div class="col-md-6">
-									<input type="text" placeholder="Tên" name="name" id="name">
+									<input type="text" placeholder="Tên Người Gửi" name="name" id="name">
 								</div>
 								<div class="col-md-6">
 									<input type="email" placeholder="Email" name="email" id="email">
 								</div>
+								<div class="col-md-6">
+									<input type="text" placeholder="Tên Bé" name="namebaby" id="namebaby">
+								</div>
+								<div class="col-md-6">
+									<input type="file" placeholder="Hình ảnh" name="image" id="image">
+								</div>
 							</div>
 							<div class="row">
 								<div class="col-12">
-									<textarea name="message" id="message" rows="8" placeholder="Thông Tin Về bé "></textarea>
+									<textarea name="message" id="message" rows="8" placeholder="Miêu Tả Về bé "></textarea>
 								</div>
 							</div>
 							<div class="row">
