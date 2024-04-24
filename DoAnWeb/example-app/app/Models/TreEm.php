@@ -26,5 +26,9 @@ public function QuyCaNhan()
 {
     return $this->hasMany(QuyCaNhan::class);
 }
+public function HinhAnh()
+{
+    return $this->hasMany(HinhAnh::class);
+}
 
 }

@@ -29,9 +29,13 @@
     <div class="max-w-md mx-auto">
         <form id="addForm" action="/HinhAnh" method="post" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-20" style="display: none;">
             @csrf
-            <div class="mb-4">
+            <!-- <div class="mb-4">
                 <label for="DuongDan" class="block text-gray-700 text-sm font-bold mb-2">Tải lên ảnh:</label>
                 <input type="file" id="DuongDan" name="DuongDan" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+            </div> -->
+            <div class="mb-4">
+                <label for="DuongDan" class="block text-gray-700 text-sm font-bold mb-2">Đường Dẫn:</label>
+                <input type="text" id="DuongDan" name="DuongDan" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
             </div>
             <div class="mb-4">
                 <label for="ChuThich" class="block text-gray-700 text-sm font-bold mb-2">Chú Thích:</label>

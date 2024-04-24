@@ -46,11 +46,15 @@
     }
     .custom-div {
     width: 300px;
-    height: 400px;
+    height: 500px;
     border: 1px solid #ccc;
     padding: 10px;
     word-wrap: break-word;
   }
+  img {
+      width: 200px; 
+      height: 200px; 
+    }
   </style>
 </head>
 
@@ -61,10 +65,13 @@
       <form method="GET" action="{{ route('danhsachtreem', ['id' => $record->id]) }}">
       <input type="hidden" name="treem_id" value="{{ $record->id }}">
       <div class="custom-div">
-        @if(isset($record->imagePath) && !empty($record->imagePath))
-        <img src="https://th.bing.com/th/id/OIP.SvrKyZhazpRfhDeGMq59yQAAAA?rs=1&pid=ImgDetMain" alt="Ảnh của bạn">
-        @endif
-        <!-- <p class="text-lg font-medium"><strong>Mã Nhận Em:</strong> {{ $Ds + 1 }}</p> -->
+      @foreach($allHinhAnhRecords as $hinhAnhRecord)
+      @if ($hinhAnhRecord->TreEm_id === $record->id) @if(isset($hinhAnhRecord->DuongDan) && !empty($hinhAnhRecord->DuongDan))
+          <img class="anh"src="{{ $hinhAnhRecord->DuongDan }}" alt="{{ $hinhAnhRecord->Ten }}" style="width: 100%;">
+           @else
+          <img src="assets/images/placeholder.jpg" alt="Image not available"> @endif
+        @break @endif
+    @endforeach
         <p><strong>Tên Em:</strong> {{ $record->Ten }} </p>
         <p><strong>Giới tính:</strong> {{ $record->GioiTinh ? 'Nam' : 'Nữ' }}</p>
         <p><strong>Học Tại:</strong> {{ $record->TenTruongHoc }}</p>

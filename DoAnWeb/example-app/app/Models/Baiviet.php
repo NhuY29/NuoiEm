@@ -23,4 +23,8 @@ class Baiviet extends Model
     {
         return $this->belongsTo(User::class, 'user_id', 'id');
     }
+    public function HinhAnh()
+{
+    return $this->hasMany(HinhAnh::class);
+}
 }

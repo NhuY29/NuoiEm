@@ -116,4 +116,11 @@ class HinhAnhController extends Controller
         
     //     return redirect()->back()->with('success', 'Image uploaded successfully!');
     // }
+    public function Ds()
+    {
+        $allTreEmRecords = TreEm::with('benThu3')->paginate(1000);
+        $allHinhAnhRecords = HinhAnh::where('isdelete', 0)->get();
+
+        return view('danhsachtreem', compact('allTreEmRecords', 'allHinhAnhRecords'));
+    }
 }
