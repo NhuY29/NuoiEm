@@ -1,5 +1,5 @@
 <?php
-
+use App\Http\Controllers\HinhAnhController;
 use App\Http\Controllers\BaiVietController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BenThu3Controller;
@@ -106,7 +106,14 @@ Route::get('/editBaiViet/{id}', [BaiVietController::class, 'edit']);
 Route::put('/updateBaiViet/{id}', [BaiVietController::class, 'update']);
 Route::match(['get', 'post'], '/searchBaiViet', [BaiVietController::class, 'search'])->name('searchBaiViet');
 Route::post('/export-excel', [TreEmController::class, 'export'])->name('export.excel');
-
+// Hinh Anh 
+Route::get('/HinhAnh', [HinhAnhController::class, 'index']);
+Route::post('/HinhAnh', [HinhAnhController::class, 'xuLyDuLieu']);
+Route::delete('/deleteHinhAnh/{id}', [HinhAnhController::class, 'delete']);
+Route::get('/editHinhAnh/{id}', [HinhAnhController::class, 'edit']);
+Route::put('/updateHinhAnh/{id}', [HinhAnhController::class, 'update']);
+Route::match(['get', 'post'], '/searchHinhAnh', [HinhAnhController::class, 'search'])->name('searchHinhAnh');
+//
 
 Route::get('auth/facebook', [FacebookSocialiteController::class, 'redirectToFB']);
 Route::get('callback/facebook', [FacebookSocialiteController::class, 'handleCallback']);
