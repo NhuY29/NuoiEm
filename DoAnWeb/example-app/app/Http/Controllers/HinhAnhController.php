@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\HinhAnhModel;
 use Illuminate\Http\Request;
 use CloudinaryLabs\CloudinaryLaravel\Facades\Cloudinary;
 
@@ -11,15 +12,16 @@ class HinhAnhController extends Controller
     {
         $image = $request->file('image');
         
-        // Tải lên hình ảnh lên Cloudinary
-        $uploadedFile = Cloudinary::upload($image->getRealPath());
+        $uploadedFile = Cloudinary::upload($image->getRealPath(), [
+            'folder' => 'uploads', 
+        ]);
         
         // Lấy đường dẫn của hình ảnh từ Cloudinary
         $imageUrl = $uploadedFile->getSecurePath();
         
         // Lưu đường dẫn vào cơ sở dữ liệu
-        $imageModel = new Image();
-        $imageModel->url = $imageUrl;
+        $imageModel = new HinhAnhModel();
+        $imageModel->DuongDan = $imageUrl;
         $imageModel->save();
         
         return redirect()->back()->with('success', 'Image uploaded successfully!');

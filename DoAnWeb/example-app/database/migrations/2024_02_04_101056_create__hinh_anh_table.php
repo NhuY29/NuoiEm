@@ -15,7 +15,7 @@ return new class extends Migration
             $table->bigIncrements("id");
             $table->string("DuongDan")->nullable();
             $table->string("ChuThich")->nullable();
-            $table->unsignedBigInteger('BaiViet_id');
+            $table->unsignedBigInteger('BaiViet_id')->nullable();
             $table->foreign('BaiViet_id')->references('id')->on('_bai_viet');
             $table->unsignedBigInteger('TreEm_id');
             $table->foreign('TreEm_id')->references('id')->on('_tre_em');
