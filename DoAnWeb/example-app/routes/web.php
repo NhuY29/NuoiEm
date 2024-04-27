@@ -38,7 +38,7 @@ Route::get('/home2', function () {
     return view('home2');
 });
 Route::get('/danhsachtreem', [TreEmController::class, 'Ds']);
-Route::get('/danhsachtreem', [HinhAnhController::class, 'Ds']);
+Route::get('/danhsachtreem2', [HinhAnhController::class, 'Ds']);
 //user
 Route::get('/User', [UserController::class, 'index']);
 Route::post('/User', [UserController::class, 'xuLyDuLieu']);
@@ -124,3 +124,5 @@ Route::get('/danhsachtreem/{id}', [BenThu3Controller::class, 'redirectToOtherPag
 Route::post('/gui-email', [EmailController ::class, 'sendEmail'])->name('gui-email');
 Route::get('/gui-emailtask', [EmailController ::class, 'index'])->name('index');
 Route::post('/task', [EmailController ::class, 'store'])->name('store.task');
+
+Route::post('/upload', [HinhAnhController::class, 'upload'])->name('upload');

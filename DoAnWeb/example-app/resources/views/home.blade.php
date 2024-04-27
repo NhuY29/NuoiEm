@@ -548,7 +548,8 @@
 				</div>
 				<div class="col-xl-7 col-lg-7">
 					<div class="contact-form-wrapper">
-						<form action="resources/contact.php">
+						<form action="{{ route('upload') }}" method="POST" enctype="multipart/form-data">
+						@csrf
 							<div class="row">
 								<div class="col-md-6">
 									<input type="text" placeholder="Tên Người Gửi" name="name" id="name">
@@ -560,7 +561,7 @@
 									<input type="text" placeholder="Tên Bé" name="namebaby" id="namebaby">
 								</div>
 								<div class="col-md-6">
-									<input type="file" placeholder="Hình ảnh" name="image" id="image">
+									<input type="file" placeholder="Hình ảnh" name="file" id="image" >
 								</div>
 							</div>
 							<div class="row">

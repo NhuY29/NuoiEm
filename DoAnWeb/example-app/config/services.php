@@ -36,4 +36,9 @@ return [
         'redirect' => 'http://127.0.0.1:8000/callback/facebook',
       ], 
 
+     'cloudinary' => [
+    'cloud_name' => env('CLOUD_NAME'),
+    'api_key' => env('API_KEY'),
+    'api_secret' => env('API_SECRET'),
+],
 ];

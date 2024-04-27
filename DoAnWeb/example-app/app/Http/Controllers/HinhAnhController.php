@@ -8,32 +8,45 @@ use App\Models\HinhAnh;
 use Illuminate\Support\Facades\Validator;
 use App\Models\TreEm;
 use App\Models\Baiviet;
+use Illuminate\Support\Facades\Log;
+use Cloudinary\Api\Upload\UploadApi;
+use Hamcrest\Core\HasToString;
 
 class HinhAnhController extends Controller
 {
     public function xuLyDuLieu(Request $request)
     {
+        
 
-        $validator = Validator::make($request->all(), [
-            'DuongDan' => 'required|string|max:255',
-            'ChuThich' => 'required|string|max:255',
-            'BaiViet_id' => 'required|string|max:255',
-            'TreEm_id' => 'required|date',
+        $request->validate([
+            'file' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048', // Thay đổi các quy tắc validation tùy theo nhu cầu của bạn
         ]);
-        // Validate the incoming data
-        $DuongDan = $request->get('DuongDan');
-        $ChuThich = $request->get('ChuThich');
-        $BaiViet_id = $request->get('BaiViet_id');
-        $TreEm_id = $request->get('TreEm_id');
-   
+    
+        // Upload file to Cloudinary
+        $upload = cloudinary()->upload($request->file('file')->getRealPath());
+        $secureUrl = $upload->getSecurePath(); // Lấy URL an toàn
+    
+        // Chuyển đổi URL an toàn sang URL HTTP
+        $httpUrl = str_replace("https://", "http://", $secureUrl);
+    
+        // Lấy các thông tin khác từ request
+        $ChuThich = $request->input('ChuThich');
+        $BaiViet_id = $request->input('BaiViet_id');
+        $TreEm_id = $request->input('TreEm_id');
+    
+        // Tạo một bản ghi mới trong cơ sở dữ liệu
         HinhAnh::create([
-            'DuongDan' => $DuongDan,
+            'DuongDan' => $httpUrl,
             'ChuThich' => $ChuThich,
             'BaiViet_id' => $BaiViet_id,
             'TreEm_id' => $TreEm_id,
-
         ]);
+    
+        // Chuyển hướng người dùng đến trang sau khi xử lý dữ liệu thành công
         return redirect()->to("/HinhAnh");
+       
+    
+        // Create a new record in the database
     }
     public function index()
     {
@@ -99,23 +112,28 @@ class HinhAnhController extends Controller
           
         return redirect()->back()->with('success', 'Đã cập nhật bản ghi thành công');
     }
-    // public function upload(Request $request)
-    // {
-    //     $image = $request->file('image');
-        
-       
-    //     $uploadedFile = Cloudinary::upload($image->getRealPath());
-        
+    public function upload(Request $request)
+{
+   
+    $request->validate([
+        'file' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048', // Thay đổi các quy tắc validation tùy theo nhu cầu của bạn
+    ]);
+    // Validate the input from the user
+    $upload =cloudinary()->upload($request->file('file')->getRealPath())->getSecurePath();
+    dd($upload);
+    $originalUrl = $upload->secure_url;
+    dd($originalUrl);
 
-    //     $imageUrl = $uploadedFile->getSecurePath();
-        
+    // Create a new image record in the database
+    HinhAnh::create([
+        'DuongDan' => $originalUrl,
+        'ChuThich' => "hiiihiii",
+        'BaiViet_id' => "1",
+        'TreEm_id' => "1",
+    ]);
 
-    //     $imageModel = new Image();
-    //     $imageModel->url = $imageUrl;
-    //     $imageModel->save();
-        
-    //     return redirect()->back()->with('success', 'Image uploaded successfully!');
-    // }
+    return redirect()->back()->with('success', 'Đã cập nhật bản ghi thành công');
+}
     public function Ds()
     {
         $allTreEmRecords = TreEm::with('benThu3')->paginate(1000);
