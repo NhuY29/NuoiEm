@@ -141,4 +141,5 @@ class HinhAnhController extends Controller
 
         return view('danhsachtreem', compact('allTreEmRecords', 'allHinhAnhRecords'));
     }
+    
 }

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use App\Models\TreEm;
 use App\Models\BenThu3;
+use App\Models\HinhAnh;
 use Maatwebsite\Excel\Facades\Excel;
 use Illuminate\Support\Facades\Session;
 use PhpOffice\PhpSpreadsheet\Spreadsheet;
@@ -76,8 +77,9 @@ class TreEmController extends Controller
     {
         $allTreEmRecords = TreEm::with('benThu3')->paginate(1000);
         $allBenThubaRecords = BenThu3::where('isdelete', 0)->get();
+        $allHinhAnhRecords = HinhAnh::where('isdelete', 0)->get();
 
-        return view('danhsachtreem', compact('allTreEmRecords', 'allBenThubaRecords'));
+        return view('danhsachtreem', compact('allTreEmRecords', 'allBenThubaRecords','allHinhAnhRecords'));
     }
     
     //phan trang
