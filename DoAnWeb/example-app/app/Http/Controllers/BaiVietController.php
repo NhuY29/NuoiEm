@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Validator;
 use App\Models\TreEm;
 use App\Models\Baiviet;
 use App\Models\User;
+use App\Models\HinhAnh;
 use App\Models\UserModel;
 
 class BaiVietController extends Controller
@@ -37,6 +38,9 @@ class BaiVietController extends Controller
         //     // Trả về một script JavaScript thông báo lỗi
         //     return redirect()->back()->with('alert', $errorMessage)->withInput();
         // }
+        $treem = session('treem');
+        $treem_id = $treem->id;
+        $treem_name = $treem->Ten;
 
         // Validate the incoming data
         $TieuDe = $request->get('TieuDe');
@@ -89,10 +93,27 @@ class BaiVietController extends Controller
       
     }
 
-    public function hienThiForm()
+    public function hienThiThongTinTreEm($id)
     {
-        return view('BaiViet');
+        // Lấy thông tin của trẻ em từ model TreEm dựa trên ID
+        $treem = TreEm::find($id);
+    
+        // Kiểm tra xem trẻ em có tồn tại không
+        if ($treem) {
+            // Lấy thông tin bài viết từ model Baiviet dựa trên ID
+            $baiviet = Baiviet::findOrFail($id);
+    
+            // Lấy thông tin ảnh của trẻ em
+            $anhTreEm = HinhAnh::where('TreEm_id', $id)->first();
+    
+            // Tiếp tục xử lý logic của bạn tại đây...
+            return view('ThongTinChiTiet', ['treem' => $treem, 'anhTreEm' => $anhTreEm, 'baiviet' => $baiviet]);
+        } else {
+            // Xử lý trường hợp không tìm thấy thông tin của trẻ em
+            return redirect()->back()->with('error', 'Không tìm thấy thông tin trẻ em.');
+        }
     }
+    
     public function delete($id)
     {
         $record = Baiviet::findOrFail($id);

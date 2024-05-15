@@ -31,6 +31,12 @@ use Illuminate\Support\Facades\Hash;
 Route::get('/home', function () {
     return view('home');
 });
+Route::get('/thongtinchitiet', function () {
+    return view('ThongTinChiTiet');
+});
+Route::get('/thongtinchitiet/{id}', [BaiVietController::class, 'hienThiThongTinTreEm'])->name('thongtinchitiet');
+
+
 Route::get('/chuyenkhoan', function () {
     return view('ThongTinChuyenKhoan');
 });
