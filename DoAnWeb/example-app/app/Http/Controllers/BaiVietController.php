@@ -13,52 +13,47 @@ use App\Models\UserModel;
 class BaiVietController extends Controller
 {
     public function xuLyDuLieu(Request $request)
-    {
+{
+    $validator = Validator::make($request->all(), [
+        'TieuDe' => 'required|string|max:255',
+        'TreEm_id' => 'required|string|max:255',
+        'NoiDung' => 'required|string|max:255',
+        'NgayDang' => 'required|date',
+        'user_id' => 'required|string|max:255',
+    ]);
 
-        $validator = Validator::make($request->all(), [
-            'TieuDe' => 'required|string|max:255',
-            'TreEm_id' => 'required|string|max:255',
-            'NoiDung' => 'required|string|max:255',
-            'NgayDang' => 'required|date',
-            'user_id' => 'required|string|max:255',
-
-        ]);
-
-        // if ($validator->fails()) {
-        //     $errors = $validator->errors();
-
-        //     // Kiểm tra lỗi cho từng trường
-        //     if ($errors->has('TieuDe')) {
-        //         $errorMessage = 'Thieu tieu de';
-        //     }
-        //      else {
-        //         $errorMessage = 'Đã xảy ra lỗi trong quá trình xử lý dữ liệu, không được rỗng';
-        //     }
-
-        //     // Trả về một script JavaScript thông báo lỗi
-        //     return redirect()->back()->with('alert', $errorMessage)->withInput();
-        // }
-        $treem = session('treem');
-        $treem_id = $treem->id;
-        $treem_name = $treem->Ten;
-
-        // Validate the incoming data
-        $TieuDe = $request->get('TieuDe');
-        $TreEm_id = $request->get('TreEm_id');
-        $NoiDung = $request->get('NoiDung');
-        $NgayDang = $request->get('NgayDang');
-        $user_id = $request->get('user_id');
-   
-        Baiviet::create([
-            'TieuDe' => $TieuDe,
-            'TreEm_id' => $TreEm_id,
-            'NoiDung' => $NoiDung,
-            'NgayDang' => $NgayDang,
-            'user_id' => $user_id,
-
-        ]);
-        return redirect()->to("/BaiViet");
+    // Nếu validation không thành công, redirect về trang trước đó với thông báo lỗi
+    if ($validator->fails()) {
+        return redirect()->back()->withErrors($validator)->withInput();
     }
+
+    // Lấy thông tin từ request
+    $TieuDe = $request->input('TieuDe');
+    $TreEm_id = $request->input('TreEm_id');
+    $NoiDung = $request->input('NoiDung');
+    $NgayDang = $request->input('NgayDang');
+    $user_id = $request->input('user_id');
+
+    // Kiểm tra xem trong bảng Baiviet đã có bài viết nào có tre_em_id tương tự hay chưa
+    $existingBaiViet = Baiviet::where('TreEm_id', $TreEm_id)->exists();
+
+    // Nếu đã tồn tại bài viết có tre_em_id tương tự, không thêm mới
+    if ($existingBaiViet) {
+        return redirect()->back()->with('error', 'Bài viết với tre_em_id này đã tồn tại.');
+    }
+
+    // Nếu không có bài viết nào có tre_em_id tương tự, thêm mới bài viết
+    Baiviet::create([
+        'TieuDe' => $TieuDe,
+        'TreEm_id' => $TreEm_id,
+        'NoiDung' => $NoiDung,
+        'NgayDang' => $NgayDang,
+        'user_id' => $user_id,
+    ]);
+
+    return redirect()->to("/BaiViet");
+}
+
     public function index()
     {
         // Lấy tất cả các bản ghi từ bảng BenThu3
