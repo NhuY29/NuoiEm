@@ -338,6 +338,7 @@
 								<img src="	https://w.ladicdn.com/s900x700/5c3219ef974b7861952fed1d/sgagwehw-20220808091422.png" alt="">
 								<p>Các bé vùng cao Tây Bắc xa xôi, hẻo lánh để đến với “con chữ” có rất nhiều khó khăn, gian khổ. Chỉ vì để được đến trường học tập với thầy cô và các bạn, các em bé ấy không ngại những quãng đường xa xôi hàng km hay thức dậy rất sớm để được cắp sách đếntrường.</p>
 							</div>
+							<div class="fb-like" data-href="https://f1a9-2001-ee0-570c-c720-8092-44fc-fba4-33a1.ngrok-free.app/home" data-width="" data-layout="" data-action="" data-size="" data-share="true"></div>
 							<button class="btn btn-link" onclick="toggleReadMore()">Xem Thêm</button>
 						</div>
 					</div>
@@ -446,36 +447,6 @@
 				</div>
 			</div>
 		</div>
-		<div class="container2">
-			<h1>Sửa khun cho bé - Hướng dẫn chi tiết và an toàn</h1>
-			<p>Sửa khun là một kỹ thuật chỉnh hình giúp điều chỉnh các ngón chân bị cong, vẹo về vị trí bình thường. Kỹ thuật này thường được áp dụng cho trẻ em trong giai đoạn phát triển để tránh ảnh hưởng đến khả năng vận động và sức khỏe của bé về sau.</p>
-			<h2>Lý do cần sửa khun cho bé</h2>
-			<ul>
-				<li>Ngón chân bị cong, vẹo có thể gây khó khăn cho bé khi đi lại, mang giày dép và tham gia các hoạt động thể thao.</li>
-				<li>Tình trạng này có thể ảnh hưởng đến sự phát triển của hệ xương khớp và gây ra các vấn đề về sức khỏe như đau nhức, viêm khớp, v.v.</li>
-			</ul>
-			<h2>Độ tuổi thích hợp để sửa khun</h2>
-			<p>Thời điểm tốt nhất để sửa khun cho bé là từ 3 đến 6 tuổi, khi hệ xương khớp của bé vẫn đang trong giai đoạn phát triển.</p>
-			<p>Tuy nhiên, trẻ em ở độ tuổi nào cũng có thể được sửa khun nếu có nhu cầu.</p>
-			<h2>Các phương pháp sửa khun</h2>
-			<p>Có hai phương pháp sửa khun chính:</p>
-			<ul>
-				<li><strong>Sửa khun bằng nẹp chỉnh hình:</strong> Phương pháp này sử dụng nẹp chỉnh hình để điều chỉnh ngón chân về vị trí bình thường. Nẹp chỉnh hình cần được đeo trong thời gian dài, thường là từ 6 tháng đến 1 năm.</li>
-				<li><strong>Sửa khun bằng phẫu thuật:</strong> Phương pháp này được áp dụng cho các trường hợp cong vẹo ngón chân nghiêm trọng. Phẫu thuật sẽ giúp chỉnh sửa vị trí của xương ngón chân và cố định chúng bằng nẹp hoặc đinh vít.</li>
-			</ul>
-			<h2>Lưu ý khi sửa khun cho bé</h2>
-			<ul>
-				<li>Cần đưa bé đến gặp bác sĩ chuyên khoa chỉnh hình để được chẩn đoán và tư vấn phương pháp sửa khun phù hợp.</li>
-				<li>Cha mẹ cần tuân thủ hướng dẫn của bác sĩ trong quá trình điều trị cho bé.</li>
-				<li>Cần theo dõi sát sao tình trạng của bé và đưa bé đi tái khám định kỳ.</li>
-			</ul>
-			<h2>Kết luận</h2>
-			<p>Sửa khun là một kỹ thuật an toàn và hiệu quả giúp điều chỉnh ngón chân cong vẹo cho bé. Cha mẹ nên đưa bé đi khám sớm để được tư vấn và điều trị kịp thời.</p>
-			<div class="fb-like" data-href="https://f1a9-2001-ee0-570c-c720-8092-44fc-fba4-33a1.ngrok-free.app/home" data-width="" data-layout="" data-action="" data-size="" data-share="true"></div>
-		</div>
-	</section>
-	<section class="testimonial-area pt-80 pb-90">
-
 	</section>
 	<section id="tham-em" class="blog-area pt-170 pb-140">
 		<div class="container">
@@ -716,13 +687,6 @@
 
 	.btn-hover:hover .back-to-top {
 		display: block;
-	}
-
-	/* baiviet */
-	.container2 {
-		width: 700px;
-		margin: 0 auto;
-		background-color: #fff;
 	}
 
 	h1 {
