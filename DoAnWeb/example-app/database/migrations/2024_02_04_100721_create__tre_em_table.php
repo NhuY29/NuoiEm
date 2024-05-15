@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string("SDT")->nullable();
             $table->string("NgheNghiep")->nullable();
             $table->string("NoiCongTac")->nullable();
+    
             $table->boolean('isCreate')->default(false);
             $table->boolean('isDelete')->default(false);
             $table->timestamps();
@@ -31,6 +32,7 @@ return new class extends Migration
             $table->string("TenTruongHoc")->nullable();
             $table->boolean("TrangThai")->nullable();
             $table->string("DiaChi")->nullable();
+            $table->text("UocMo")->nullable();
             $table->unsignedBigInteger('BenThu3_id');
             $table->foreign('BenThu3_id')->references('id')->on('_ben_thu3');
             $table->boolean('isCreate')->default(false);
