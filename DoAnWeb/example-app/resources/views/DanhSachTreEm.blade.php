@@ -104,6 +104,7 @@
           <p><strong>Hổ Trợ Bởi:</strong> {{ $record->benThu3->Ten }}</p>
 
           <button type="submit" class="bg-blue-500 hover:bg-blue-700">Nhận Em</button>
+          <a href="{{ route('thongtinchitiet', ['id' => $record->id]) }}}" class="bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded inline-block mt-2">Chi Tiết</a>
         </div>
       </form>
       <?php $Ds++; ?> @if ($Ds % 4 === 0)
