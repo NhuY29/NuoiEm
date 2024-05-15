@@ -10,7 +10,7 @@ class TreEm extends Model
     use HasFactory;
     protected $table = '_tre_em'; // Tên của bảng trong CSDL
 
-    protected $fillable = ['Ten', 'GioiTinh', 'TenTruongHoc', 'DiaChi', 'BenThu3_id'];
+    protected $fillable = ['Ten', 'GioiTinh', 'TenTruongHoc', 'DiaChi', 'BenThu3_id','TrangThai'];
    // Model TreEm.php
 public function benThu3()
 {
