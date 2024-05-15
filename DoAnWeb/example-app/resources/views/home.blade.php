@@ -552,13 +552,13 @@
 						@csrf
 							<div class="row">
 								<div class="col-md-6">
-									<input type="text" placeholder="Tên Người Gửi" name="name" id="name">
+									<input type="text" placeholder="Tên Người Gửi" name="HotenNguoi3" id="HotenNguoi3">
 								</div>
 								<div class="col-md-6">
-									<input type="email" placeholder="Email" name="email" id="email">
+									<input type="email" placeholder="Email" name="Email" id="Email">
 								</div>
 								<div class="col-md-6">
-									<input type="text" placeholder="Tên Bé" name="namebaby" id="namebaby">
+									<input type="text" placeholder="Tên Bé" name="TenBe" id="TenBe">
 								</div>
 								<div class="col-md-6">
 									<input type="file" placeholder="Hình ảnh" name="file" id="image" >

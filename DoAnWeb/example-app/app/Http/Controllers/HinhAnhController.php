@@ -8,6 +8,7 @@ use App\Models\HinhAnh;
 use Illuminate\Support\Facades\Validator;
 use App\Models\TreEm;
 use App\Models\Baiviet;
+use App\Models\ThongTinTam;
 use Illuminate\Support\Facades\Log;
 use Cloudinary\Api\Upload\UploadApi;
 use Hamcrest\Core\HasToString;
@@ -115,21 +116,24 @@ class HinhAnhController extends Controller
     public function upload(Request $request)
 {
    
-    $request->validate([
-        'file' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048', // Thay đổi các quy tắc validation tùy theo nhu cầu của bạn
-    ]);
+    $upload = cloudinary()->upload($request->file('file')->getRealPath());
+    $secureUrl = $upload->getSecurePath(); // Lấy URL an toàn
+
+    // Chuyển đổi URL an toàn sang URL HTTP
+    $httpUrl = str_replace("https://", "http://", $secureUrl);
     // Validate the input from the user
-    $upload =cloudinary()->upload($request->file('file')->getRealPath())->getSecurePath();
-    dd($upload);
-    $originalUrl = $upload->secure_url;
-    dd($originalUrl);
+    $NoiDung= $request->input('NoiDung');
+    $TenBe= $request->input('TenBe');
+    $Email= $request->input('Email');
+    $HotenNguoi3= $request->input('HotenNguoi3');
 
     // Create a new image record in the database
-    HinhAnh::create([
-        'DuongDan' => $originalUrl,
-        'ChuThich' => "hiiihiii",
-        'BaiViet_id' => "1",
-        'TreEm_id' => "1",
+    ThongTinTam::create([
+        'HinhAnh' =>  $httpUrl,
+        'NoiDung' => $NoiDung,
+        'TenBe' => $TenBe,
+        'Email' => $Email,
+        'HotenNguoi3' => $HotenNguoi3,
     ]);
 
     return redirect()->back()->with('success', 'Đã cập nhật bản ghi thành công');
