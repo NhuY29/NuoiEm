@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('_bai_viet', function (Blueprint $table) {
             $table->bigIncrements("id");
             $table->string("TieuDe")->nullable();
-            $table->string("NoiDung")->nullable();
+            $table->text("NoiDung")->nullable();
             $table->dateTime("NgayDang")->nullable();
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
