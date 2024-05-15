@@ -17,7 +17,7 @@
     <p>Tên bé: <b>{{$treem_name}}</b></p>
     <p>Việc chuyển khoản hằng tháng sẽ giúp đáp ứng nhu cầu thiết yếu cho bé <b>{{$treem_name}}</b>. Đồng thời, điều này cũng giúp anh/chị <b>{{$name}}</b> dễ dàng theo dõi quá trình phát triển của bé và yên tâm về việc bé được chăm sóc tốt nhất.</p>
     <p>Số tiền hỗ trợ hằng tháng mà bé <b>{{$treem_name}}</b> mong muốn nhận được là 1 triệu đồng. Số tiền này sẽ được sử dụng để chi trả cho các khoản chi phí như: ăn uống, chăm sóc sức khỏe, học tập,...</p>
-    <p>Chúng tôi cam kết sẽ sử dụng số tiền hỗ trợ một cách hiệu quả và minh bạch, đồng thời báo cáo chi tiêu định kỳ tại: <a href="https://gemini.google.com/u/0/app/ef4bc51376454cd7">Tại Đây</a></p>
+    <p>Chúng tôi cam kết sẽ sử dụng số tiền hỗ trợ một cách hiệu quả và minh bạch, đồng thời báo cáo chi tiêu định kỳ tại: <a href="https://www.facebook.com/NTNhuY29?mibextid=LQQJ4d">Tại Đây</a></p>
     <h3>Xin chân thành cảm ơn!</h3>
 </div>
 </div>

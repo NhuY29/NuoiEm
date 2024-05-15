@@ -24,6 +24,7 @@ class EmailController extends Controller
         // $treem_id = $_GET['treem_id'];
         $treem = session('treem');
         $treem_id = $treem->id;
+        $treem_name = $treem->Ten;
         // dump($treem_id);
         $to_name = "Le Quang Bao";
         $data = array(
@@ -31,7 +32,8 @@ class EmailController extends Controller
             "name" => $name,
             "id_card_number" => $id_card_number,
             "phone_number" => $phone_number,
-            "treem_id" => $treem_id
+            "treem_id" => $treem_id,
+            "treem_name" => $treem_name
         );
         
         Mail::send("templates", $data, function($message) use ($to_name, $email, $data) {

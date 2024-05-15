@@ -59,6 +59,29 @@
       padding: 10px;
       word-wrap: break-word;
     }
+    .container {
+  max-width: 7xl; /* Chiều rộng tối đa */
+  margin: 0 auto; /* Căn giữa container */
+  padding-left: 2rem; /* Khoảng cách bên trái */
+  padding-right: 2rem; /* Khoảng cách bên phải */
+}
+
+.custom-flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start; /* Căn chỉnh các phần tử từ trái qua phải */
+  gap: 1rem; /* Khoảng cách giữa các phần tử */
+}
+
+.custom-div {
+  flex: 1 1 25%; /* Chiều rộng cố định cho mỗi mục */
+  padding: 1rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.375rem;
+  background-color: #fff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
   </style>
 </head>
 
@@ -90,10 +113,10 @@
       @endif
       @endif
       @endforeach
-
+   
     </div>
+    
   </div>
-
 </body>
 
 </html>
