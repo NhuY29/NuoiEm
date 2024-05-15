@@ -64,17 +64,17 @@
 										<a class="page-scroll" href="#he-sinh-thai">Hệ Sinh Thái</a>
 									</li>
 									<li class="nav-item">
-									<a href="/chuyenkhoan" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Số Tài Khoản</a>
+										<a href="/chuyenkhoan" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Số Tài Khoản</a>
 									</li>
 									<li class="nav-item">
-										<a class="header-btn btn-hover" href="#courses">Get Started</a>
+										<a class="header-btn btn-hover" href="#courses">Quản trị</a>
 									</li>
 								</ul>
-							</div> 
-						</nav> 
+							</div>
+						</nav>
 					</div>
-				</div> 
-			</div> 
+				</div>
+			</div>
 		</div>
 	</header>
 	<section id="gioi-thieu" class="hero-area bg_cover">
@@ -94,7 +94,7 @@
 			</div>
 		</div>
 		<div class="hero-left">
-			<img src="https://img.cand.com.vn/NewFiles/Images/2022/10/27/1-1666870392779.jpg" alt="">
+			<img class="img-fluid" src="https://img.cand.com.vn/NewFiles/Images/2022/10/27/1-1666870392779.jpg" alt="">
 		</div>
 	</section>
 	<section id="skill" class="skill-area pt-170">
@@ -200,7 +200,7 @@
 								<div class="meta-item">
 									<i class="lni lni-star"></i>
 									<span>5.0</span>
-								</div>												
+								</div>
 							</div>
 						</div>
 					</div>
@@ -226,7 +226,7 @@
 								<div class="meta-item">
 									<i class="lni lni-star"></i>
 									<span>4.0</span>
-								</div>								
+								</div>
 							</div>
 						</div>
 					</div>
@@ -267,7 +267,7 @@
 							</a>
 						</div>
 						<div class="course-info">
-							<h4><a href="course-single.html">200+ bé Tỉnh Đắk Lắk  </a></h4>
+							<h4><a href="course-single.html">200+ bé Tỉnh Đắk Lắk </a></h4>
 							<div class="course-meta">
 								<div class="meta-item">
 									<i class="lni lni-user"></i>
@@ -447,32 +447,32 @@
 			</div>
 		</div>
 		<div class="container2">
-        <h1>Sửa khun cho bé - Hướng dẫn chi tiết và an toàn</h1>
-        <p>Sửa khun là một kỹ thuật chỉnh hình giúp điều chỉnh các ngón chân bị cong, vẹo về vị trí bình thường. Kỹ thuật này thường được áp dụng cho trẻ em trong giai đoạn phát triển để tránh ảnh hưởng đến khả năng vận động và sức khỏe của bé về sau.</p>
-        <h2>Lý do cần sửa khun cho bé</h2>
-        <ul>
-            <li>Ngón chân bị cong, vẹo có thể gây khó khăn cho bé khi đi lại, mang giày dép và tham gia các hoạt động thể thao.</li>
-            <li>Tình trạng này có thể ảnh hưởng đến sự phát triển của hệ xương khớp và gây ra các vấn đề về sức khỏe như đau nhức, viêm khớp, v.v.</li>
-        </ul>
-        <h2>Độ tuổi thích hợp để sửa khun</h2>
-        <p>Thời điểm tốt nhất để sửa khun cho bé là từ 3 đến 6 tuổi, khi hệ xương khớp của bé vẫn đang trong giai đoạn phát triển.</p>
-        <p>Tuy nhiên, trẻ em ở độ tuổi nào cũng có thể được sửa khun nếu có nhu cầu.</p>
-        <h2>Các phương pháp sửa khun</h2>
-        <p>Có hai phương pháp sửa khun chính:</p>
-        <ul>
-            <li><strong>Sửa khun bằng nẹp chỉnh hình:</strong> Phương pháp này sử dụng nẹp chỉnh hình để điều chỉnh ngón chân về vị trí bình thường. Nẹp chỉnh hình cần được đeo trong thời gian dài, thường là từ 6 tháng đến 1 năm.</li>
-            <li><strong>Sửa khun bằng phẫu thuật:</strong> Phương pháp này được áp dụng cho các trường hợp cong vẹo ngón chân nghiêm trọng. Phẫu thuật sẽ giúp chỉnh sửa vị trí của xương ngón chân và cố định chúng bằng nẹp hoặc đinh vít.</li>
-        </ul>
-        <h2>Lưu ý khi sửa khun cho bé</h2>
-        <ul>
-            <li>Cần đưa bé đến gặp bác sĩ chuyên khoa chỉnh hình để được chẩn đoán và tư vấn phương pháp sửa khun phù hợp.</li>
-            <li>Cha mẹ cần tuân thủ hướng dẫn của bác sĩ trong quá trình điều trị cho bé.</li>
-            <li>Cần theo dõi sát sao tình trạng của bé và đưa bé đi tái khám định kỳ.</li>
-        </ul>
-        <h2>Kết luận</h2>
-        <p>Sửa khun là một kỹ thuật an toàn và hiệu quả giúp điều chỉnh ngón chân cong vẹo cho bé. Cha mẹ nên đưa bé đi khám sớm để được tư vấn và điều trị kịp thời.</p>
-		<div class="fb-like" data-href="https://f1a9-2001-ee0-570c-c720-8092-44fc-fba4-33a1.ngrok-free.app/home" data-width="" data-layout="" data-action="" data-size="" data-share="true"></div>
-	</div>
+			<h1>Sửa khun cho bé - Hướng dẫn chi tiết và an toàn</h1>
+			<p>Sửa khun là một kỹ thuật chỉnh hình giúp điều chỉnh các ngón chân bị cong, vẹo về vị trí bình thường. Kỹ thuật này thường được áp dụng cho trẻ em trong giai đoạn phát triển để tránh ảnh hưởng đến khả năng vận động và sức khỏe của bé về sau.</p>
+			<h2>Lý do cần sửa khun cho bé</h2>
+			<ul>
+				<li>Ngón chân bị cong, vẹo có thể gây khó khăn cho bé khi đi lại, mang giày dép và tham gia các hoạt động thể thao.</li>
+				<li>Tình trạng này có thể ảnh hưởng đến sự phát triển của hệ xương khớp và gây ra các vấn đề về sức khỏe như đau nhức, viêm khớp, v.v.</li>
+			</ul>
+			<h2>Độ tuổi thích hợp để sửa khun</h2>
+			<p>Thời điểm tốt nhất để sửa khun cho bé là từ 3 đến 6 tuổi, khi hệ xương khớp của bé vẫn đang trong giai đoạn phát triển.</p>
+			<p>Tuy nhiên, trẻ em ở độ tuổi nào cũng có thể được sửa khun nếu có nhu cầu.</p>
+			<h2>Các phương pháp sửa khun</h2>
+			<p>Có hai phương pháp sửa khun chính:</p>
+			<ul>
+				<li><strong>Sửa khun bằng nẹp chỉnh hình:</strong> Phương pháp này sử dụng nẹp chỉnh hình để điều chỉnh ngón chân về vị trí bình thường. Nẹp chỉnh hình cần được đeo trong thời gian dài, thường là từ 6 tháng đến 1 năm.</li>
+				<li><strong>Sửa khun bằng phẫu thuật:</strong> Phương pháp này được áp dụng cho các trường hợp cong vẹo ngón chân nghiêm trọng. Phẫu thuật sẽ giúp chỉnh sửa vị trí của xương ngón chân và cố định chúng bằng nẹp hoặc đinh vít.</li>
+			</ul>
+			<h2>Lưu ý khi sửa khun cho bé</h2>
+			<ul>
+				<li>Cần đưa bé đến gặp bác sĩ chuyên khoa chỉnh hình để được chẩn đoán và tư vấn phương pháp sửa khun phù hợp.</li>
+				<li>Cha mẹ cần tuân thủ hướng dẫn của bác sĩ trong quá trình điều trị cho bé.</li>
+				<li>Cần theo dõi sát sao tình trạng của bé và đưa bé đi tái khám định kỳ.</li>
+			</ul>
+			<h2>Kết luận</h2>
+			<p>Sửa khun là một kỹ thuật an toàn và hiệu quả giúp điều chỉnh ngón chân cong vẹo cho bé. Cha mẹ nên đưa bé đi khám sớm để được tư vấn và điều trị kịp thời.</p>
+			<div class="fb-like" data-href="https://f1a9-2001-ee0-570c-c720-8092-44fc-fba4-33a1.ngrok-free.app/home" data-width="" data-layout="" data-action="" data-size="" data-share="true"></div>
+		</div>
 	</section>
 	<section class="testimonial-area pt-80 pb-90">
 
@@ -486,46 +486,23 @@
 					</div>
 				</div>
 			</div>
+
 			<div class="row">
+				@foreach ($allTinTucRecords as $DS)
 				<div class="col-xl-4 col-lg-4 col-md-6">
 					<div class="single-blog">
 						<div class="blog-img">
 							<a href="javascript:void(0)" class="d-block">
-								<img src="https://image-us.eva.vn/upload/2-2023/images/2023-05-29/3-1685333396-312-width780height516.jpg" alt="">
+								<img src="{{ $DS->HinhAnh }}" alt="">
 							</a>
 						</div>
 						<div class="blog-content">
-							<h4><a href="javascript:void(0)">Dự án "Cơm cho em" của Trung tâm Hỗ trợ Giáo dục và Phát triển Cộng đồng (CED)</a></h4>
-							<p>Cung cấp bữa ăn trưa đầy đủ dinh dưỡng cho học sinh nghèo, học sinh bán trú tại các trường học vùng cao, giúp các em có đủ sức khỏe để học tập.</p>
+							<h4><a href="javascript:void(0)">{{ $DS->TieuDe }}</a></h4>
+							<p>{{ $DS->NoiDung }}</p>
 						</div>
 					</div>
 				</div>
-				<div class="col-xl-4 col-lg-4 col-md-6">
-					<div class="single-blog">
-						<div class="blog-img">
-							<a href="javascript:void(0)" class="d-block">
-								<img src="https://th.bing.com/th/id/R.76768973648153db6db0c582b822d524?rik=2y6N0rk6%2f4cZJw&riu=http%3a%2f%2fmedia.baokiemtoannhanuoc.vn%2ffiles%2flibrary%2fimages%2fsite-3%2f20191015%2fweb%2fchum-anh-hoat-dong-thien-nguyen-cua-doan-thanh-nien-kiem-toan-nha-nuoc-tai-tinh-thanh-hoa-va-hoa-binh-310-130249.JPG&ehk=dyEBo9uqsF5JyJcklXXjuq2kyutuyd%2fJ9C7TNoT0oV0%3d&risl=&pid=ImgRaw&r=0" alt="">
-							</a>
-						</div>
-						<div class="blog-content">
-							<h4><a href="javascript:void(0)">Dự án "Vì em đến trường" của Quỹ Bảo trợ Trẻ em Việt Nam</a></h4>
-							<p>Hỗ trợ học sinh nghèo, học sinh có hoàn cảnh khó khăn tiếp tục đến trường. Giảm tỷ lệ học sinh bỏ học do thiếu điều kiện kinh tế, góp phần nâng cao chất lượng giáo dục tại các địa phương khó khăn.</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-xl-4 col-lg-4 col-md-6">
-					<div class="single-blog">
-						<div class="blog-img">
-							<a href="javascript:void(0)" class="d-block">
-								<img src="https://th.bing.com/th/id/R.13defcd63ae28f8de6acf24bf466ee8c?rik=Mf0k0%2b1R%2brbG7A&pid=ImgRaw&r=0" alt="">
-							</a>
-						</div>
-						<div class="blog-content">
-							<h4><a href="javascript:void(0)">Dự án "Hy vọng cho em" của Tập đoàn FPT</a></h4>
-							<p>Hỗ trợ trẻ em mồ côi, trẻ em có hoàn cảnh đặc biệt khó khăn tại Việt Nam, giúp các em có được cuộc sống tốt đẹp hơn, có cơ hội học tập và phát triển. Xây dựng và quản lý các mái ấm tình thương cho trẻ em mồ côi, trẻ em có hoàn cảnh đặc biệt khó khăn.</p>
-						</div>
-					</div>
-				</div>
+				@endforeach
 			</div>
 		</div>
 	</section>
@@ -549,7 +526,7 @@
 				<div class="col-xl-7 col-lg-7">
 					<div class="contact-form-wrapper">
 						<form action="{{ route('upload') }}" method="POST" enctype="multipart/form-data">
-						@csrf
+							@csrf
 							<div class="row">
 								<div class="col-md-6">
 									<input type="text" placeholder="Tên Người Gửi" name="HotenNguoi3" id="HotenNguoi3">
@@ -561,7 +538,7 @@
 									<input type="text" placeholder="Tên Bé" name="TenBe" id="TenBe">
 								</div>
 								<div class="col-md-6">
-									<input type="file" placeholder="Hình ảnh" name="file" id="image" >
+									<input type="file" placeholder="Hình ảnh" name="file" id="image">
 								</div>
 							</div>
 							<div class="row">
@@ -638,7 +615,6 @@
 	<script src="resources/js/main.js"></script>
 
 	<script>
-
 		var pageLink = document.querySelectorAll('.page-scroll');
 
 		pageLink.forEach(elem => {
@@ -708,76 +684,85 @@
 </script>
 <style>
 	.quy-trinh-btn {
-  width: 150px;
-  height: 40px;
-  background-color: #337ab7;
-  color: #ffffff;
-  font-family: Arial, sans-serif;
-  font-size: 16px;
-  font-weight: bold;
-  border: none;
-  border-radius: 5px;
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
-  transition: all 0.2s ease-in-out;
-  &:hover {
-    background-color: #286090;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
-  }
-  &:active {
-    background-color: #1e476a;
-    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
-  }
-}
-.back-to-top {
-  position: fixed;
-  right: 100px; 
-  bottom: 20px;
-  display: none;
-}
+		width: 150px;
+		height: 40px;
+		background-color: #337ab7;
+		color: #ffffff;
+		font-family: Arial, sans-serif;
+		font-size: 16px;
+		font-weight: bold;
+		border: none;
+		border-radius: 5px;
+		box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+		transition: all 0.2s ease-in-out;
 
-.btn-hover:hover .back-to-top { 
-  display: block;
-}
-/* baiviet */
-.container2 {
-  width: 700px;
-  margin: 0 auto;
-  background-color: #fff;
-}
+		&:hover {
+			background-color: #286090;
+			box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+		}
 
-h1 {
-  font-size: 24px;
-  font-weight: bold;
-  margin-top: 20px;
-}
+		&:active {
+			background-color: #1e476a;
+			box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+		}
+	}
 
-p {
-  font-size: 16px;
-  line-height: 1.5;
-  margin-bottom: 10px;
-}
+	.back-to-top {
+		position: fixed;
+		right: 100px;
+		bottom: 20px;
+		display: none;
+	}
 
-ul {
-  list-style: none;
-  padding: 0;
-}
+	.btn-hover:hover .back-to-top {
+		display: block;
+	}
 
-ul li {
-  margin-bottom: 10px;
-}
+	/* baiviet */
+	.container2 {
+		width: 700px;
+		margin: 0 auto;
+		background-color: #fff;
+	}
 
-strong {
-  font-weight: bold;
-}
+	h1 {
+		font-size: 24px;
+		font-weight: bold;
+		margin-top: 20px;
+	}
 
-.image-container {
-  text-align: center;
-  margin-bottom: 10px;
-}
+	p {
+		font-size: 16px;
+		line-height: 1.5;
+		margin-bottom: 10px;
+	}
 
-img {
-  width: 500px;
-  height: auto;
-}
+	ul {
+		list-style: none;
+		padding: 0;
+	}
 
+	ul li {
+		margin-bottom: 10px;
+	}
+
+	strong {
+		font-weight: bold;
+	}
+
+	.image-container {
+		text-align: center;
+		margin-bottom: 10px;
+	}
+
+	img {
+		width: 500px;
+		height: auto;
+	}
+
+	.img-fluid {
+		width: 700px;
+		height: auto;
+
+	}
 </style>

@@ -32,6 +32,9 @@ use Illuminate\Support\Facades\Hash;
 Route::get('/home', function () {
     return view('home');
 });
+
+Route::get('/home', [TinTucController::class, 'DS']);
+
 Route::get('/thongtinchitiet', function () {
     return view('ThongTinChiTiet');
 });

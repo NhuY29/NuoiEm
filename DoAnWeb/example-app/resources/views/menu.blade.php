@@ -17,6 +17,7 @@
         </div>
         <div class="hidden md:block">
           <div class="ml-10 flex items-baseline space-x-4">
+          <a href="/home" class="px-3 py-2 rounded-md text-sm font-medium text-white hover:text-gray-300">Home</a>
             <!-- Thêm menu xổ xuống dưới đây -->
             <div class="relative">
               <button type="button" class="px-3 py-2 rounded-md text-sm font-medium text-white hover:text-gray-300 focus:outline-none focus:text-gray-300" id="aboutMenu">

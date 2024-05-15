@@ -48,6 +48,11 @@ class TinTucController extends Controller
         $allTinTucRecords = TinTuc::paginate(5);
         return view('TinTuc', compact('allTinTucRecords'));
     }
+    public function DS()
+    {
+        $allTinTucRecords = TinTuc::all();
+        return view('home', compact('allTinTucRecords'));
+    }
 
     public function search(Request $request)
     {
