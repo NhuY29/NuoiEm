@@ -81,7 +81,22 @@
   background-color: #fff;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
-
+.custom-button {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 2rem;
+  border: none;
+  border-radius: 0.375rem;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adding a subtle shadow */
+}
+a {
+  text-decoration: none; /* Remove underline */
+  color: inherit; /* Inherit the color from the parent element */
+}
+.custom-button:hover {
+  background-color: #0056b3; /* Change color on hover for interactivity */
+}
   </style>
 </head>
 
@@ -103,8 +118,8 @@
           <p><strong>Địa chỉ:</strong> {{ $record->DiaChi }}</p>
           <p><strong>Hổ Trợ Bởi:</strong> {{ $record->benThu3->Ten }}</p>
 
-          <button type="submit" class="bg-blue-500 hover:bg-blue-700">Nhận Em</button>
-          <a href="{{ route('thongtinchitiet', ['id' => $record->id]) }}}" class="bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded inline-block mt-2">Chi Tiết</a>
+          <button type="submit" class="custom-button">Nhận Em</button>
+          <a href="{{ route('thongtinchitiet', ['id' => $record->id]) }}}" class="custom-button">Chi Tiết</a>
         </div>
       </form>
       <?php $Ds++; ?> @if ($Ds % 4 === 0)

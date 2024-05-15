@@ -10,6 +10,7 @@ use App\Http\Controllers\QuyCaNhanController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\FacebookSocialiteController;
 use App\Http\Controllers\EmailController;
+use App\Http\Controllers\TintucController;
 use App\Models\User;
 use App\Models\Roles;
 use App\Models\UserModel;
@@ -133,3 +134,10 @@ Route::get('/gui-emailtask', [EmailController ::class, 'index'])->name('index');
 Route::post('/task', [EmailController ::class, 'store'])->name('store.task');
 
 Route::post('/upload', [HinhAnhController::class, 'upload'])->name('upload');
+// tin tuc
+Route::get('/TinTuc', [TinTucController::class, 'index']);
+Route::post('/TinTuc', [TinTucController::class, 'xuLyDuLieu']);
+Route::delete('/deleteTinTuc/{id}', [TinTucController::class, 'delete']);
+Route::get('/editTinTuc/{id}', [TinTucController::class, 'edit']);
+Route::put('/updateTinTuc/{id}', [TinTucController::class, 'update']);
+Route::match(['get', 'post'], '/searchTinTuc', [TinTucController::class, 'search'])->name('searchTinTuc');
