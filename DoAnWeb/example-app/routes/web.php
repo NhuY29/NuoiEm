@@ -114,6 +114,7 @@ Route::delete('/deleteHinhAnh/{id}', [HinhAnhController::class, 'delete']);
 Route::get('/editHinhAnh/{id}', [HinhAnhController::class, 'edit']);
 Route::put('/updateHinhAnh/{id}', [HinhAnhController::class, 'update']);
 Route::match(['get', 'post'], '/searchHinhAnh', [HinhAnhController::class, 'search'])->name('searchHinhAnh');
+Route::post('/submit-feedback', [HinhAnhController::class, 'infor'])->name('submit.feedback');
 
 Route::get('auth/facebook', [FacebookSocialiteController::class, 'redirectToFB']);
 Route::get('callback/facebook', [FacebookSocialiteController::class, 'handleCallback']);

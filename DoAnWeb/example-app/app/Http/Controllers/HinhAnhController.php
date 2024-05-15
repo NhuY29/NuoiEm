@@ -7,12 +7,13 @@ use CloudinaryLabs\CloudinaryLaravel\Facades\Cloudinary;
 use App\Models\HinhAnh;
 use Illuminate\Support\Facades\Validator;
 use App\Models\TreEm;
+use App\Models\BenThu3;
 use App\Models\Baiviet;
 use App\Models\ThongTinTam;
 use Illuminate\Support\Facades\Log;
 use Cloudinary\Api\Upload\UploadApi;
 use Hamcrest\Core\HasToString;
-
+use Illuminate\Support\Facades\Mail;
 class HinhAnhController extends Controller
 {
     public function xuLyDuLieu(Request $request)
@@ -113,6 +114,27 @@ class HinhAnhController extends Controller
           
         return redirect()->back()->with('success', 'Đã cập nhật bản ghi thành công');
     }
+
+    public function infor(Request $request)
+{
+    $Ten = $request->input('Ten');
+    $DiaChi = $request->input('DiaChi');
+    $Sdt = $request->input('Sdt');
+    $NgheNghiep = $request->input('NgheNghiep');
+    $NoiCongTac = $request->input('NoiCongTac');
+
+    BenThu3::create([
+        'Ten' => $Ten,
+        'GioiTinh' => "1", // Giả sử giới tính là 1 (nam), bạn có thể thay đổi tùy theo yêu cầu
+        'DiaChi' => $DiaChi,
+        'SDT' => $Sdt,
+        'NgheNghiep' => $NgheNghiep,
+        'NoiCongTac' => $NoiCongTac
+    ]);
+
+    return view('User');
+}
+
     public function upload(Request $request)
 {
    
@@ -126,6 +148,18 @@ class HinhAnhController extends Controller
     $TenBe= $request->input('TenBe');
     $Email= $request->input('Email');
     $HotenNguoi3= $request->input('HotenNguoi3');
+    $to_name = "Le Quang Bao";
+    $data = array(
+        "email" => $Email,
+        "name" =>  $TenBe,
+       
+    );
+
+    Mail::send("Gmmail", $data, function($message) use ($to_name, $Email, $data) {
+        $message->to($Email, $to_name)->subject("Test mail nhan nuoi tre em");
+        $message->from($data['email'], $data['name']);
+      
+    });
 
     // Create a new image record in the database
     ThongTinTam::create([
