@@ -16,27 +16,33 @@ class TinTucController extends Controller
             'NoiDung' => 'required|string|max:255',
         ]);
 
-        if ($validator->fails()) {
-            $errors = $validator->errors();
+        $upload = cloudinary()->upload($request->file('file')->getRealPath());
+        $secureUrl = $upload->getSecurePath(); // Lấy URL an toàn
+    
+        // Chuyển đổi URL an toàn sang URL HTTP
+        $httpUrl = str_replace("https://", "http://", $secureUrl);
 
-            if ($errors->has('HinhAnh')) {
-                $errorMessage = 'Hình ảnh không được rỗng.';
-            } else if ($errors->has('TieuDe')) {
-                $errorMessage = 'Tiêu đề không được rỗng.';
-            } else if ($errors->has('NoiDung')) {
-                $errorMessage = 'Nội dung không được rỗng.';
-            } else {
-                $errorMessage = 'Đã xảy ra lỗi trong quá trình xử lý dữ liệu.';
-            }
+        // if ($validator->fails()) {
+        //     $errors = $validator->errors();
 
-            return redirect()->back()->with('alert', $errorMessage)->withInput();
-        }
+        //     if ($errors->has('HinhAnh')) {
+        //         $errorMessage = 'Hình ảnh không được rỗng.';
+        //     } else if ($errors->has('TieuDe')) {
+        //         $errorMessage = 'Tiêu đề không được rỗng.';
+        //     } else if ($errors->has('NoiDung')) {
+        //         $errorMessage = 'Nội dung không được rỗng.';
+        //     } else {
+        //         $errorMessage = 'Đã xảy ra lỗi trong quá trình xử lý dữ liệu.';
+        //     }
 
-        $HinhAnh = $request->get('HinhAnh');
+        //     return redirect()->back()->with('alert', $errorMessage)->withInput();
+        // }
+
+        // $HinhAnh = $request->get('HinhAnh');
         $TieuDe = $request->get('TieuDe');
         $NoiDung = $request->get('NoiDung');
         TinTuc::create([
-            'HinhAnh' => $HinhAnh,
+            'HinhAnh' =>  $httpUrl,
             'TieuDe' => $TieuDe,
             'NoiDung' => $NoiDung,
         ]);
