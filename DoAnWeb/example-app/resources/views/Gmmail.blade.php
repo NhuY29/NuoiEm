@@ -9,19 +9,7 @@
 <h2>Lời cảm ơn chân thành từ <b>Dự Án Nuôi Em</b></h2>
     <h3>Kính gửi anh/chị: {{$email}}</h3>
     <h3>Với Tên bé: {{$name}}</h3>
-    <form action="{{ route('Information') }}" method="POST" enctype="multipart/form-data">
-    @csrf  
-    <label for="Ten">Tên</label>
-    <input type="text" name="Ten" placeholder="Nhập tên của bạn">
-    <label for="DiaChi">Địa Chỉ</label>
-    <input type="text" name="DiaChi" placeholder="Nhập địa chỉ của bạn">
-    <label for="Sdt">Số Điện Thoại</label>
-    <input type="text" name="Sdt" placeholder="Nhập số điện thoại của bạn">
-    <label for="NgheNghiep">Nghề Nghiệp</label>
-    <input type="text" name="NgheNghiep" placeholder="Nhập nghề nghiệp của bạn">
-    <label for="NoiCongTac">Nơi Công Tác</label>
-    <input type="text" name="NoiCongTac" placeholder="Nhập nơi công tác của bạn">
-    <input type="submit" value="Gửi phản hồi">
-</form>
+    <a href="{{ route('Informationd') }}">Link tới trang đã chuẩn bị</a>
+   
 </body>
 </html>
