@@ -117,7 +117,7 @@
 
                             <label for="DuongDan_edit{{ $record->id }}" class="block text-gray-700 text-sm font-bold mb-2">Đường Dẫn:</label>
 
-                            <input type="text" id="DuongDan_edit{{ $record->id }}" name="DuongDan" value="{{ $record->DuongDan }}" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                            <input type="file" id="DuongDan_edit{{ $record->id }}" name="filess" value="{{ $record->DuongDan }}" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
 
                         </div>
 

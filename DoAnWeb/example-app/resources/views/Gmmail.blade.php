@@ -9,7 +9,7 @@
 <h2>Lời cảm ơn chân thành từ <b>Dự Án Nuôi Em</b></h2>
     <h3>Kính gửi anh/chị: {{$email}}</h3>
     <h3>Với Tên bé: {{$name}}</h3>
-    <form method="post" action="{{ route('submit.feedback') }}">
+    <form action="{{ route('Information') }}" method="POST" enctype="multipart/form-data">
     @csrf  
     <label for="Ten">Tên</label>
     <input type="text" name="Ten" placeholder="Nhập tên của bạn">

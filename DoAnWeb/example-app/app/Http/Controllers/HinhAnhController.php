@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Log;
 use Cloudinary\Api\Upload\UploadApi;
 use Hamcrest\Core\HasToString;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Redirect;
 class HinhAnhController extends Controller
 {
     public function xuLyDuLieu(Request $request)
@@ -108,32 +109,20 @@ class HinhAnhController extends Controller
             return redirect()->back()->withErrors($validator)->withInput();
         }
 
+        $upload = cloudinary()->upload($request->file('filess')->getRealPath());
+    $secureUrl = $upload->getSecurePath(); // Lấy URL an toàn
+
+    // Chuyển đổi URL an toàn sang URL HTTP
+    $httpUrl = str_replace("https://", "http://", $secureUrl);
+
         $record = HinhAnh::findOrFail($id);
-        
+        $record->DuongDan = $httpUrl;
         $record->update($request->all());
           
         return redirect()->back()->with('success', 'Đã cập nhật bản ghi thành công');
     }
 
-    public function infor(Request $request)
-{
-    $Ten = $request->input('Ten');
-    $DiaChi = $request->input('DiaChi');
-    $Sdt = $request->input('Sdt');
-    $NgheNghiep = $request->input('NgheNghiep');
-    $NoiCongTac = $request->input('NoiCongTac');
-
-    BenThu3::create([
-        'Ten' => $Ten,
-        'GioiTinh' => "1", // Giả sử giới tính là 1 (nam), bạn có thể thay đổi tùy theo yêu cầu
-        'DiaChi' => $DiaChi,
-        'SDT' => $Sdt,
-        'NgheNghiep' => $NgheNghiep,
-        'NoiCongTac' => $NoiCongTac
-    ]);
-
-    return view('User');
-}
+   
 
     public function upload(Request $request)
 {
@@ -178,6 +167,34 @@ class HinhAnhController extends Controller
         $allHinhAnhRecords = HinhAnh::where('isdelete', 0)->get();
 
         return view('danhsachtreem', compact('allTreEmRecords', 'allHinhAnhRecords'));
+    }
+
+
+    public function Information(Request $request)
+    {
+      // Lấy dữ liệu từ request
+      $ten = $request->input('Ten');
+      $diaChi = $request->input('DiaChi');
+      $sdt = $request->input('Sdt');
+      $ngheNghiep = $request->input('NgheNghiep');
+      $noiCongTac = $request->input('NoiCongTac');
+      $email = "ble07983@gmail.com"; 
+      // Gửi email
+      $data = array(
+        "email" => $email,
+        "ten " => $ten ,
+        "diaChi" => $diaChi,
+        "sdt" => $sdt,
+        "ngheNghiep" => $ngheNghiep,
+        "noiCongTac" => $noiCongTac,
+    );
+    
+    Mail::send("FeedbackMail", $data, function($message) use ($email ,  $data) {
+        $message->to($email)->subject("Test mail ");
+        $message->from($data['email'], $data['diachi']);
+      
+    });
+      return "oke";
     }
     
 }
