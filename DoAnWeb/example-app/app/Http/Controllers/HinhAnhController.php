@@ -173,28 +173,24 @@ class HinhAnhController extends Controller
     public function Information(Request $request)
     {
       // Lấy dữ liệu từ request
-      $ten = $request->input('Ten');
-      $diaChi = $request->input('DiaChi');
-      $sdt = $request->input('Sdt');
-      $ngheNghiep = $request->input('NgheNghiep');
-      $noiCongTac = $request->input('NoiCongTac');
-      $email = "ble07983@gmail.com"; 
-      // Gửi email
-      $data = array(
-        "email" => $email,
-        "ten " => $ten ,
-        "diaChi" => $diaChi,
-        "sdt" => $sdt,
-        "ngheNghiep" => $ngheNghiep,
-        "noiCongTac" => $noiCongTac,
-    );
-    
-    Mail::send("FeedbackMail", $data, function($message) use ($email ,  $data) {
-        $message->to($email)->subject("Test mail ");
-        $message->from($data['email'], $data['diachi']);
-      
-    });
+      $Ten = $request->input('Ten');
+    $DiaChi = $request->input('DiaChi');
+    $Sdt = $request->input('Sdt');
+    $NgheNghiep = $request->input('NgheNghiep');
+    $NoiCongTac = $request->input('NoiCongTac');
+
+    BenThu3::create([
+        'Ten' => $Ten,
+        'GioiTinh' => "1", // Giả sử giới tính là 1 (nam), bạn có thể thay đổi tùy theo yêu cầu
+        'DiaChi' => $DiaChi,
+        'SDT' => $Sdt,
+        'NgheNghiep' => $NgheNghiep,
+        'NoiCongTac' => $NoiCongTac
+    ]);
       return "oke";
     }
-    
+    public function Informationd(){
+return view('Thongtinbenthu3');
+    }
 }
+

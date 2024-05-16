@@ -148,6 +148,8 @@ Route::delete('/deleteTinTuc/{id}', [TinTucController::class, 'delete']);
 Route::get('/editTinTuc/{id}', [TinTucController::class, 'edit']);
 Route::put('/updateTinTuc/{id}', [TinTucController::class, 'update']);
 Route::match(['get', 'post'], '/searchTinTuc', [TinTucController::class, 'search'])->name('searchTinTuc');
-
 Route::post('/Information', [HinhAnhController::class, 'Information'])->name('Information');
+Route::get('/Informationd', [HinhAnhController::class, 'Informationd'])->name('Informationd');
+
 Route::get('/ThongKe', [ThongKeController::class, 'index']);
+
