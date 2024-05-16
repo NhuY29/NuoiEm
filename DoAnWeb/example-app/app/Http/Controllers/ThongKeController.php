@@ -1,22 +1,27 @@
 <?php
+
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\ThongKe;
+use Illuminate\Http\Request;
+
+use function Laravel\Prompts\select;
 
 class ThongKeController extends Controller
 {
-    public function index(Request $request){
-        $tungay = $request->tuNgay;
-        $denngay = $request->denNgay;
-        $get = ThongKe::whereBetween('created_at', [$tungay, $denngay])->orderBy('created_at','ASC')->get();
-        $chart_data = [];
-        foreach($get as $key => $value){
-           $chart_data[] = array(
-               "period" => $value->created_at,
-               "licensed" => $value->SoTien,
-           );
+    public function index()
+    {
+        $data = ThongKe::selectRaw('count(TreEm_id) as TreEm, sum(SoTien) as TongTien')
+                        ->groupBy('TreEm_id')
+                        ->get();
+        
+        $array = [['TreEm', 'TongTien']];
+        foreach ($data as $key => $value) {
+            $array[++$key] = [$value->TreEm, floatval($value->TongTien)]; // Chuyển đổi 'TongTien' thành kiểu số
         }
-        return response()->json($chart_data);
+    
+        return view('ThongKe')->with('data', json_encode($array));
     }
+    
 }
+ 

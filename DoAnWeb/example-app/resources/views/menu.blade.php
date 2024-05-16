@@ -38,6 +38,7 @@
               </div>
             </div>
             <a href="/User" class="px-3 py-2 rounded-md text-sm font-medium text-white hover:text-gray-300">Users</a>
+            <a href="/ThongKe" class="px-3 py-2 rounded-md text-sm font-medium text-white hover:text-gray-300">Biểu Đồ</a>
           
     @csrf
     <a href="{{ route('export.excel') }}" class="px-3 py-2 rounded-md text-sm font-medium text-white hover:text-gray-300">Thống kê</a>
