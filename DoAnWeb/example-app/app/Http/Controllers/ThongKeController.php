@@ -11,7 +11,7 @@ class ThongKeController extends Controller
 {
     public function index()
     {
-        $data = ThongKe::selectRaw('count(TreEm_id) as TreEm, sum(SoTien) as TongTien')
+        $data = ThongKe::selectRaw('TreEm_id as TreEm, sum(SoTien) as TongTien')
                         ->groupBy('TreEm_id')
                         ->get();
         
