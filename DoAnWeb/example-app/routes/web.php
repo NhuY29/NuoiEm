@@ -11,6 +11,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\FacebookSocialiteController;
 use App\Http\Controllers\EmailController;
 use App\Http\Controllers\TintucController;
+use App\Http\Controllers\ThongKeController;
 use App\Models\User;
 use App\Models\Roles;
 use App\Models\UserModel;
@@ -32,6 +33,9 @@ use Illuminate\Support\Facades\Hash;
 Route::get('/home', function () {
     return view('home');
 });
+// Route::get('/thongkebieudo', function () {
+//     return view('ThongKe');
+// });
 
 Route::get('/home', [TinTucController::class, 'DS']);
 
@@ -144,3 +148,6 @@ Route::delete('/deleteTinTuc/{id}', [TinTucController::class, 'delete']);
 Route::get('/editTinTuc/{id}', [TinTucController::class, 'edit']);
 Route::put('/updateTinTuc/{id}', [TinTucController::class, 'update']);
 Route::match(['get', 'post'], '/searchTinTuc', [TinTucController::class, 'search'])->name('searchTinTuc');
+// ThongKe
+Route::get('/ThongKe', [ThongKeController::class, 'index']);
+
