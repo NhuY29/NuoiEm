@@ -90,7 +90,7 @@ class TreEmController extends Controller
     {
         
         $query = $request->input('search-items-name');
-        $allTreEmRecords = TreEm::where('Ten', 'like', '%'.$query.'%')->paginate(5);
+        $allTreEmRecords = TreEm::where('Ten', 'like', '%'.$query.'%') ->where('isDelete', false)->paginate(5);
         $i = 0; // Start counter at 1
     
         // Lấy dữ liệu BenThu3 nếu cần

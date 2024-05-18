@@ -48,7 +48,7 @@
             </div>
             <label for="TreEm_id" class="block text-gray-700 text-sm font-bold mb-2">Trẻ Em:</label>
             <div class="relative">
-            <select name="TreEm_id" class="block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
+                <select name="TreEm_id" class="block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
                     @foreach ($allTreEmRecords as $record)
                     @if (!$allHinhAnhRecords->contains('TreEm_id', $record->id)) <!-- Chỉ hiển thị nếu không tồn tại trong bảng Baiviet -->
                     <option value="{{ $record->id }}">{{ $record->Ten }}</option>
@@ -112,7 +112,7 @@
                 </tr>
 
                 <div id="editForm{{ $record->id }}" style="display: none;" class="max-w-md mx-auto my-8">
-                    <form action="{{ route('update-image', ['id' => $record->id]) }}" method="post" enctype="multipart/form-data"  style="display: none;" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+                    <form action="{{ route('update-image', ['id' => $record->id]) }}" method="post" enctype="multipart/form-data" style="display: none;" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
                         @csrf
                         @method('PUT')
                         <div class="mb-4">
@@ -147,23 +147,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="mb-4">
-                            <label for="TreEm_id_edit{{ $record->id }}" class="block text-gray-700 text-sm font-bold mb-2">Trẻ Em:</label>
-                            <div class="relative">
-                            <select name="TreEm_id" class="block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
-                    @foreach ($allTreEmRecords as $record)
-                    @if (!$allHinhAnhRecords->contains('TreEm_id', $record->id)) <!-- Chỉ hiển thị nếu không tồn tại trong bảng Baiviet -->
-                    <option value="{{ $record->id }}">{{ $record->Ten }}</option>
-                    @endif
-                    @endforeach
-                </select>
-                                <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
-                                    <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                                        <path d="M9 9l3 3 3-3z" />
-                                    </svg>
-                                </div>
-                            </div>
-                        </div>
+                        <input type="hidden" name="TreEm_id" value="{{ $record->TreEm_id }}">
 
                         <div class="flex items-center justify-between">
 

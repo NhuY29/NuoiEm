@@ -91,24 +91,19 @@ class BaiVietController extends Controller
 
     public function hienThiThongTinTreEm($id)
     {
-        // Lấy thông tin của trẻ em từ model TreEm dựa trên ID
-        $treem = TreEm::find($id);
+        // Retrieve the TreEm record based on the ID
+        $treem = TreEm::findOrFail($id);
     
-        // Kiểm tra xem trẻ em có tồn tại không
-        if ($treem) {
-            // Lấy thông tin bài viết từ model Baiviet dựa trên ID
-            $baiviet = Baiviet::findOrFail($id);
+        // Retrieve the associated HinhAnh record
+        $anhTreEm = HinhAnh::where('TreEm_id', $id)->first();
     
-            // Lấy thông tin ảnh của trẻ em
-            $anhTreEm = HinhAnh::where('TreEm_id', $id)->first();
+        // Retrieve the associated BaiViet record
+        $baiviet = BaiViet::where('TreEm_id', $id)->first();
     
-            // Tiếp tục xử lý logic của bạn tại đây...
-            return view('ThongTinChiTiet', ['treem' => $treem, 'anhTreEm' => $anhTreEm, 'baiviet' => $baiviet]);
-        } else {
-            // Xử lý trường hợp không tìm thấy thông tin của trẻ em
-            return redirect()->back()->with('error', 'Không tìm thấy thông tin trẻ em.');
-        }
+        // Pass the retrieved data to the view
+        return view('ThongTinChiTiet', compact('treem', 'anhTreEm', 'baiviet'));
     }
+    
     
     public function delete($id)
     {

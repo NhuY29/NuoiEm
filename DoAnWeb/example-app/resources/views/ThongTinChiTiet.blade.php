@@ -26,16 +26,21 @@
         }
 
         .profile-img {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    margin-bottom: 20px;
-    object-fit: cover;
-    object-position: center;
-    border: 5px solid red; /* Add a border around the image with a blue color */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle shadow effect */
-    filter: brightness(120%); /* Increase the brightness of the image */
-}     .section-title {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+            object-fit: cover;
+            object-position: center;
+            border: 5px solid red;
+            /* Add a border around the image with a blue color */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            /* Add a subtle shadow effect */
+            filter: brightness(120%);
+            /* Increase the brightness of the image */
+        }
+
+        .section-title {
             background-color: #007bff;
             color: white;
             padding: 5px 10px;
@@ -69,6 +74,7 @@
         .section {
             margin-bottom: 20px;
         }
+
         .section-title {
             background: linear-gradient(to right, #ff7e5f, #feb47b);
             color: white;
@@ -77,22 +83,28 @@
             margin-bottom: 15px;
             font-size: 1.2em;
             text-align: center;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
-            transition: transform 0.3s; 
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
         }
-        
+
         .section-title:hover {
-            transform: scale(1.1); 
+            transform: scale(1.1);
         }
-        
     </style>
 </head>
 
 <body>
     <div class="container">
         <div class="header">
-            <img src="{{ $anhTreEm->DuongDan }}" alt="Profile Picture" class="profile-img">
-            <h1>{{ $treem->Ten }}</h1>
+        <div class="header">
+    @if(!empty($anhTreEm) && $anhTreEm->isDelete == 0)
+        <img src="{{ $anhTreEm->DuongDan }}" alt="Profile Picture" class="profile-img">
+    @else
+        <img src="https://via.placeholder.com/200" alt="No Image" class="profile-img">
+    @endif
+    <h1>{{ $treem->Ten }}</h1>
+</div>
+
         </div>
         <div class="row">
             <div class="col-md-4">
@@ -100,21 +112,21 @@
                     <div class="section-title">THÔNG TIN CƠ BẢN</div>
                     <div class="info-item">
                         <label>Địa Chỉ</label>
-                        <div>{{ $treem->DiaChi}}</div>
+                        <div>{{ $treem->DiaChi }}</div>
                     </div>
                     <div class="info-item">
                         <label>Tên Trường Học</label>
-                        <div>{{ $treem->TenTruongHoc}}</div>
+                        <div>{{ $treem->TenTruongHoc }}</div>
                     </div>
                     <div class="info-item">
                         <label>Bên Hỗ Trợ:</label>
-                        <div>{{ $treem->benThu3->Ten}}</div>
+                        <div>{{ $treem->benThu3->Ten }}</div>
                     </div>
                 </div>
                 <div class="section">
                     <div class="section-title">HY VỌNG Ở TƯƠNG LAI</div>
                     <div class="info-item">
-                        <p>Bé quyết định rằng mình sẽ trở thành một bác sĩ để có thể mang lại niềm vui và hy vọng cho những người bệnh..</p>
+                        <p>Bé quyết định rằng mình sẽ trở thành một bác sĩ để có thể mang lại niềm vui và hy vọng cho những người bệnh.</p>
                     </div>
                 </div>
             </div>
@@ -122,7 +134,11 @@
                 <div class="section">
                     <div class="section-title">Gia Cảnh</div>
                     <div class="info-item">
+                        @if(!empty($baiviet->NoiDung))
                         {{ $baiviet->NoiDung }}
+                        @else
+                        <p>Thông tin về gia cảnh hiện không có sẵn.</p>
+                        @endif
                     </div>
                 </div>
                 <div class="section">

@@ -42,7 +42,9 @@ Route::get('/home', [TinTucController::class, 'DS']);
 Route::get('/thongtinchitiet', function () {
     return view('ThongTinChiTiet');
 });
+// Define the route with a placeholder for the ID
 Route::get('/thongtinchitiet/{id}', [BaiVietController::class, 'hienThiThongTinTreEm'])->name('thongtinchitiet');
+
 
 
 Route::get('/chuyenkhoan', function () {

@@ -62,7 +62,7 @@ class HinhAnhController extends Controller
         $allHinhAnhRecords = HinhAnh::where('isDelete', false)->paginate(5);
         $allTreEmRecords = TreEm::where('isdelete', 0)->get();
         $allBaiVietRecords = BaiViet::where('isdelete', 0)->get();
-    return view('HinhAnh', compact('allHinhAnhRecords',"allTreEmRecords","allBaiVietRecords"))->with('i',(request()->input('page',1)-1)*5);
+        return view('HinhAnh', compact('allHinhAnhRecords', 'allTreEmRecords', 'allBaiVietRecords'))->with('i', (request()->input('page', 1) - 1) * 5);
     }
     //phan trang
 
