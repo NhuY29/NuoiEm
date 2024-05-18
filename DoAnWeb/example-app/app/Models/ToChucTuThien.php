@@ -10,7 +10,7 @@ class ToChucTuThien extends Model
     use HasFactory;
     protected $table = 'tochuctuthien'; // Tên của bảng trong CSDL
 
-    protected $fillable = ['Ten', 'MoTa', 'DiaChi', 'SDT', 'Email', 'ThongTin'];
+    protected $fillable = ['Ten', 'MoTa', 'DiaChi', 'SDT', 'Email', 'ThongTin' ,'isDelete'];
     public function Quy()
     {
         return $this->hasMany(Quy::class);

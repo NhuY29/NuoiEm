@@ -64,7 +64,9 @@ class HinhAnhController extends Controller
     public function search(Request $request)
     {
         $query = $request->input('search-items-name');
-        $allHinhAnhRecords =HinhAnh::where('TreEm_id', 'like', '%'.$query.'%')
+        $allHinhAnhRecords = HinhAnh::whereHas('treEm', function($q) use ($query) {
+            $q->where('Ten', 'like', '%' . $query . '%');
+        })
         ->where('isDelete', false) // Chỉ lấy các bản ghi có isDelete là false
         ->paginate(5);
         $i = 0; // Start counter at 1
@@ -99,30 +101,43 @@ class HinhAnhController extends Controller
     public function update(Request $request, $id)
     {
         $validator = Validator::make($request->all(), [
-            'DuongDan' => 'required|string|max:255',
+            'DuongDan' => 'required|file|mimes:jpg,jpeg,png,gif|max:10240', // Điều chỉnh quy tắc cho 'DuongDan' để đảm bảo đây là một file hình ảnh
             'ChuThich' => 'required|string|max:255',
             'BaiViet_id' => 'required|string|max:255',
-            'TreEm_id' => 'required|date',
+            'TreEm_id' => 'required|string|max:255', // Điều chỉnh loại cho 'TreEm_id'
         ]);
 
         if ($validator->fails()) {
             return redirect()->back()->withErrors($validator)->withInput();
         }
 
-        $upload = cloudinary()->upload($request->file('filess')->getRealPath());
-    $secureUrl = $upload->getSecurePath(); // Lấy URL an toàn
-
-    // Chuyển đổi URL an toàn sang URL HTTP
-    $httpUrl = str_replace("https://", "http://", $secureUrl);
-
         $record = HinhAnh::findOrFail($id);
-        $record->DuongDan = $httpUrl;
-        $record->update($request->all());
-          
+        $oldImageUrl = $record->DuongDan;
+
+        if ($request->hasFile('DuongDan')) {
+            // Tải ảnh mới lên Cloudinary
+            $upload = Cloudinary::upload($request->file('DuongDan')->getRealPath());
+            $secureUrl = $upload->getSecurePath(); // Lấy URL an toàn
+
+            // Cập nhật URL mới vào bản ghi
+            $record->DuongDan = $secureUrl;
+
+            // Xóa ảnh cũ khỏi Cloudinary
+            if ($oldImageUrl) {
+                $publicId = basename($oldImageUrl, '.' . pathinfo($oldImageUrl, PATHINFO_EXTENSION));
+                Cloudinary::destroy($publicId);
+            }
+        }
+
+        // Cập nhật các trường khác
+        $record->ChuThich = $request->input('ChuThich');
+        $record->BaiViet_id = $request->input('BaiViet_id');
+        $record->TreEm_id = $request->input('TreEm_id');
+        $record->save();
+
         return redirect()->back()->with('success', 'Đã cập nhật bản ghi thành công');
     }
 
-   
 
     public function upload(Request $request)
 {

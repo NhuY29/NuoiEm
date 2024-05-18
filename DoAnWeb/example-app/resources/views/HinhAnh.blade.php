@@ -110,18 +110,16 @@
                 </tr>
 
                 <div id="editForm{{ $record->id }}" style="display: none;" class="max-w-md mx-auto my-8">
-                    <form action="/updateHinhAnh/{{ $record->id }}" method="post" style="display: none;" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+                    <form action="{{ route('update-image', ['id' => $record->id]) }}" method="post" enctype="multipart/form-data"  style="display: none;" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
                         @csrf
                         @method('PUT')
                         <div class="mb-4">
 
                             <label for="DuongDan_edit{{ $record->id }}" class="block text-gray-700 text-sm font-bold mb-2">Đường Dẫn:</label>
 
-<<<<<<< HEAD
-                            <input type="file" id="DuongDan_edit{{ $record->id }}" name="filess" value="{{ $record->DuongDan }}" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
-=======
+
                             <input type="file" id="DuongDan_edit{{ $record->id }}" name="DuongDan" value="{{ $record->DuongDan }}" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
->>>>>>> 94ffa936ba036362df6ed69da9c519d91b7b7031
+
 
                         </div>
 

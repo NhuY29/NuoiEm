@@ -126,7 +126,7 @@ Route::get('/HinhAnh', [HinhAnhController::class, 'index']);
 Route::post('/HinhAnh', [HinhAnhController::class, 'xuLyDuLieu']);
 Route::delete('/deleteHinhAnh/{id}', [HinhAnhController::class, 'delete']);
 Route::get('/editHinhAnh/{id}', [HinhAnhController::class, 'edit']);
-Route::put('/updateHinhAnh/{id}', [HinhAnhController::class, 'update']);
+Route::put('/updateHinhAnh/{id}', [HinhAnhController::class, 'update'])->name('update-image');
 Route::match(['get', 'post'], '/searchHinhAnh', [HinhAnhController::class, 'search'])->name('searchHinhAnh');
 
 
