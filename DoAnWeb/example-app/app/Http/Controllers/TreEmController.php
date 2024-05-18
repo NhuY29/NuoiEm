@@ -70,7 +70,7 @@ class TreEmController extends Controller
     }
     public function index()
     {
-        $allTreEmRecords = TreEm::with('benThu3')->paginate(5);
+        $allTreEmRecords = TreEm::where('isDelete',false)->paginate(5);
         $allBenThubaRecords = BenThu3::where('isdelete', 0)->get();
         
       return view('TreEm', compact('allTreEmRecords', 'allBenThubaRecords'))->with('i',(request()->input('page',1)-1)*5);
@@ -93,7 +93,7 @@ class TreEmController extends Controller
         $i = 0; // Start counter at 1
     
         // Lấy dữ liệu BenThu3 nếu cần
-        $allBenThubaRecords = BenThu3::where('isdelete', 0)->get();
+        $allBenThubaRecords = BenThu3::where('isDelete', 0)->get();
     
         return view('TreEm', [
             'allTreEmRecords' => $allTreEmRecords,
