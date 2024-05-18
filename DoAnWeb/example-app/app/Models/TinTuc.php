@@ -10,5 +10,5 @@ class TinTuc extends Model
     use HasFactory;
     protected $table = '_baivietintuc'; // Tên của bảng trong CSDL
 
-    protected $fillable = ['HinhAnh', 'TieuDe', 'NoiDung'];
+    protected $fillable = ['HinhAnh', 'TieuDe', 'NoiDung','Link','isDelete'];
 }

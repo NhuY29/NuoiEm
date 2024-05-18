@@ -16,6 +16,7 @@ return new class extends Migration
             $table->text("HinhAnh")->nullable();
             $table->text("TieuDe")->nullable();
             $table->text("NoiDung")->nullable();
+            $table->text("Link")->nullable();
             $table->timestamps();
         });
     }

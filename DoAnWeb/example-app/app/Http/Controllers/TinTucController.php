@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use App\Models\TinTuc;
-
+use CloudinaryLabs\CloudinaryLaravel\Facades\Cloudinary;
 class TinTucController extends Controller
 {
     public function xuLyDuLieu(Request $request)
@@ -14,6 +14,7 @@ class TinTucController extends Controller
             'HinhAnh' => 'required|string|max:255',
             'TieuDe' => 'required|string',
             'NoiDung' => 'required|string|max:255',
+            'Link' => 'required|string|max:255',
         ]);
 
         $upload = cloudinary()->upload($request->file('file')->getRealPath());
@@ -41,10 +42,12 @@ class TinTucController extends Controller
         // $HinhAnh = $request->get('HinhAnh');
         $TieuDe = $request->get('TieuDe');
         $NoiDung = $request->get('NoiDung');
+        $Link = $request->get('Link');
         TinTuc::create([
             'HinhAnh' =>  $httpUrl,
             'TieuDe' => $TieuDe,
             'NoiDung' => $NoiDung,
+            'Link' => $Link
         ]);
         return redirect()->to("/TinTuc");
     }
@@ -88,18 +91,42 @@ class TinTucController extends Controller
     public function update(Request $request, $id)
     {
         $validator = Validator::make($request->all(), [
-            'HinhAnh' => 'required|string|max:255',
+            'HinhAnh' => 'nullable|file|mimes:jpg,jpeg,png,gif|max:10240', // Điều chỉnh quy tắc cho 'HinhAnh' để đảm bảo đây là một file hình ảnh
             'TieuDe' => 'required|string',
             'NoiDung' => 'required|string|max:255',
+            'Link' => 'required|string|max:255',
         ]);
-
+    
         if ($validator->fails()) {
             return redirect()->back()->withErrors($validator)->withInput();
         }
-
+    
         $record = TinTuc::findOrFail($id);
-        $record->update($request->all());
-
+    
+        // Lưu trữ đường dẫn cũ để xóa nếu cần thiết
+        $oldImageUrl = $record->HinhAnh;
+    
+        if ($request->hasFile('HinhAnh')) {
+            // Tải ảnh mới lên Cloudinary
+            $upload = Cloudinary::upload($request->file('HinhAnh')->getRealPath());
+            $secureUrl = $upload->getSecurePath(); // Lấy URL an toàn
+    
+            // Cập nhật URL mới vào bản ghi
+            $record->HinhAnh = $secureUrl;
+    
+            // Xóa ảnh cũ khỏi Cloudinary (nếu có)
+            if ($oldImageUrl) {
+                $publicId = pathinfo($oldImageUrl, PATHINFO_FILENAME);
+                Cloudinary::destroy($publicId);
+            }
+        }
+    
+        // Cập nhật các trường khác
+        $record->TieuDe = $request->input('TieuDe');
+        $record->NoiDung = $request->input('NoiDung');
+        $record->Link = $request->input('Link');
+        $record->save();
+    
         return redirect()->back()->with('success', 'Đã cập nhật bản ghi thành công.');
     }
 }

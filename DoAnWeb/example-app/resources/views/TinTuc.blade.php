@@ -39,6 +39,10 @@
                 <label for="NoiDung" class="block text-gray-700 text-sm font-bold mb-2">Nội Dung:</label>
                 <input type="text" id="NoiDung" name="NoiDung" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
             </div>
+            <div class="mb-4">
+                <label for="Link" class="block text-gray-700 text-sm font-bold mb-2">Link:</label>
+                <input type="text" id="Link" name="Link" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+            </div>
             <div class="flex items-center justify-between">
                 <button type="button" onclick="cancelAdd()" class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Hủy</button>
                 <input type="submit" value="Xác Nhận" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
@@ -58,6 +62,7 @@
                     <th class="px-4 py-2 bg-blue-500 text-white border">Ảnh</th>
                     <th class="px-4 py-2 bg-blue-500 text-white border">Tiêu Đề</th>
                     <th class="px-4 py-2 bg-blue-500 text-white border">Nội dung</th>
+                    <th class="px-4 py-2 bg-blue-500 text-white border">Link</th>
                     <th class="px-4 py-2 bg-blue-500 text-white border">Thao Tác</th>
                 </tr>
             </thead>
@@ -73,6 +78,7 @@
                     </td>
                     <td class="px-4 py-2 text-center border whitespace-normal max-w-xs">{{ $record->TieuDe}}</td>
                     <td class="px-4 py-2 text-center border whitespace-normal max-w-xs">{{ $record->NoiDung}}</td>
+                    <td class="px-4 py-2 text-center border whitespace-normal max-w-xs">{{ $record->Link}}</td>
                     <td>
                         <form id="deleteForm{{ $record->id }}" action="/deleteTinTuc/{{ $record->id }}" method="post">
                             @csrf
@@ -107,6 +113,13 @@
                             <label for="NoiDung_edit{{ $record->id }}" class="block text-gray-700 text-sm font-bold mb-2">Nội Dung:</label>
 
                             <input type="text" id="NoiDung_edit{{ $record->id }}" name="NoiDung" value="{{ $record->NoiDung }}" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+
+                        </div>
+                        <div class="mb-4">
+
+                            <label for="Link_edit{{ $record->id }}" class="block text-gray-700 text-sm font-bold mb-2">Link:</label>
+
+                            <input type="text" id="Link_edit{{ $record->id }}" name="Link" value="{{ $record->Link }}" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
 
                         </div>
 

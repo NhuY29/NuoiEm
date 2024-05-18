@@ -42,6 +42,9 @@ class EmailController extends Controller
           
         });
 
+        $record = TreEm::findOrFail( $treem_id);
+        $record->update(['TrangThai' => 0]);
+
       return redirect()->back(); 
     }
 

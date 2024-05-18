@@ -463,12 +463,12 @@
 				<div class="col-xl-4 col-lg-4 col-md-6">
 					<div class="single-blog">
 						<div class="blog-img">
-							<a href="javascript:void(0)" class="d-block">
+							<a href="{{$DS->Link}}" class="d-block">
 								<img src="{{ $DS->HinhAnh }}" alt="">
 							</a>
 						</div>
 						<div class="blog-content">
-							<h4><a href="javascript:void(0)">{{ $DS->TieuDe }}</a></h4>
+							<h4><a href="{{$DS->Link}}">{{ $DS->TieuDe }}</a></h4>
 							<p>{{ $DS->NoiDung }}</p>
 						</div>
 					</div>
