@@ -36,7 +36,13 @@ class HinhAnhController extends Controller
         $ChuThich = $request->input('ChuThich');
         $BaiViet_id = $request->input('BaiViet_id');
         $TreEm_id = $request->input('TreEm_id');
-    
+        $existingHinhAnh = HinhAnh::where('TreEm_id', $TreEm_id)
+        ->where('isDelete', 0)
+        ->exists();
+        // Nếu đã tồn tại bài viết có tre_em_id tương tự, không thêm mới
+        if ($existingHinhAnh) {
+            return redirect()->back()->with('error', 'Bài viết với tre_em_id này đã tồn tại.');
+        }
         // Tạo một bản ghi mới trong cơ sở dữ liệu
         HinhAnh::create([
             'DuongDan' => $httpUrl,
