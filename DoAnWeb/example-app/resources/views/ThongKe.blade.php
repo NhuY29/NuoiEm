@@ -16,23 +16,38 @@
         // Parse JSON data
         var jsonData = <?php echo $data; ?>;
         for (var i = 0; i < jsonData.length; i++) {
-            data.addRow([jsonData[i][0].toString(), parseFloat(jsonData[i][1])]); // Chuyển đổi sang chuỗi
+            data.addRow([jsonData[i][0], parseFloat(jsonData[i][1])]);
         }
 
         var options = {
-            title: 'ThongKe'
+            title: 'ThongKe',
+            legend: { position: 'bottom' }
         };
 
         var chart = new google.visualization.PieChart(document.getElementById('piechart'));
         chart.draw(data, options);
     }
-</script>
-
-
-
+    </script>
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+        }
+        #piechart {
+            width: 1000px;
+            height: 800px;
+        }
+    </style>
 </head>
 <body>
-    <!-- Container to hold the pie chart -->
-    <div id="piechart" style="width: 900px; height: 500px;"></div>
+    <div class="container">
+        <div id="piechart"></div>
+    </div>
 </body>
 </html>
