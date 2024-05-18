@@ -22,3 +22,49 @@
 </form>
 </body>
 </html>
+<style>
+    body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+form {
+    max-width: 400px;
+    margin: 50px auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+form label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+form input[type="text"] {
+    width: calc(100% - 12px);
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+form input[type="submit"] {
+    width: 100%;
+    background: #007bff;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+form input[type="submit"]:hover {
+    background: #0056b3;
+}
+
+</style>

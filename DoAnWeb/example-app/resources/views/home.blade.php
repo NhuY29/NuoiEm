@@ -728,5 +728,24 @@
 		width: 700px;
 		height: auto;
 
-	}
+	}.single-blog {
+    height: 500px; /* Đặt chiều cao cố định cho mỗi phần tử single-blog */
+    overflow: hidden; /* Ẩn nội dung vượt quá chiều cao */
+}
+
+.single-blog .blog-img {
+    height: 30%; /* Đặt chiều cao của phần ảnh trong mỗi phần tử single-blog */
+    overflow: hidden; /* Ẩn phần dư thừa của hình ảnh */
+}
+
+.single-blog .blog-img img {
+    width: 100%; /* Đảm bảo hình ảnh đầy đủ chiều rộng */
+    height: auto; /* Đảm bảo hình ảnh tỷ lệ đúng */
+}
+
+.single-blog .blog-content {
+    height: 70%; /* Đặt chiều cao của phần nội dung trong mỗi phần tử single-blog */
+    overflow: hidden; /* Ẩn phần dư thừa của nội dung */
+}
+
 </style>

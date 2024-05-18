@@ -10,7 +10,7 @@
 <div class="flex justify-center items-center h-screen bg-gray-100">
     <form class="w-full max-w-md bg-white p-8 rounded-lg shadow-md" action="{{ route('gui-email') }}" method="POST">
         @csrf
-        <h2 class="text-2xl font-bold mb-4">Nhập thông tin khách hàng</h2>
+        <h2 class="text-2xl font-bold mb-4">Mời nhập thông tin người nhận </h2>
         <div class="mb-4">
             <input type="email" name="email" class="w-full p-2 border border-gray-300 rounded" placeholder="Nhập địa chỉ email">
         </div>
