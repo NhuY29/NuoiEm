@@ -84,6 +84,7 @@
                     <th class="px-4 py-2 bg-blue-500 text-white border">Tên Trường Học</th>
                     <th class="px-4 py-2 bg-blue-500 text-white border">Địa chỉ</th>
                     <th class="px-4 py-2 bg-blue-500 text-white border">Bên Thứ 3</th>
+                    <th class="px-4 py-2 bg-blue-500 text-white border">Trạng Thái</th>
                     <th class="px-4 py-2 bg-blue-500 text-white border">Thao Tác</th>
                 </tr>
             </thead>
@@ -96,6 +97,14 @@
                     <td class="px-4 py-2 text-center border whitespace-normal max-w-xs">{{ $record->TenTruongHoc }}</td>
                     <td class="px-4 py-2 text-center border whitespace-normal max-w-xs">{{ $record->DiaChi }}</td>
                     <td class="px-4 py-2 text-center border whitespace-normal max-w-xs">{{ $record->benThu3->Ten }}</td>
+                    <td class="px-4 py-2 text-center border whitespace-normal max-w-xs">
+                        @if($record->TrangThai == 1)
+                        Chưa được nhận
+                        @else
+                        Đã được nhận
+                        @endif
+                    </td>
+
                     <td class="px-4 py-2 text-center border whitespace-nowrap max-w-xs">
                         <form id="deleteForm{{ $record->id }}" action="/deleteTreEm/{{ $record->id }}" method="post">
                             @csrf

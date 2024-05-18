@@ -151,5 +151,6 @@ Route::match(['get', 'post'], '/searchTinTuc', [TinTucController::class, 'search
 Route::post('/Information', [HinhAnhController::class, 'Information'])->name('Information');
 Route::get('/Informationd', [HinhAnhController::class, 'Informationd'])->name('Informationd');
 
-Route::get('/ThongKe', [ThongKeController::class, 'index']);
+// Route::get('/ThongKe', [ThongKeController::class, 'index']);
 
+Route::get('/ThongKe', [ThongKeController::class, 'index'])->name('ThongKe.index');

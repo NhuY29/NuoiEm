@@ -1,22 +1,37 @@
 <?php
+// App\Http\Controllers\ThongKeController.php
+
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\ThongKe;
+use Illuminate\Http\Request;
 
 class ThongKeController extends Controller
 {
-    public function index(Request $request){
-        $tungay = $request->tuNgay;
-        $denngay = $request->denNgay;
-        $get = ThongKe::whereBetween('created_at', [$tungay, $denngay])->orderBy('created_at','ASC')->get();
-        $chart_data = [];
-        foreach($get as $key => $value){
-           $chart_data[] = array(
-               "period" => $value->created_at,
-               "licensed" => $value->SoTien,
-           );
+    public function index(Request $request)
+    {
+        $query = ThongKe::with('treEm')
+            ->where('isdelete', 0);
+
+        // Lọc theo ngày nếu có
+        if ($request->has('start_date') && $request->has('end_date')) {
+            $startDate = $request->input('start_date');
+            $endDate = $request->input('end_date');
+            $query->whereBetween('Ngay_gop', [$startDate, $endDate]);
         }
-        return response()->json($chart_data);
+
+        $data = $query->selectRaw('TreEm_id, sum(SoTien) as TongTien')
+            ->groupBy('TreEm_id')
+            ->get();
+
+        $array = [['TreEm', 'TongTien']];
+        foreach ($data as $value) {
+            $array[] = [$value->treEm->Ten, floatval($value->TongTien)]; // Sử dụng tên của TreEm
+        }
+
+        return view('ThongKe')->with('data', json_encode($array));
     }
 }
+
+
+ 
