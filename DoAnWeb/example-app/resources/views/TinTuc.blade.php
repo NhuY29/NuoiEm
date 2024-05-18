@@ -90,7 +90,7 @@
                 </tr>
 
                 <div id="editForm{{ $record->id }}" style="display: none;" class="max-w-md mx-auto my-8">
-                    <form action="/updateTinTuc/{{ $record->id }}" method="post" style="display: none;" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+                    <form action="{{ route('update-Tintuc', ['id' => $record->id]) }}" method="post" enctype="multipart/form-data" style="display: none;" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
                         @csrf
                         @method('PUT')
                         <div class="mb-4">
