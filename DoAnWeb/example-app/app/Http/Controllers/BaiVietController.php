@@ -35,8 +35,9 @@ class BaiVietController extends Controller
     $user_id = $request->input('user_id');
 
     // Kiểm tra xem trong bảng Baiviet đã có bài viết nào có tre_em_id tương tự hay chưa
-    $existingBaiViet = Baiviet::where('TreEm_id', $TreEm_id)->exists();
-
+    $existingBaiViet = Baiviet::where('TreEm_id', $TreEm_id)
+    ->where('isDelete', 0)
+    ->exists();
     // Nếu đã tồn tại bài viết có tre_em_id tương tự, không thêm mới
     if ($existingBaiViet) {
         return redirect()->back()->with('error', 'Bài viết với tre_em_id này đã tồn tại.');
