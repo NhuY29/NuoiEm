@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\TenMailable;
 use App\Models\TreEm;
+use App\Models\Nguoinhannuoi;
 use App\Models\User;
 use App\Jobs\SendEmail;
 class EmailController extends Controller
@@ -18,6 +19,9 @@ class EmailController extends Controller
     public function sendEmail(Request $request)
     {
         $email = $request->input('email');
+        $diachi = $request->input('DiaChi');
+        $thunhaptrungbinh = $request->input('ThuNhapTrungBinh');
+        $nghenghiep = $request->input('NgheNghiep');
         $name = $request->input('name');
         $id_card_number = $request->input('id_card_number');
         $phone_number = $request->input('phone_number');
@@ -44,6 +48,18 @@ class EmailController extends Controller
 
         $record = TreEm::findOrFail( $treem_id);
         $record->update(['TrangThai' => 0]);
+
+        Nguoinhannuoi::create([
+            'HoTen' =>   $name,
+            'Email' => $email,
+            'CCCD' => $id_card_number,
+            'SDT' =>  $phone_number,
+            'NgheNghiep' => $nghenghiep,
+            'ThuNhapTrungBinh' =>  $thunhaptrungbinh,
+            'DiaChi' =>  $diachi ,
+            'TreEm_id' => $treem_id
+
+        ]);
 
       return redirect()->back(); 
     }

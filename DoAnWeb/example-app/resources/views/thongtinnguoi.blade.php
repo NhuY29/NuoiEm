@@ -23,6 +23,15 @@
         <div class="mb-4">
             <input type="text" name="phone_number" class="w-full p-2 border border-gray-300 rounded" placeholder="Số điện thoại">
         </div>
+        <div class="mb-4">
+            <input type="text" name="NgheNghiep" class="w-full p-2 border border-gray-300 rounded" placeholder="Nghe nghệp">
+        </div>
+        <div class="mb-4">
+            <input type="text" name="ThuNhapTrungBinh" class="w-full p-2 border border-gray-300 rounded" placeholder="Thu nhap trung bình">
+        </div>
+        <div class="mb-4">
+            <input type="text" name="DiaChi" class="w-full p-2 border border-gray-300 rounded" placeholder="Dia chỉ">
+        </div>
         <button type="submit" class="w-full bg-blue-500 text-white p-2 rounded hover:bg-blue-700">Submit</button>
     </form>
 </div>
