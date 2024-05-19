@@ -163,7 +163,10 @@ class TreEmController extends Controller
     $sheet->setCellValue('F1', 'Trạng Thái');
     
     // Lấy dữ liệu trẻ em đã nhận nuôi
-    $data_nhan_nuoi = TreEm::where('TrangThai', '=', 0)->get();
+    $data_nhan_nuoi = TreEm::where([
+        ['TrangThai', '=', 0],
+        ['isDelete', '=', 0]
+    ])->get();
     
     // Thêm dòng tiêu đề phân biệt
     $sheet->setCellValue('A2', 'Trẻ em đã nhận nuôi');
@@ -183,7 +186,10 @@ class TreEmController extends Controller
     }
     
     // Lấy dữ liệu trẻ em chưa nhận nuôi
-    $data_chua_nhan_nuoi = TreEm::where('TrangThai', '=', 1)->get();
+    $data_chua_nhan_nuoi = TreEm::where([
+        ['TrangThai', '=', 1],
+        ['isDelete', '=', 0]
+    ])->get();
     
     // Thêm dòng tiêu đề phân biệt
     $sheet->setCellValue('A' . ($row + 1), 'Trẻ em chưa nhận nuôi');
