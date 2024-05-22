@@ -18,7 +18,6 @@ class BaiVietController extends Controller
         'TieuDe' => 'required|string|max:255',
         'TreEm_id' => 'required|string|max:255',
         'NoiDung' => 'required|string|max:255',
-        'NgayDang' => 'required|date',
         'user_id' => 'required|string|max:255',
     ]);
 
