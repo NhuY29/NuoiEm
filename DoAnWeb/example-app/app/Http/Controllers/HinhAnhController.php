@@ -26,6 +26,9 @@ class HinhAnhController extends Controller
         ]);
     
         // Upload file to Cloudinary
+        $video = $request->file('Video');
+        $uploadedVideo = cloudinary()->upload($video->getRealPath(), ['resource_type' => 'video']);
+        $secureUrlVideo = $uploadedVideo->getSecurePath();
         $upload = cloudinary()->upload($request->file('file')->getRealPath());
         $secureUrl = $upload->getSecurePath(); // Lấy URL an toàn
     
@@ -45,10 +48,11 @@ class HinhAnhController extends Controller
         }
         // Tạo một bản ghi mới trong cơ sở dữ liệu
         HinhAnh::create([
-            'DuongDan' => $httpUrl,
+            'DuongDan' => $httpUrl ,
             'ChuThich' => $ChuThich,
             'BaiViet_id' => $BaiViet_id,
             'TreEm_id' => $TreEm_id,
+            'Video' => $secureUrlVideo
         ]);
     
         // Chuyển hướng người dùng đến trang sau khi xử lý dữ liệu thành công

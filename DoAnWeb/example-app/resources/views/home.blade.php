@@ -157,12 +157,12 @@
 				<div class="col-xl-4 col-lg-4 col-md-6">
 					<div class="single-course wow fadeInUp" data-wow-delay=".2s">
 						<div class="course-img">
-							<a href="course-single.html">
+							<a href="/danhsachtreem">
 								<img src="https://img1.kienthucvui.vn/uploads/2021/02/11/anh-nhung-dua-tre-ngheo-duoc-nhan-banh-keo-tu-thien_114003675.jpg"  alt="..." class="img-fluid-ss">
 							</a>
 						</div>
 						<div class="course-info">
-							<h4><a href="course-single.html">3000+ bé huyện Mường Nhé Tỉnh Điện Biên</a></h4>
+							<h4><a href="/danhsachtreem">3000+ bé huyện Mường Nhé Tỉnh Điện Biên</a></h4>
 							<div class="course-meta">
 								<div class="meta-item">
 									<i class="lni lni-user"></i>
@@ -183,12 +183,12 @@
 				<div class="col-xl-4 col-lg-4 col-md-6">
 					<div class="single-course wow fadeInUp" data-wow-delay=".4s">
 						<div class="course-img">
-							<a href="course-single.html">
+							<a href="/danhsachtreem">
 								<img src="http://giaoxutanviet.com/wp-content/uploads/2020/09/tre-vung-cao.jpg" alt="" class="img-fluid-ss">
 							</a>
 						</div>
 						<div class="course-info">
-							<h4><a href="course-single.html">3000+ bé huyện Nậm Pồ Tỉnh Điện Biên</a></h4>
+							<h4><a href="/danhsachtreem">3000+ bé huyện Nậm Pồ Tỉnh Điện Biên</a></h4>
 							<div class="course-meta">
 								<div class="meta-item">
 									<i class="lni lni-user"></i>
@@ -209,12 +209,12 @@
 				<div class="col-xl-4 col-lg-4 col-md-6">
 					<div class="single-course wow fadeInUp" data-wow-delay=".6s">
 						<div class="course-img">
-							<a href="course-single.html">
+							<a href="/danhsachtreem">
 								<img src="https://nortalic.com/wp-content/uploads/2022/06/z3453153246100_0fe6c283bef14adcf853d371b2423d14-1024x768.jpg" alt="" class="img-fluid-ss">
 							</a>
 						</div>
 						<div class="course-info">
-							<h4><a href="course-single.html">644+ bé huyện Điện Biên Đông Tỉnh Điện Biên</a></h4>
+							<h4><a href="/danhsachtreem">644+ bé huyện Điện Biên Đông Tỉnh Điện Biên</a></h4>
 							<div class="course-meta">
 								<div class="meta-item">
 									<i class="lni lni-user"></i>
@@ -237,12 +237,12 @@
 				<div class="col-xl-4 col-lg-4 col-md-6">
 					<div class="single-course wow fadeInUp" data-wow-delay=".2s">
 						<div class="course-img">
-							<a href="course-single.html">
+							<a href="/danhsachtreem">
 								<img src="https://i.ex-cdn.com/giadinhmoi.vn/files/danggiang/2018/03/29/hinh-anh-tre-em-vung-cao-ngo-nghinh-de-thuong-nhat-1-1007.png" alt="" class="img-fluid-ss">
 							</a>
 						</div>
 						<div class="course-info">
-							<h4><a href="course-single.html">500+ bé Tỉnh Bắc Kạn</a></h4>
+							<h4><a href="/danhsachtreem">500+ bé Tỉnh Bắc Kạn</a></h4>
 							<div class="course-meta">
 								<div class="meta-item">
 									<i class="lni lni-user"></i>
@@ -263,12 +263,12 @@
 				<div class="col-xl-4 col-lg-4 col-md-6">
 					<div class="single-course wow fadeInUp" data-wow-delay=".4s">
 						<div class="course-img">
-							<a href="course-single.html">
+							<a href="/danhsachtreem">
 								<img src="https://luatsux.vn/wp-content/uploads/2022/04/Hoan-canh-kho-khan-don-xin-xac-nhan-ho-ngheo.jpg" alt="" class="img-fluid-ss">
 							</a>
 						</div>
 						<div class="course-info">
-							<h4><a href="course-single.html">200+ bé Tỉnh Đắk Lắk </a></h4>
+							<h4><a href="/danhsachtreem">200+ bé Tỉnh Đắk Lắk </a></h4>
 							<div class="course-meta">
 								<div class="meta-item">
 									<i class="lni lni-user"></i>
@@ -289,12 +289,12 @@
 				<div class="col-xl-4 col-lg-4 col-md-6">
 					<div class="single-course wow fadeInUp" data-wow-delay=".6s">
 						<div class="course-img">
-							<a href="course-single.html">
+							<a href="/danhsachtreem">
 								<img src="https://file1.dangcongsan.vn/DATA/0/2016/01/19_qtvp-10_21_01_447.jpg" alt="" class="img-fluid-ss">
 							</a>
 						</div>
 						<div class="course-info">
-							<h4><a href="course-single.html">355+ bé Tỉnh Lào Cai</a></h4>
+							<h4><a href="/danhsachtreem">355+ bé Tỉnh Lào Cai</a></h4>
 							<div class="course-meta">
 								<div class="meta-item">
 									<i class="lni lni-user"></i>

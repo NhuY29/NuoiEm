@@ -126,7 +126,7 @@
                 <div class="section">
                     <div class="section-title">HY VỌNG Ở TƯƠNG LAI</div>
                     <div class="info-item">
-                        <p>Bé quyết định rằng mình sẽ trở thành một bác sĩ để có thể mang lại niềm vui và hy vọng cho những người bệnh.</p>
+                        <p>{{$treem->UocMo}}</p>
                     </div>
                 </div>
             </div>
@@ -162,7 +162,19 @@
                 </div>
             </div>
         </div>
+
+        <div class="footer">
+    @if(!empty($anhTreEm) && $anhTreEm->isDelete == 0)
+    <video width="320" height="240" controls>
+    <source src="{{ $anhTreEm->Video }}" type="video/mp4">
+
+</video>
+    @else
+        <img src="https://via.placeholder.com/200" alt="No Image" class="profile-img">
+    @endif
     </div>
+    </div>
+    
 </body>
 
 </html>

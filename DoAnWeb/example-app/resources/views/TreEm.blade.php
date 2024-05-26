@@ -48,6 +48,10 @@
                 <label for="DiaChi" class="block text-gray-700 text-sm font-bold mb-2">Địa Chỉ:</label>
                 <textarea id="DiaChi" name="DiaChi" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"></textarea>
             </div>
+            <div class="mb-4">
+                <label for="UocMo" class="block text-gray-700 text-sm font-bold mb-2">Ước Mơ:</label>
+                <textarea id="UocMo" name="UocMo" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"></textarea>
+            </div>
             <label for="BenThu3_id" class="block text-gray-700 text-sm font-bold mb-2"> Bên Thứ 3:</label>
             <div class="relative">
                 <select name="BenThu3_id" class="block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
@@ -85,6 +89,7 @@
                     <th class="px-4 py-2 bg-blue-500 text-white border">Địa chỉ</th>
                     <th class="px-4 py-2 bg-blue-500 text-white border">Bên Thứ 3</th>
                     <th class="px-4 py-2 bg-blue-500 text-white border">Trạng Thái</th>
+                    <th class="px-4 py-2 bg-blue-500 text-white border">Ước Mơ</th>
                     <th class="px-4 py-2 bg-blue-500 text-white border">Thao Tác</th>
                 </tr>
             </thead>
@@ -97,6 +102,7 @@
                     <td class="px-4 py-2 text-center border whitespace-normal max-w-xs">{{ $record->TenTruongHoc }}</td>
                     <td class="px-4 py-2 text-center border whitespace-normal max-w-xs">{{ $record->DiaChi }}</td>
                     <td class="px-4 py-2 text-center border whitespace-normal max-w-xs">{{ $record->benThu3->Ten }}</td>
+
                     <td class="px-4 py-2 text-center border whitespace-normal max-w-xs">
                         @if($record->TrangThai == 1)
                         Chưa được nhận
@@ -104,7 +110,7 @@
                         Đã được nhận
                         @endif
                     </td>
-
+                    <td class="px-4 py-2 text-center border whitespace-normal max-w-xs">{{ $record->UocMo }}</td>
                     <td class="px-4 py-2 text-center border whitespace-nowrap max-w-xs">
                         <form id="deleteForm{{ $record->id }}" action="/deleteTreEm/{{ $record->id }}" method="post">
                             @csrf
@@ -154,7 +160,13 @@
                             <textarea id="DiaChi_edit{{ $record->id }}" name="DiaChi" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">{{ $record->DiaChi }}</textarea>
 
                         </div>
+                        <div class="mb-4">
 
+<label for="UocMo_edit{{ $record->id }}" class="block text-gray-700 text-sm font-bold mb-2">Ước Mơ:</label>
+
+<textarea id="UocMo_edit{{ $record->id }}" name="UocMo" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">{{ $record->UocMo }}</textarea>
+
+</div>
 
                         <label for="BenThu3_id" class="block text-gray-700 text-sm font-bold mb-2"> Bên Thứ 3:</label>
                         <div class="relative">

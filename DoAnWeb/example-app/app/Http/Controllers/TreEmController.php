@@ -56,6 +56,7 @@ class TreEmController extends Controller
         $TenTruongHoc = $request->get('TenTruongHoc');
         $DiaChi = $request->get('DiaChi');
         $BenThu3_id = $request->get('BenThu3_id');
+        $UocMo = $request->get('UocMo');
         $TrangThai = 1;
         TreEm::create([
             'Ten' => $ten,
@@ -64,6 +65,7 @@ class TreEmController extends Controller
             'DiaChi' => $DiaChi,
             'BenThu3_id' => $BenThu3_id,
             'TrangThai' => $TrangThai,
+            'UocMo' => $UocMo,
 
         ]);
         return redirect()->to("/TreEm")->with('alert', 'Đã thêm thành công');
@@ -135,6 +137,7 @@ class TreEmController extends Controller
             'TenTruongHoc' => 'required|string|max:255',
             'DiaChi' => 'required|string|max:255',
             'BenThu3_id' => 'required|string|max:255',
+            'UocMo' => 'required|string|max:255',
         ]);
 
         if ($validator->fails()) {

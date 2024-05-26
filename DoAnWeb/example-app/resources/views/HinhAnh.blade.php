@@ -34,6 +34,10 @@
                 <input type="file" id="DuongDan" name="file" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
             </div>
             <div class="mb-4">
+                <label for="Video" class="block text-gray-700 text-sm font-bold mb-2">Tải Video:</label>
+                <input type="file" id="Video" name="Video" accept="video/*" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+            </div>
+            <div class="mb-4">
                 <label for="ChuThich" class="block text-gray-700 text-sm font-bold mb-2">Chú Thích:</label>
                 <input type="text" id="ChuThich" name="ChuThich" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
             </div>
@@ -79,6 +83,7 @@
                     <th class="px-4 py-2 bg-blue-500 text-white border">STT</th>
                     <th class="px-4 py-2 bg-blue-500 text-white border">Đường Dẫn</th>
                     <th class="px-4 py-2 bg-blue-500 text-white border">Ảnh</th>
+                    <th class="px-4 py-2 bg-blue-500 text-white border">Video</th>
                     <th class="px-4 py-2 bg-blue-500 text-white border">Chú Thích</th>
                     <th class="px-4 py-2 bg-blue-500 text-white border">Bài Viết</th>
                     <th class="px-4 py-2 bg-blue-500 text-white border">Trẻ Em</th>
@@ -95,7 +100,12 @@
                     <td>
                         <img src="{{ $record->DuongDan }}" alt="{{ $record->ChuThich }}">
                     </td>
-
+                    <td class="px-4 py-2 text-center border whitespace-normal max-w-xs">
+                        <video width="320" height="240" controls>
+                            <source src="{{ $record->Video }}" type="video/mp4">
+             
+                        </video>
+                    </td>
                     <td class="px-4 py-2 text-center border whitespace-normal max-w-xs">
                         {{ $record->ChuThich }}
                     </td>
@@ -147,7 +157,7 @@
                                 </div>
                             </div>
                         </div>
-                       <input type="hidden" name="TreEm_id" value="{{ $record->TreEm_id }}">
+                        <input type="hidden" name="TreEm_id" value="{{ $record->TreEm_id }}">
 
                         <div class="flex items-center justify-between">
 
