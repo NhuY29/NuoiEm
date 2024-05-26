@@ -36,47 +36,48 @@
 		</div>
 	</div>
 	<header class="header_area">
-		<div id="header_navbar" class="header_navbar">
-			<div class="container">
-				<div class="row align-items-center">
-					<div class="col-xl-12">
-						<nav class="navbar navbar-expand-lg">
-							<a class="navbar-brand" href="index.html">
-								<img id="logo" src="resources/images/logo.svg" alt="Logo">
-							</a>
-							<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-								<span class="toggler-icon"></span>
-								<span class="toggler-icon"></span>
-								<span class="toggler-icon"></span>
-							</button>
-							<div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
-								<ul id="nav" class="navbar-nav ml-auto">
-									<li class="nav-item">
-										<a class="page-scroll" href="/danhsachtreem">Nhận Mã</a>
-									</li>
-									<li class="nav-item">
-										<a class="page-scroll" href="#tra-ma">Tra Mã</a>
-									</li>
-									<li class="nav-item">
-										<a class="page-scroll" href="#tham-em">Thăm Em</a>
-									</li>
-									<li class="nav-item">
-										<a class="page-scroll" href="#he-sinh-thai">Hệ Sinh Thái</a>
-									</li>
-									<li class="nav-item">
-										<a href="/chuyenkhoan" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Số Tài Khoản</a>
-									</li>
-									<li class="nav-item">
-										<a class="header-btn btn-hover" href="/login">Quản trị</a>
-									</li>
-								</ul>
-							</div>
-						</nav>
-					</div>
-				</div>
-			</div>
-		</div>
-	</header>
+    <div id="header_navbar" class="header_navbar">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-xl-12">
+                    <nav class="navbar navbar-expand-lg">
+                        <a class="navbar-brand" href="index.html">
+                            <img id="logo" src="resources/images/logo.svg" alt="Logo">
+                        </a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="toggler-icon"></span>
+                            <span class="toggler-icon"></span>
+                            <span class="toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
+                            <ul id="nav" class="navbar-nav ml-auto">
+                                <li class="nav-item">
+                                    <a class="page-scroll" href="/danhsachtreem">Nhận Mã</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="page-scroll" href="#tra-ma">Tra Mã</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="page-scroll" href="#tham-em">Thăm Em</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="page-scroll" href="{{ route('hesinhthai') }}">Hệ Sinh Thái</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/chuyenkhoan" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Số Tài Khoản</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="header-btn btn-hover" href="/login">Quản trị</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
 	<section id="gioi-thieu" class="hero-area bg_cover">
 		<div class="container">
 			<div class="row align-items-center">
@@ -157,7 +158,7 @@
 					<div class="single-course wow fadeInUp" data-wow-delay=".2s">
 						<div class="course-img">
 							<a href="course-single.html">
-								<img src="https://scontent.fsgn23-1.fna.fbcdn.net/v/t1.6435-9/42734639_498874713911925_3248776802440577024_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=5f2048&_nc_ohc=VSjWqPK3pvQAb62B7fB&_nc_ht=scontent.fsgn23-1.fna&oh=00_AfCsPhkSnyrlJYsp2M1L454qhplHXuWlcZxYZADM3XD6Iw&oe=6639C5DC" class="d-block w-100" alt="...">
+								<img src="https://img1.kienthucvui.vn/uploads/2021/02/11/anh-nhung-dua-tre-ngheo-duoc-nhan-banh-keo-tu-thien_114003675.jpg"  alt="..." class="img-fluid-ss">
 							</a>
 						</div>
 						<div class="course-info">
@@ -183,7 +184,7 @@
 					<div class="single-course wow fadeInUp" data-wow-delay=".4s">
 						<div class="course-img">
 							<a href="course-single.html">
-								<img src="https://scontent.fsgn23-1.fna.fbcdn.net/v/t1.6435-9/42916545_1451952921615651_8749642963786661888_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=5f2048&_nc_ohc=E7WyK3EXehkAb5fGaRy&_nc_ht=scontent.fsgn23-1.fna&oh=00_AfDtTuz6GxWyrvegRLTF6HUHvU5R6yagMy3A1wlAOz7yDQ&oe=6639D3A7" alt="">
+								<img src="http://giaoxutanviet.com/wp-content/uploads/2020/09/tre-vung-cao.jpg" alt="" class="img-fluid-ss">
 							</a>
 						</div>
 						<div class="course-info">
@@ -209,7 +210,7 @@
 					<div class="single-course wow fadeInUp" data-wow-delay=".6s">
 						<div class="course-img">
 							<a href="course-single.html">
-								<img src="https://scontent.fsgn23-1.fna.fbcdn.net/v/t1.6435-9/43114194_500705173728879_5458069780063846400_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=5f2048&_nc_ohc=jD5P0PDEqkEAb7JWaIC&_nc_ht=scontent.fsgn23-1.fna&oh=00_AfA0o_hkCS53BKYMyq9AKwoh890wCu8fLS1_OrBVn9LMfQ&oe=6639CD97" alt="">
+								<img src="https://nortalic.com/wp-content/uploads/2022/06/z3453153246100_0fe6c283bef14adcf853d371b2423d14-1024x768.jpg" alt="" class="img-fluid-ss">
 							</a>
 						</div>
 						<div class="course-info">
@@ -237,7 +238,7 @@
 					<div class="single-course wow fadeInUp" data-wow-delay=".2s">
 						<div class="course-img">
 							<a href="course-single.html">
-								<img src="https://scontent.fsgn23-1.fna.fbcdn.net/v/t1.6435-9/43019946_500705417062188_4177365276049801216_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=5f2048&_nc_ohc=IpPn3PuZql8Ab4Eh_Bn&_nc_ht=scontent.fsgn23-1.fna&oh=00_AfA7vJClxqVCw1M4X9xHVIQi_0kxlTnnhf3Ulr57uNNa4w&oe=6639D39A" alt="">
+								<img src="https://i.ex-cdn.com/giadinhmoi.vn/files/danggiang/2018/03/29/hinh-anh-tre-em-vung-cao-ngo-nghinh-de-thuong-nhat-1-1007.png" alt="" class="img-fluid-ss">
 							</a>
 						</div>
 						<div class="course-info">
@@ -263,7 +264,7 @@
 					<div class="single-course wow fadeInUp" data-wow-delay=".4s">
 						<div class="course-img">
 							<a href="course-single.html">
-								<img src="https://scontent.fsgn23-1.fna.fbcdn.net/v/t1.6435-9/43127774_500704550395608_4670148112533159936_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=5f2048&_nc_ohc=StGV8Q7bZUwAb6_ZqeL&_nc_ht=scontent.fsgn23-1.fna&oh=00_AfDQPq_zCq7VzF3ZU0pSH6oX0kch7XfZP_IrBFpZKri8VQ&oe=6639D78A" alt="">
+								<img src="https://luatsux.vn/wp-content/uploads/2022/04/Hoan-canh-kho-khan-don-xin-xac-nhan-ho-ngheo.jpg" alt="" class="img-fluid-ss">
 							</a>
 						</div>
 						<div class="course-info">
@@ -289,7 +290,7 @@
 					<div class="single-course wow fadeInUp" data-wow-delay=".6s">
 						<div class="course-img">
 							<a href="course-single.html">
-								<img src="https://scontent.fsgn23-1.fna.fbcdn.net/v/t1.6435-9/43130972_500926653706731_6862288425295282176_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=5f2048&_nc_ohc=0FVjY2AfkSIAb6ORPUl&_nc_ht=scontent.fsgn23-1.fna&oh=00_AfA6mThSDtZaSIhQPljWlH8JHxSEELSpUhsXQc99uVsGng&oe=6639CB67" alt="">
+								<img src="https://file1.dangcongsan.vn/DATA/0/2016/01/19_qtvp-10_21_01_447.jpg" alt="" class="img-fluid-ss">
 							</a>
 						</div>
 						<div class="course-info">
@@ -468,7 +469,7 @@
 							</a>
 						</div>
 						<div class="blog-content">
-							<h4><a href="{{$DS->Link}}">{{ $DS->TieuDe }}</a></h4>
+							<h4><a href="{{$DS->Link}}	">{{ $DS->TieuDe }}</a></h4>
 							<p>{{ $DS->NoiDung }}</p>
 						</div>
 					</div>
@@ -747,5 +748,7 @@
     height: 70%; /* Đặt chiều cao của phần nội dung trong mỗi phần tử single-blog */
     overflow: hidden; /* Ẩn phần dư thừa của nội dung */
 }
-
+.img-fluid-ss{
+	height: 250px;
+}
 </style>

@@ -22,7 +22,7 @@ class HinhAnhController extends Controller
         
 
         $request->validate([
-            'file' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048', // Thay đổi các quy tắc validation tùy theo nhu cầu của bạn
+            'file' => 'required|mimes:jpeg,png,jpg,gif,mp4|max:20480', // Thay đổi các quy tắc validation tùy theo nhu cầu của bạn
         ]);
     
         // Upload file to Cloudinary

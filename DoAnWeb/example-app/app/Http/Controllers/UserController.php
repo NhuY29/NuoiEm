@@ -45,7 +45,9 @@ class UserController extends Controller
         return view('index');
        
     }
-
+public function hesinhthai(){
+    return view('hesinhthai');
+}
     public function login(Request $request)
     {
         $credentials = $request->only('email', 'password');

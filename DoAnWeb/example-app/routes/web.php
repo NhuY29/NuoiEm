@@ -43,9 +43,6 @@ Route::get('/', [TinTucController::class, 'DS']);
 Route::get('/thongtinchitiet', function () {
     return view('ThongTinChiTiet');
 });
-Route::get('/hesinhthai', function () {
-    return view('hesinhthai');
-});
 // Define the route with a placeholder for the ID
 Route::get('/thongtinchitiet/{id}', [BaiVietController::class, 'hienThiThongTinTreEm'])->name('thongtinchitiet');
 
@@ -70,6 +67,7 @@ Route::match(['get', 'post'], '/searchUser', [UserController::class, 'search'])-
 Route::get('/login', [UserController::class, 'Loginsss']);
 Route::get('/Logout', [UserController::class, 'logout'])->name('logout');
 Route::post('/login', [UserController::class, 'login'])->name('login');
+Route::post('/hesinhthai', [UserController::class, 'hesinhthai'])->name('hesinhthai');
 
 // Route::post('/register', [UserController::class, 'register']);
 
@@ -79,6 +77,7 @@ Route::get('/Resgisted', function () {
 Route::get('/menu', function () {
     return view('menu');
 });
+
 Route::get('/save', [BenThu3Controller::class, 'index']);
 Route::post('/save', [BenThu3Controller::class, 'xuLyDuLieu']);
 Route::delete('/deleteBenThu3/{id}', [BenThu3Controller::class, 'delete']);
