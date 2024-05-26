@@ -339,7 +339,7 @@
 								<img src="	https://w.ladicdn.com/s900x700/5c3219ef974b7861952fed1d/sgagwehw-20220808091422.png" alt="">
 								<p>Các bé vùng cao Tây Bắc xa xôi, hẻo lánh để đến với “con chữ” có rất nhiều khó khăn, gian khổ. Chỉ vì để được đến trường học tập với thầy cô và các bạn, các em bé ấy không ngại những quãng đường xa xôi hàng km hay thức dậy rất sớm để được cắp sách đếntrường.</p>
 							</div>
-							<div class="fb-share-button" data-href="https://b60e-116-106-111-83.ngrok-free.app" data-layout="" data-size=""><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fb60e-116-106-111-83.ngrok-free.app%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Chia sẻ</a></div>
+							<div class="fb-share-button" data-href="https://2011-116-106-111-83.ngrok-free.app" data-layout="" data-size=""><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2F2011-116-106-111-83.ngrok-free.app%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Chia sẻ</a></div>
 							<button class="btn btn-link" onclick="toggleReadMore()">Xem Thêm</button>
 						</div>
 					</div>
