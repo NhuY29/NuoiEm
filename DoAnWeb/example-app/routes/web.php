@@ -10,6 +10,7 @@ use App\Http\Controllers\QuyCaNhanController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\FacebookSocialiteController;
 use App\Http\Controllers\EmailController;
+use App\Http\Controllers\NguoiNhanNuoiController;
 use App\Http\Controllers\TintucController;
 use App\Http\Controllers\ThongKeController;
 use App\Models\User;
@@ -159,3 +160,11 @@ Route::get('/Informationd', [HinhAnhController::class, 'Informationd'])->name('I
 // Route::get('/ThongKe', [ThongKeController::class, 'index']);
 
 Route::get('/ThongKe', [ThongKeController::class, 'index'])->name('ThongKe.index');
+
+//nguoi nhan nuoi 
+Route::get('/Nguoinhannuoi', [NguoiNhanNuoiController::class, 'index']);
+Route::post('/Nguoinhannuoi', [NguoiNhanNuoiController::class, 'xuLyDuLieu']);
+Route::delete('/deleteNguoinhannuoi/{id}', [NguoiNhanNuoiController::class, 'delete']);
+Route::get('/editNguoinhannuoi/{id}', [NguoiNhanNuoiController::class, 'edit']);
+Route::put('/updateNguoinhannuoi/{id}', [NguoiNhanNuoiController::class, 'update']);
+Route::match(['get', 'post'], '/searchNguoinhannuoi', [NguoiNhanNuoiController::class, 'search'])->name('searchNguoinhannuoi');

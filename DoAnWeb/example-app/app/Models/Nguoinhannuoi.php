@@ -11,4 +11,10 @@ class Nguoinhannuoi extends Model
     protected $table = '_nguoi_nhannuoi'; // Tên của bảng trong CSDL
 
     protected $fillable = ['HoTen', 'Email', 'CCCD', 'SDT', 'NgheNghiep' , 'ThuNhapTrungBinh','DiaChi','isDelete','TreEm_id'];
+
+    public function TreEm()
+    {
+        return $this->belongsTo(TreEm::class, 'TreEm_id', 'id');
+    }
+
 }
