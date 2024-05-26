@@ -52,7 +52,7 @@
 							<div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
 								<ul id="nav" class="navbar-nav ml-auto">
 									<li class="nav-item">
-										<a class="page-scroll" href="#nhan-ma">Nhận Mã</a>
+										<a class="page-scroll" href="/danhsachtreem">Nhận Mã</a>
 									</li>
 									<li class="nav-item">
 										<a class="page-scroll" href="#tra-ma">Tra Mã</a>
@@ -67,7 +67,7 @@
 										<a href="/chuyenkhoan" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Số Tài Khoản</a>
 									</li>
 									<li class="nav-item">
-										<a class="header-btn btn-hover" href="#courses">Quản trị</a>
+										<a class="header-btn btn-hover" href="/login">Quản trị</a>
 									</li>
 								</ul>
 							</div>

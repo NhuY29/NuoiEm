@@ -30,17 +30,20 @@ use Illuminate\Support\Facades\Hash;
 // Route::get('/', function () {
 //     return view('welcome');
 // });
-Route::get('/home', function () {
+Route::get('/', function () {
     return view('home');
 });
 // Route::get('/thongkebieudo', function () {
 //     return view('ThongKe');
 // });
 
-Route::get('/home', [TinTucController::class, 'DS']);
+Route::get('/', [TinTucController::class, 'DS']);
 
 Route::get('/thongtinchitiet', function () {
     return view('ThongTinChiTiet');
+});
+Route::get('/hesinhthai', function () {
+    return view('hesinhthai');
 });
 // Define the route with a placeholder for the ID
 Route::get('/thongtinchitiet/{id}', [BaiVietController::class, 'hienThiThongTinTreEm'])->name('thongtinchitiet');
@@ -63,7 +66,7 @@ Route::get('/editUser/{id}', [UserController::class, 'edit']);
 Route::put('/updateUser/{id}', [UserController::class, 'update']);
 Route::match(['get', 'post'], '/searchUser', [UserController::class, 'search'])->name('searchUser');
 //login
-Route::get('/', [UserController::class, 'Loginsss']);
+Route::get('/login', [UserController::class, 'Loginsss']);
 Route::get('/Logout', [UserController::class, 'logout'])->name('logout');
 Route::post('/login', [UserController::class, 'login'])->name('login');
 
