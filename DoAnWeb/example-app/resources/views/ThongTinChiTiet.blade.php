@@ -162,10 +162,11 @@
                 </div>
             </div>
         </div>
+<br>
 
         <div class="footer">
     @if(!empty($anhTreEm) && $anhTreEm->isDelete == 0)
-    <video width="320" height="240" controls>
+    <video width="100%" height="300" controls>
     <source src="{{ $anhTreEm->Video }}" type="video/mp4">
 
 </video>

@@ -12,7 +12,7 @@
             /* Take up 20% of the space */
         }
 
-        table img {
+        table img, video{
             max-width: 200px;
             /* Adjust this value as needed */
             height: auto;

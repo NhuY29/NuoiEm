@@ -19,7 +19,7 @@
 
         @include('menu')
     </header>
-    <h1 class="text-2xl font-bold mb-4 text-center text-blue-700 m-12">Nhập Liệu Bài Viết</h1>
+    <h1 class="text-2xl font-bold mb-4 text-center text-blue-700 m-12">Nhập Liệu Người Nhận Nuôi</h1>
     <div class="max-w-md mx-auto">
         <form id="addForm" action="/Nguoinhannuoi" method="post" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-20" style="display: none;">
             @csrf
